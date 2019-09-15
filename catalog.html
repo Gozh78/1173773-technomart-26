@@ -11,10 +11,15 @@
           <img src="img/logo-technomart.svg" alt="Логотип интернет магазина «Техномарт»">
         </a>
         <div class="header-buttons">
-          <button type="">Поиск:<!--Форма для поиска--></button>
+          <form class="search-form" action="#" method="get"> <!--Этот ли метод отправки данных? -->
+            <label for="search-field" class="visually-hidden">Поиск:
+              <!--Если будет скрываться вместе с полем поиска, то уберу из label и поставлю рядом-->
+              <input type="text" id="search-field" name="search-field" class="search-field" placeholder="Поиск:">
+            </label>
+          </form>
           <button type="">Закладки: 0</button>
           <button type="">Корзина: 0</button>
-          <button type="">Оформить заказ</button>
+          <button type="submit">Оформить заказ</button>
         </div>
       </div>
       <div class="header-body">
@@ -70,24 +75,72 @@
           Фильтр:
         </h2>
         <!--Здесь будет форма фильтра и сортировка-->
-        <h3>
-          Производители:
-        </h3>
-        <ul class="brands">
-          <li>BOSCH</li>
-          <li>ИНТЕРСКОЛ</li>
-          <li>MAKITA</li>
-          <li>DEWALT</li>
-          <li>HITACHI</li>
-        </ul>
-        <h3>
-          Питание:
-        </h3>
-        <ul>
-          <li>Аккумуляторные</li>
-          <li>Сетевые</li>
-        </ul>
+        <form action="#" method="get" class="filter-brands">
+          <fieldset> <!--Либо просто ставить <hr> -->
+            <h3>
+              Производители:
+            </h3>
+            <ul class="brands">
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox"
+                type="checkbox" id="filter-bosch" name="bosch" checked>
+                <label for="filter-bosch">
+                  BOSCH
+                </label>
+              </li>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox"
+                type="checkbox" id="filter-interskol" name="interskol">
+                <label for="filter-interskol">
+                  ИНТЕРСКОЛ
+                </label>
+              </li>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox"
+                type="checkbox" id="filter-makita" name="makita" checked>
+                <label for="filter-makita">
+                  MAKITA
+                </label>
+              </li>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox"
+                type="checkbox" id="filter-dewalt" name="dewalt">
+                <label for="filter-dewalt">
+                  DEWALT
+                </label>
+              </li>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-checkbox"
+                type="checkbox" id="filter-hitachi" name="hitachi">
+                <label for="filter-hitachi">
+                  HITACHI
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset>
+            <h3>
+              Питание:
+            </h3>
+            <ul>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-radio"
+                type="radio" id="filter-accumulator" name="accumulator" checked>
+                <label for="filter-accumulator">
+                Аккумуляторные
+                </label>
+              </li>
+              <li class="filter-option">
+                <input class="visually-hidden filter-input filter-input-radio"
+                type="radio" id="filter-mains-supply" name="mains-supply">
+                <label for="filter-mains-supply">
+                Сетевые
+                </label>
+              </li>
+            </ul>
+          </fieldset>
         <button type="button">Показать</button>
+      </form>
       </section>
       <section class="items-list">
           <h2>
@@ -269,16 +322,34 @@
      </div>
     </footer>
     <section>
-      <h2>Личный кабинет</h2>
+      <h2 class="visually-hiddden">Войти в личный кабинет</h2>
       <p>Введите свой логин и пароль.</p>
-      <!-- Здесь будет форма -->
-      <button type="button">Закрыть</button>
-    </section>
-    <section class="back-link">
-      <h2>Обратная связь</h2>
-
-      <!-- Здесь будет форма -->
-      <input type="submit" value="Отправить">
+      <!-- Не нашёл в макете, как выглядит окно авторизации, так что делаю пока так -->
+      <form action="#" method="post" class="authorization-form">
+        <div>
+          <label for="user-login" class="visually-hidden"></label>
+          <input type="text" class="authorization-field-login"
+          id="user-login" name="user-login" placeholder="Логин">
+        </div>
+        <div>
+          <label for="user-password" class="visually-hidden"></label>
+          <input type="password" class="authorization-field-password"
+           id="user-password" name="user-password" placeholder="Пароль">
+        </div>
+        <input type="checkbox" id="remember-me" name="remember-me" class="checkbox-authorization">
+        <label for="remember-me">
+          Запомнить меня
+        </label>
+        <a href="">
+          Забыли пароль?
+        </a>
+      </form>
+      <button type="submit">
+        Войти
+      </button>
+      <button type="button">
+        Закрыть
+      </button>
     </section>
     <ul class="user-navigation">
         <li>
@@ -288,5 +359,16 @@
           <button type="button">Добавить в закладки</button>
         </li>
     </ul>
+    <div class="cart-addition">
+      <p>
+        Товар добавлен в корзину!
+      </p>
+      <a href="#">
+        Оформить заказ
+      </a>
+      <button class="continue-shopping">
+        Продолжить покупки
+      </button>
+    </div>
   </body>
 </html>
