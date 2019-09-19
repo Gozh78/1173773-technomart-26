@@ -17,9 +17,9 @@
               <input type="text" id="search-field" name="search-field" class="search-field" placeholder="Поиск:">
             </label>
           </form>
-          <button type="">Закладки: 0</button>
-          <button type="">Корзина: 0</button>
-          <button type="submit">Оформить заказ</button>
+          <a href="#">Закладки: 0</a>
+          <a href="#">Корзина: 0</a>
+          <a href="#">Оформить заказ</a>
         </div>
       </div>
       <div class="header-body">
@@ -74,9 +74,18 @@
         <h2>
           Фильтр:
         </h2>
-        <!--Здесь будет форма фильтра и сортировка-->
         <form action="#" method="get" class="filter-brands">
-          <fieldset> <!--Либо просто ставить <hr> -->
+          <h2 class="filter-header">
+            Фильтр:
+          </h2>
+          <label for="price-range">
+            Цена:
+          </label>
+          <input type="range" name="price-range-1" min="0" max="" id="price-range">
+          <input type="range" name="price-range-2" min="0" max="">
+          <output name="price-1">0</output>
+          <output name="price-2">30000</output>
+          <fieldset>
             <h3>
               Производители:
             </h3>
@@ -140,6 +149,24 @@
             </ul>
           </fieldset>
         <button type="button">Показать</button>
+        <section class="sorting">
+          <h2>
+            Сортировка:
+          </h2>
+          <ul>
+            <li>
+              <a href="#">По цене</a>
+            </li>
+            <li>
+              <a href="#">По типу</a>
+            </li>
+            <li>
+              <a href="#">По функционалу</a>
+            </li>
+          </ul>
+          <img src="" width="" height="" alt="">
+          <img src="" width="" height="" alt="">
+        </section>
       </form>
       </section>
       <section class="items-list">
@@ -153,7 +180,7 @@
                   Перфоратор BOSCH
                   BFG 3000
                 </h3>
-                <img src="img/bosch_bfg_3000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 3000">
+                <img src="img/bosch-bfg-3000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 3000">
                 <p>
                   <del>22500 Р.</del>
                 </p>
@@ -168,7 +195,7 @@
                   Перфоратор BOSCH
                   BFG 6000
                 </h3>
-                <img src="img/bosch_bfg_6000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 6000">
+                <img src="img/bosch-bfg-6000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 6000">
                 <p>
                   <del>30500 Р.</del>
                 </p>
@@ -183,7 +210,7 @@
                   Перфоратор BOSCH
                   BFG 2000
                 </h3>
-                <img src="img/bosch_bfg_2000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
+                <img src="img/bosch-bfg-2000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
                 <p>
                   12500 Р.
                 </p>
@@ -195,7 +222,7 @@
                   Перфоратор BOSCH
                   BFG 3000
                 </h3>
-                <img src="img/bosch_bfg_3000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 3000">
+                <img src="img/bosch-bfg-3000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 3000">
                 <p>
                   <del>22500 Р.</del>
                 </p>
@@ -210,7 +237,7 @@
                   Перфоратор BOSCH
                   BFG 6000
                 </h3>
-                <img src="img/bosch_bfg_6000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 6000">
+                <img src="img/bosch-bfg-6000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 6000">
                 <p>
                   <del>30500 Р.</del>
                 </p>
@@ -225,7 +252,7 @@
                   Перфоратор BOSCH
                   BFG 2000
                 </h3>
-                <img src="img/bosch_bfg_2000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
+                <img src="img/bosch-bfg-2000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
                 <p>
                   12500 Р.
                 </p>
@@ -237,7 +264,7 @@
                   Перфоратор BOSCH
                   BFG 3000
                 </h3>
-                <img src="img/bosch_bfg_3000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 3000">
+                <img src="img/bosch-bfg-3000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 3000">
                 <p>
                   <del>22500 Р.</del>
                 </p>
@@ -252,7 +279,7 @@
                   Перфоратор BOSCH
                   BFG 6000
                 </h3>
-                <img src="img/bosch_bfg_6000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 6000">
+                <img src="img/bosch-bfg-6000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 6000">
                 <p>
                   <del>30500 Р.</del>
                 </p>
@@ -267,11 +294,11 @@
                   Перфоратор BOSCH
                   BFG 2000
                 </h3>
-                <img src="img/bosch_bfg_2000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
+                <img src="img/bosch-bfg-2000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
                 <p>
                   12500 Р.
                 </p>
-              </a>  
+              </a>
             </li>
           </ul>
         </section>
@@ -281,7 +308,7 @@
           <li><a href="#">3</a></li>
           <li><a href="#">Следующая</a></li>
         </ul>
-        <section class="rotary_hummer_info">
+        <section class="rotary-hummer-info">
           <h2>
             Пара слов о перфораторах
           </h2>
@@ -339,10 +366,9 @@
        </p>
      </div>
     </footer>
-    <section>
+    <!-- <section>
       <h2 class="visually-hiddden">Войти в личный кабинет</h2>
       <p>Введите свой логин и пароль.</p>
-      <!-- Не нашёл в макете, как выглядит окно авторизации, так что делаю пока так -->
       <form action="#" method="post" class="authorization-form">
         <div>
           <label for="user-login" class="visually-hidden"></label>
@@ -368,7 +394,10 @@
       <button type="button">
         Закрыть
       </button>
-    </section>
+    </section> -->
+    <a href="#">
+      Войти
+    </a>
     <ul class="user-navigation">
         <li>
           <button type="button">Купить</button>
