@@ -1,0 +1,451 @@
+/* Позиционирование */
+
+/* Блочная модель */
+
+/* Типографика и оформление*/
+
+body {
+  padding: 0;
+  margin: 0;
+
+  color: #ffffff;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 400;
+
+  background-color: #ffffff;
+  background-image: url("img/white-background.jpg");
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-top {
+  background-color: #293449;
+  background-image: url("img/header-top-background.jpg");
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+
+.main-header-logo img{
+  border-bottom: 4px solid #b52933;
+  padding: 13px 57px 12px 55px;
+
+  background-color: #ee3643;
+  background-image: url("img/logo-background.jpg");
+}
+
+.main-header-logo img:hover {
+  background-color: #ca2c37;
+  border-color: #9a212a;
+}
+
+.main-header-logo img:focus,
+.main-header-logo img:active { /*фокус почему-то не работает; и вообще при фокусе захватывается поле снизу ещё*/
+  background-color: #ba2732;
+  border-color: #8e1e26;
+}
+
+.header-buttons {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 18px;
+}
+
+.search-field {
+  font: inherit;
+  background-color: inherit;
+  border: none; /*Не пойму, как поменять цвет замещающего текста с серого на белый */
+}
+
+.search-field:hover {
+  background-color: #212a3a;
+}
+
+.search-field:active,
+.search-field:focus {
+  background-color: #ffffff;
+  color: #000000;
+  outline: none;
+}
+
+.bookmarker:hover,
+.cart:hover {
+  background-color: #212a3a;
+}
+
+/*.cart {
+  background-color: #ee3643;
+} для случая, когда в корзине есть товар*/
+
+.bookmarker:active,
+.cart:active {
+  background-color: #161d29;
+  color: rgba(255,255,255,0.6);
+}
+
+.header-top .to-order {
+  background-color: #63a63e;
+  background-image: url("img/make-order-background.jpg");
+}
+
+.to-order:hover {
+  background-color: #5fbb2d;
+}
+
+.to-order:active {
+  color: rgba(255,255,255,0.5);
+  background-color: #518534;
+}
+
+ul {
+  list-style: none; /* Этот стиль неправильно задавать по критерию Д25, но списки по-стандартному нигде не сделаны*/
+}
+
+.header-body {
+  font-family: "Cuprum", Arial, sans-serif;
+  background-color: #f3f7f9;
+  background-image: url("img/header-body-background.jpg");
+  background-position: 0 0;
+  background-repeat: repeat;
+  padding-bottom: 60px;
+}
+
+.italic {
+  font-size: 16px;
+  line-height: 23px;
+  font-style: italic;
+
+  color: #ee3643;
+}
+
+.contacts p + p {
+  font-size: 14px;
+  line-height: 24px;
+  color: #32425c;
+}
+
+.contacts a {
+  font-size: 21px;
+  line-height: 21px;
+  padding: 10px 50px 9px 72px;  /* Этот параметр править, наверное, придется с появлением иконки*/
+
+  color: #ee3643;
+  border: 3px solid #ffffff;
+}
+
+.header-authorization a {
+  font-size: 21px;
+  line-height: 21px;
+
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.header-authorization a:hover {
+  color: #ee3643;
+}
+
+.header-authorization a:active {
+  color: rgba(0,0,0,0.3);
+}
+
+.user-name a {
+  font-size: 21px;
+  line-height: 21px;
+  padding: 14px 68px 12px 46px; /*поле почему-то продолжается до конца ширины вьюпорта*/
+
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.user-name p::after {
+
+}
+
+.user-name p::before {
+
+}
+
+.user-features a{
+  text-decoration: underline;
+  font-size: 16px;
+  line-height: 18px;
+
+  color: #32425c;
+}
+
+.user-features a:hover {
+  color: #ee3643;
+}
+
+.user-name a:active,
+.user-features a:active {
+  color: rgba(0,0,0,0.3);
+}
+
+/* Не вставляются фоновые картинки поверх цветовой заливки- не могу понять, почему*/
+.main-navigation {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 17px;
+  background-color: #32425c;
+  background-image: url("img/main-navigation-background.jpg");
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+
+.site-navigation a:hover {
+  background-color: #293449;
+  color: #ffffff;
+}
+
+.site-navigation a:active {
+  background-color: #1d2739;
+  color: rgba(255,255,255,0.5);
+}
+
+.red-button {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  border-radius: 2px;
+  color: #ffffff;
+  background-color: #ee3643;
+}
+
+.additional h2 {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.additional p {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 24px;
+
+  color: #000000;
+}
+
+.companies-list {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+
+  color: #000000;
+}
+
+.company-info-button {
+  padding: 14px 40px 12px 40px;
+}
+
+.write-us-button {
+  padding: 14px 59px 12px 64px;
+}
+
+
+.footer-top {
+  background-color: #32425c;
+  background-image: url("img/footer-top-background.jpg");
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+
+.footer-top p,
+.footer-top li {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+
+  color: #f3f7f9;
+}
+
+.site-navigation-1 a {
+  color: #f1f5f7;
+}
+.site-navigation-2 a,
+.academy-contacts {
+  color: #ffd180;
+}
+
+.footer-top a:hover {
+  text-decoration: underline;
+}
+
+.site-navigation-1 a:active {
+  text-decoration: none;
+  color: rgba(241,245,247,0.5);
+}
+
+.site-navigation-2 a:active {
+  text-decoration: none;
+  color: rgba(255,209,128,0.5);
+}
+
+.footer-bottom {
+  background-color: #293449;
+  background-image: url("img/footer-bottom-background.jpg");
+  background-position: 0 0;
+  background-repeat: repeat;
+}
+
+.footer-bottom .copyright,
+.footer-bottom p {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.social div {
+  background-color: #212a3a;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%; /*Иконки пока что криво встали*/
+}
+
+.social div:hover,
+.social div:active  {
+  background-color: #ee3643;
+}
+
+.academy-contacts:hover {
+  text-decoration: underline;
+}
+
+.academy-contacts:active {
+  text-decoration: none;
+  color: #ee3643;
+}
+
+    /* Далее для внутренней страницы*/
+.breadcrumbs a,
+.breadcrumbs-current {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+.inner-page-main h1 {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+
+  color: #32425c;
+  background-color: #f2f6f8;
+}
+
+fieldset h3 {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  color: #000000;
+}
+
+.filter-option label {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+.white-button {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  padding: 13px 39px 14px 38px;
+
+  color: #000000;
+}
+
+.items-list div {
+  width: 220px;
+  height: 318px;
+  border: 1px solid #e5e5e5;
+}
+
+.items-list h3,
+.items-list del,
+.items-cards p {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+  text-align: center;
+
+  color: #000000;
+}
+
+.items-cards {
+  margin: 20px; /*для восприятия поставил, потом уберу, когда сетку буду делать*/
+}
+
+.items-list del,
+.items-cards .main-price {
+  font-size: 17px;
+  line-height: 18px;
+  text-align: center;
+
+  color: #999999;
+}
+
+ .items-cards .main-price {
+  color: #ffffff;
+  background-color: #ee3643; /*Пока так. Как вообще можно это нарисовать? Сначала я думал нарисовать svg, но непонятно тогда, как сделать закругление только у двух углов */
+}
+
+.items-cards:hover {
+  box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
+  /*Пока не знаю, как заменить изображение на белый фон с кнопками*/
+}
+
+.pagination a {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  padding: 10px 15px 10px 15px;
+
+  color: #000000;
+}
+.pagination li {
+  margin: 30px;
+}
+
+.pagination-current a {
+  background-color: #ee3643;
+  color: #ffffff;
+  border-color: #ee3643;
+}
+
+.next-page a {
+  padding: 13px 32px 14px 33px;
+  text-transform: uppercase;
+}
+
+/* Анимация */
+
+/* Разное */
