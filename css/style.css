@@ -7,7 +7,7 @@
 body {
   padding: 0;
   margin: 0;
-
+  display:;
   color: #ffffff;
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
@@ -15,40 +15,54 @@ body {
   font-weight: 400;
 
   background-color: #ffffff;
-  background-image: url("img/white-background.jpg");
+  background-image: url("../img/white-background.png");
   background-position: 0 0;
   background-repeat: repeat;
 }
 
 a {
   text-decoration: none;
-  color: white;
 }
+
+.bookmarker,
+.cart,
+.to-order,
+.site-navigation a,
+.main-pages a,
+.service-items a,
+.phone-number-footer,
+.sorting-option a {
+  color: #ffffff;
+}
+
 
 .header-top {
   background-color: #293449;
-  background-image: url("img/header-top-background.jpg");
+  background-image: url("../img/header-top-background.png");
   background-position: 0 0;
   background-repeat: repeat;
 }
 
-.main-header-logo img{
+.main-header-logo {
   border-bottom: 4px solid #b52933;
   padding: 13px 57px 12px 55px;
+  margin: 10px;
 
   background-color: #ee3643;
-  background-image: url("img/logo-background.jpg");
+  background-image: url("../img/logo-background.jpg"); /*Могу ли я оставить логотип без фонового изображения? Потому что*/
 }
 
-.main-header-logo img:hover {
+.main-header-logo:hover {
   background-color: #ca2c37;
   border-color: #9a212a;
+  background-image: url("../img/logo-background-hover.jpg");
 }
 
-.main-header-logo img:focus,
-.main-header-logo img:active { /*фокус почему-то не работает; и вообще при фокусе захватывается поле снизу ещё*/
+.main-header-logo:focus,
+.main-header-logo:active {
   background-color: #ba2732;
   border-color: #8e1e26;
+  background-image: url("../img/logo-background-active.jpg");
 }
 
 .header-buttons {
@@ -60,7 +74,12 @@ a {
 .search-field {
   font: inherit;
   background-color: inherit;
-  border: none; /*Не пойму, как поменять цвет замещающего текста с серого на белый */
+  border: none;
+  display: block;
+}
+
+input::placeholder {
+  color: #ffffff;
 }
 
 .search-field:hover {
@@ -79,9 +98,9 @@ a {
   background-color: #212a3a;
 }
 
-/*.cart {
+.cart-full {
   background-color: #ee3643;
-} для случая, когда в корзине есть товар*/
+} /*для случая, когда в корзине есть товар*/
 
 .bookmarker:active,
 .cart:active {
@@ -91,7 +110,7 @@ a {
 
 .header-top .to-order {
   background-color: #63a63e;
-  background-image: url("img/make-order-background.jpg");
+  background-image: url("../img/make-order-background.png");
 }
 
 .to-order:hover {
@@ -103,14 +122,32 @@ a {
   background-color: #518534;
 }
 
-ul {
-  list-style: none; /* Этот стиль неправильно задавать по критерию Д25, но списки по-стандартному нигде не сделаны*/
+.header-authorization li,
+.site-navigation li,
+.items-list li,
+.list-brands-1 li,
+.list-brands-2 li,
+.service-items li,
+.service-items-inside li,
+.companies-list li,
+.site-navigation-1 li,
+.site-navigation-2 li,
+.social-items li,
+.user-name li,
+.user-features li,
+.breadcrumbs li,
+.brands li,
+.filter-option,
+.sorting-option li,
+.items-all li,
+.pagination li {
+  list-style: none;
 }
 
 .header-body {
   font-family: "Cuprum", Arial, sans-serif;
   background-color: #f3f7f9;
-  background-image: url("img/header-body-background.jpg");
+  background-image: url("../img/header-body-background.jpg");
   background-position: 0 0;
   background-repeat: repeat;
   padding-bottom: 60px;
@@ -124,7 +161,7 @@ ul {
   color: #ee3643;
 }
 
-.contacts p + p {
+.contacts .adress {
   font-size: 14px;
   line-height: 24px;
   color: #32425c;
@@ -158,7 +195,8 @@ ul {
 .user-name a {
   font-size: 21px;
   line-height: 21px;
-  padding: 14px 68px 12px 46px; /*поле почему-то продолжается до конца ширины вьюпорта*/
+  padding: 14px 68px 12px 46px; /**/
+  display: block;
 
   color: #000000;
   background-color: #ffffff;
@@ -172,7 +210,7 @@ ul {
 
 }
 
-.user-features a{
+.user-features a {
   text-decoration: underline;
   font-size: 16px;
   line-height: 18px;
@@ -189,13 +227,13 @@ ul {
   color: rgba(0,0,0,0.3);
 }
 
-/* Не вставляются фоновые картинки поверх цветовой заливки- не могу понять, почему*/
 .main-navigation {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 17px;
   line-height: 17px;
+
   background-color: #32425c;
-  background-image: url("img/main-navigation-background.jpg");
+  background-image: url("../img/main-navigation-background.jpg");
   background-position: 0 0;
   background-repeat: repeat;
 }
@@ -257,7 +295,7 @@ ul {
 
 .footer-top {
   background-color: #32425c;
-  background-image: url("img/footer-top-background.jpg");
+  background-image: url("../img/footer-top-background.png");
   background-position: 0 0;
   background-repeat: repeat;
 }
@@ -279,7 +317,8 @@ ul {
   color: #ffd180;
 }
 
-.footer-top a:hover {
+.site-navigation-1 a:hover,
+.site-navigation-2 a:hover {
   text-decoration: underline;
 }
 
@@ -295,7 +334,7 @@ ul {
 
 .footer-bottom {
   background-color: #293449;
-  background-image: url("img/footer-bottom-background.jpg");
+  background-image: url("../img/footer-bottom-background.png");
   background-position: 0 0;
   background-repeat: repeat;
 }
@@ -305,17 +344,18 @@ ul {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 16px;
   line-height: 18px;
+  color: #ffffff;
 }
 
-.social div {
+.social li {
   background-color: #212a3a;
   width: 42px;
   height: 42px;
   border-radius: 50%; /*Иконки пока что криво встали*/
 }
 
-.social div:hover,
-.social div:active  {
+.social li:hover,
+.social li:active {
   background-color: #ee3643;
 }
 
@@ -347,6 +387,7 @@ ul {
 
   color: #32425c;
   background-color: #f2f6f8;
+  background-image: url("../img/perforator-background.png");
 }
 
 fieldset h3 {
@@ -372,6 +413,7 @@ fieldset h3 {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  background-color: #ffffff;
   text-transform: uppercase;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
@@ -413,7 +455,7 @@ fieldset h3 {
 
  .items-cards .main-price {
   color: #ffffff;
-  background-color: #ee3643; /*Пока так. Как вообще можно это нарисовать? Сначала я думал нарисовать svg, но непонятно тогда, как сделать закругление только у двух углов */
+  background-color: #ee3643;
 }
 
 .items-cards:hover {

@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Техномарт</title>
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700|PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -36,7 +35,7 @@
           <p>
             <a href="tel:88125550555">+7(812)555-05-55</a>
           </p>
-          <p>
+          <p class="adress">
             г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
           </p>
         </div>
@@ -104,9 +103,9 @@
             Все популярные товары
           </a>
         </div>
-        <ul>
-          <li class="item-1">
-            <a href="">
+        <ul class="items-list">
+          <li>
+            <div class="items-cards">
               <h3>
                 Перфоратор BOSCH
                 BFG 9000
@@ -115,13 +114,13 @@
               <p>
                 <del>32500 Р.</del>
               </p>
-              <p class="price">
+              <p class="main-price">
                 25500 Р.
               </p>
-            </a>
+            </div>
           </li>
-          <li class="item-2">
-            <a href="">
+          <li>
+            <div class="items-cards">
               <h3>
                 Перфоратор BOSCH
                 BFG 3000
@@ -130,13 +129,13 @@
               <p>
                 <del>22500 Р.</del>
               </p>
-              <p class="price">
+              <p class="main-price">
                 15500 Р.
               </p>
-            </a>
+            </div>
           </li>
-          <li class="item-3">
-            <a href="">
+          <li>
+            <div class="items-cards">
               <h3>
                 Перфоратор BOSCH
                 BFG 6000
@@ -145,22 +144,22 @@
               <p>
                 <del>30500 Р.</del>
               </p>
-              <p class="price">
+              <p class="main-price">
                 25500 Р.
               </p>
-            </a>
+            </div>
           </li>
-          <li class="item-4">
-            <a href="">
+          <li>
+            <div class="items-cards">
               <h3>
                 Перфоратор BOSCH
                 BFG 2000
               </h3>
               <img src="img/bosch-bfg-2000.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
-              <p class="price">
+              <p class="main-price">
                 25500 Р.
               </p>
-            </a>
+            </div>
           </li>
         </ul>
       </section>
@@ -226,7 +225,7 @@
           Хороший интернет-магазин отличается от плохого не только ценами!
           Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.
         </p>
-        <ul>
+        <ul class="service-items">
           <li>
             <a href="">
               Доставка
@@ -243,7 +242,7 @@
             </a>
           </li>
         </ul>
-        <ul>
+        <ul class="service-items-inside">
           <li>
             <h2>
               Доставка
@@ -328,7 +327,7 @@
         </a>
         <p>
           г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
-            <a href="tel:88125550555">+7(812)555-05-55</a>
+            <a class="phone-number-footer" href="tel:88125550555">+7(812)555-05-55</a>
         </p>
         <ul class="site-navigation-1">
           <li><a href="">Компания</a></li>
@@ -350,27 +349,21 @@
           Все права защищены
         </div>
         <div class="social">
-          <ul>
+          <ul class="social-items">
             <li>
-              <div>
-                <a href="#" aria-label="HTMLAcademy во Вконтакте">
-                  <img src="img/icon-vk.svg" width="26" height="15" alt="Иконка Вконтакте">
-                </a>
-              </div>
+              <a href="#" aria-label="HTMLAcademy во Вконтакте">
+                <img src="img/icon-vk.svg" width="26" height="15" alt="Иконка Вконтакте">
+              </a>
             </li>
             <li>
-              <div>
-                <a href="#" aria-label="HTMLAcademy на Фейсбуке">
-                  <img src="img/icon-facebook.svg" width="12" height="22" alt="Иконка Фейсбук">
-                </a>
-              </div>
+              <a href="#" aria-label="HTMLAcademy на Фейсбуке">
+                <img src="img/icon-facebook.svg" width="12" height="22" alt="Иконка Фейсбук">
+              </a>
             </li>
             <li>
-              <div>
-                <a href="#" aria-label="HTMLAcademy в Инстаграме">
-                  <img src="img/icon-insta.svg" width="21" height="21" alt="Иконка Инстаграм">
-                </a>
-              </div>
+              <a href="#" aria-label="HTMLAcademy в Инстаграме">
+                <img src="img/icon-insta.svg" width="21" height="21" alt="Иконка Инстаграм">
+              </a>
             </li>
           </ul>
        </div>
