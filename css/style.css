@@ -13,11 +13,9 @@ body {
   font-size: 13px;
   line-height: 24px;
   font-weight: 400;
+  width: 1200px;
 
   background-color: #ffffff;
-  background-image: url("../img/white-background.png");
-  background-position: 0 0;
-  background-repeat: repeat;
 }
 
 a {
@@ -38,9 +36,6 @@ a {
 
 .header-top {
   background-color: #293449;
-  background-image: url("../img/header-top-background.png");
-  background-position: 0 0;
-  background-repeat: repeat;
 }
 
 .main-header-logo {
@@ -49,7 +44,7 @@ a {
   margin: 10px;
 
   background-color: #ee3643;
-  background-image: url("../img/logo-background.jpg"); /*Могу ли я оставить логотип без фонового изображения? Потому что*/
+  background-image: url("../img/logo-background.jpg");
 }
 
 .main-header-logo:hover {
@@ -110,7 +105,6 @@ input::placeholder {
 
 .header-top .to-order {
   background-color: #63a63e;
-  background-image: url("../img/make-order-background.png");
 }
 
 .to-order:hover {
@@ -122,34 +116,31 @@ input::placeholder {
   background-color: #518534;
 }
 
-.header-authorization li,
-.site-navigation li,
-.items-list li,
-.list-brands-1 li,
-.list-brands-2 li,
-.service-items li,
-.service-items-inside li,
-.companies-list li,
-.site-navigation-1 li,
-.site-navigation-2 li,
-.social-items li,
-.user-name li,
-.user-features li,
-.breadcrumbs li,
-.brands li,
+.header-authorization,
+.site-navigation,
+.items-list,
+.list-brands-1,
+.list-brands-2,
+.service-items,
+.service-items-inside,
+.companies-list,
+.site-navigation-1,
+.site-navigation-2,
+.social-items,
+.user-name,
+.user-features,
+.breadcrumbs,
+.brands,
 .filter-option,
-.sorting-option li,
-.items-all li,
-.pagination li {
+.sorting-option,
+.items-all,
+.pagination {
   list-style: none;
 }
 
 .header-body {
   font-family: "Cuprum", Arial, sans-serif;
   background-color: #f3f7f9;
-  background-image: url("../img/header-body-background.jpg");
-  background-position: 0 0;
-  background-repeat: repeat;
   padding-bottom: 60px;
 }
 
@@ -228,14 +219,77 @@ input::placeholder {
 }
 
 .main-navigation {
+  width: 940px;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 17px;
   line-height: 17px;
 
   background-color: #32425c;
   background-image: url("../img/main-navigation-background.jpg");
-  background-position: 0 0;
-  background-repeat: repeat;
+}
+
+.main-pages div {
+  display: block;
+  font-family: "Cuprum", Arial, sans-serif;
+  width: 300px;
+  height: 123px;
+}
+
+.main-pages h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  padding-top: 26px;
+  padding-left: 23px;
+}
+
+.main-pages a {
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  padding: 14px 27px;
+  border-radius: 3px;
+
+  background-color: rgba(0,0,0,0.1);
+}
+
+.main-pages .slider {
+  display: block;
+  width: 620px;
+  height: 266px;
+  margin-bottom: 450px;
+}
+
+.materials {
+  background-color: #ffbf47;
+  /*background-image: url("../img/materials-background.jpg"); тогда и эти фоновые картинки удалять?*/
+}
+
+.instrument {
+  background-color: #3bbce3;
+  /*background-image: url("../img/instrument-background.jpg");*/
+}
+
+.equipment {
+  background-color: #dc91d8;
+  /*background-image: url("../img/equipment-background.jpg");*/
+}
+
+.discounts {
+  background-color: #8ed78f;
+/*  background-image: url("../img/discounts-background.jpg");*/
+}
+
+.delivery {
+  background-color: #ffc047;
+/*  background-image: url("../img/delivery-background.jpg");*/
+}
+
+.popular-btn {
+  display: block;
+  width: 253px;
+  height: 38px;
+  text-align: center; /*не получается выронять по вертикали ещё*/
 }
 
 .site-navigation a:hover {
@@ -248,7 +302,8 @@ input::placeholder {
   color: rgba(255,255,255,0.5);
 }
 
-.red-button {
+.red-button,
+.slider .red-button {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 14px;
   line-height: 18px;
@@ -256,7 +311,7 @@ input::placeholder {
 
   border-radius: 2px;
   color: #ffffff;
-  background-color: #ee3643;
+  background-color: #ee3643; /*для кнопки "открыть каталог" потом подправлю размеры*/
 }
 
 .additional h2 {
