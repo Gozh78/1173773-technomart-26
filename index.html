@@ -10,15 +10,17 @@
   <body>
     <header class="page-header">
       <div class="header-top">
+        <div>
           <a class="main-header-logo" href="index.html">
             <img src="img/logo-technomart.svg" width="109" height="19" alt="Логотип интернет-магазина «Техномарт»">
           </a>
+        </div>
           <div class="header-buttons">
             <form class="search-form" action="#" method="get">
-              <label class="visually-hidden" for="search-field">Поиск:
-                <!--Если будет скрываться вместе с полем поиска, то уберу из label и поставлю рядом-->
-                <input class="search-field" type="text" id="search-field" name="search-field" placeholder="Поиск:">
+              <label class="visually-hidden" for="search-field">
+                Поиск:
               </label>
+              <input class="search-field" type="text" id="search-field" name="search-field" placeholder="Поиск:">
             </form>
             <a class="bookmarker" href="#">Закладки: 0</a>
             <a class="cart" href="#">Корзина: 0</a>
@@ -48,15 +50,15 @@
           </li>
         </ul>
         <nav class="main-navigation">
-          <ul class="site-navigation">
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="">Компания</a></li>
-            <li><a href="catalog.html">Каталог</a></li>
-            <li><a href="">Новости</a></li>
-            <li><a href="">Спецпредложения</a></li>
-            <li><a href="">Доставка</a></li>
-            <li><a href="">Контакты</a></li>
-          </ul>
+          <!--<ul class="site-navigation">-->
+            <div><a href="index.html">Главная</a></div>
+            <div><a href="">Компания</a></div>
+            <div><a href="catalog.html">Каталог</a></div>
+            <div><a href="">Новости</a></div>
+            <div><a href="">Спецпредложения</a></div>
+            <div><a href="">Доставка</a></div>
+            <div><a href="">Контакты</a></div>
+          <!--</ul>-->
         </nav>
       </div>
     </header>
@@ -73,10 +75,10 @@
           <img src="gh" width="" height="" alt="Иконка инструментов">
         </div>
         <div class="slider">
-          <h2 class="main-pages-item">Слайдер</h2>
-          <a class="button red-button" href="#">Открыть каталог</a><!-- Здесь будет слайдер-->
-          <img src="img/slider-1.jpg" width="620" height="266" alt="Каталог дрелей">
-          <img src="img/slider-2.jpg" width="620" height="266" alt="Каталог перфораторов">
+          <h2 class="main-pages-item visually-hidden">Слайдер</h2>
+          <!--<a class="button red-button" href="#">Открыть каталог</a>--><!-- Здесь будет слайдер-->
+          <img src="img/slider-1.jpg" width="620" height="266" alt="Каталог дрелей"> <!--Скрываю пока для наглядности-->
+          <!--<img src="img/slider-2.jpg" width="620" height="266" alt="Каталог перфораторов">-->
         </div>
         <div class="equipment">
           <h2 class="main-pages-item">Техника</h2>
@@ -103,9 +105,9 @@
             Все популярные товары
           </a>
         </div>
-        <ul class="items-list">
-          <li>
-            <div class="items-cards">
+        <ul class="items-list-main">
+
+            <li class="items-cards">
               <h3>
                 Перфоратор BOSCH
                 BFG 9000
@@ -117,10 +119,10 @@
               <p class="main-price">
                 25500 Р.
               </p>
-            </div>
-          </li>
-          <li>
-            <div class="items-cards">
+            </li>
+
+
+            <li class="items-cards">
               <h3>
                 Перфоратор BOSCH
                 BFG 3000
@@ -132,10 +134,9 @@
               <p class="main-price">
                 15500 Р.
               </p>
-            </div>
-          </li>
-          <li>
-            <div class="items-cards">
+            </li>
+
+            <li class="items-cards">
               <h3>
                 Перфоратор BOSCH
                 BFG 6000
@@ -147,10 +148,9 @@
               <p class="main-price">
                 25500 Р.
               </p>
-            </div>
-          </li>
-          <li>
-            <div class="items-cards">
+            </li>
+
+            <li class="items-cards">
               <h3>
                 Перфоратор BOSCH
                 BFG 2000
@@ -159,9 +159,8 @@
               <p class="main-price">
                 25500 Р.
               </p>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
       </section>
       <section class="popular-brands">
         <div class="polular-brands-bar">
@@ -172,7 +171,7 @@
             Все производители
           </a>
         </div>
-        <ul class="list-brands-1">
+        <ul class="list-brands">
           <li>
             <a href="">
               <img src="img/logo-bosch.png" width="126" height="37" alt="BOSCH">
@@ -194,7 +193,7 @@
             </a>
           </li>
         </ul>
-        <ul class="list-brands-2">
+        <ul class="list-brands">
           <li>
             <a href="">
               <img src="img/logo-hitachi.png" width="169" height="31" alt="HITACHI">
@@ -218,7 +217,7 @@
         </ul>
       </section>
       <section class="services">
-        <h2>
+        <h2 class="service-header">
           Сервисы
         </h2>
         <p>
@@ -226,17 +225,17 @@
           Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.
         </p>
         <ul class="service-items">
-          <li>
+          <li class="service-items-h">
             <a href="">
               Доставка
             </a>
           </li>
-          <li>
+          <li class="service-items-h">
             <a href="">
               Гарантия
             </a>
           </li>
-          <li>
+          <li class="service-items-h">
             <a href="">
               Кредит
             </a>
@@ -273,13 +272,14 @@
             <p>
               Залезть в долговую яму стало проще!
               Кредитные консультанты придут вам на помощь.
-              <button type="submit">Отправить заявку</button>
+              <button class="red-button" type="submit">Отправить заявку</button>
             </p>
             <img src="img/logo-credit.png" width="465" height="285" alt="Значок кредита">
           </li>
         </ul>
       </section>
       <section class="additional">
+        <div class="additional-company">
         <h2>
           Компания «Техномарт»
         </h2>
@@ -296,8 +296,9 @@
           <li>Автотрейдинг</li>
           <li>ЖелДорЭкспедиция</li>
         </ul>
+      </div>
         <a class="red-button company-info-button" href="">Подробнее о компании</a>
-        <div>
+        <div class="contacts-map">
           <h2>
             Контакты
           </h2>

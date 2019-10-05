@@ -7,13 +7,14 @@
 body {
   padding: 0;
   margin: 0;
-  display:;
   color: #ffffff;
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
   font-weight: 400;
   width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 
   background-color: #ffffff;
 }
@@ -22,10 +23,19 @@ a {
   text-decoration: none;
 }
 
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  …
+}
+
 .bookmarker,
 .cart,
 .to-order,
-.site-navigation a,
+.main-navigation a,
 .main-pages a,
 .service-items a,
 .phone-number-footer,
@@ -117,10 +127,10 @@ input::placeholder {
 }
 
 .header-authorization,
-.site-navigation,
+/*.site-navigation,*/
+.items-list-main,
 .items-list,
-.list-brands-1,
-.list-brands-2,
+.list-brands,
 .service-items,
 .service-items-inside,
 .companies-list,
@@ -148,8 +158,13 @@ input::placeholder {
   font-size: 16px;
   line-height: 23px;
   font-style: italic;
+  text-align: left;
 
   color: #ee3643;
+}
+
+.contacts {
+  text-align: center;
 }
 
 .contacts .adress {
@@ -165,6 +180,10 @@ input::placeholder {
 
   color: #ee3643;
   border: 3px solid #ffffff;
+}
+
+.header-authorization {
+  text-align: right;
 }
 
 .header-authorization a {
@@ -183,14 +202,21 @@ input::placeholder {
   color: rgba(0,0,0,0.3);
 }
 
-.user-name a {
+.user-name {
   font-size: 21px;
   line-height: 21px;
-  padding: 14px 68px 12px 46px; /**/
   display: block;
+  width: 299px;
+  height: 45px;
+  vertical-align: middle; /*и снова не работает*/
+  margin-right: 130px;
+  margin-left: auto;
 
-  color: #000000;
   background-color: #ffffff;
+}
+
+.user-name a {
+  color: #000000;
 }
 
 .user-name p::after {
@@ -209,6 +235,11 @@ input::placeholder {
   color: #32425c;
 }
 
+.user-features {
+  text-align: right;
+  margin-right: 130px
+}
+
 .user-features a:hover {
   color: #ee3643;
 }
@@ -219,13 +250,39 @@ input::placeholder {
 }
 
 .main-navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 940px;
+  height: 60px;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 17px;
   line-height: 17px;
+  margin-left: auto;
+  margin-right: auto;
 
   background-color: #32425c;
   background-image: url("../img/main-navigation-background.jpg");
+  background-repeat: no-repeat;
+}
+
+.main-navigation div:hover {
+  background-color: #293449; /*пока что не сделал дивы по определённым размерам, не знаю, как равномерно место распределить между дивами*/
+  color: #ffffff;
+}
+
+.main-navigation a:active {
+  background-color: #1d2739;
+  color: rgba(255,255,255,0.5);
+}
+
+.main-pages {
+  width: 940px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 59px;
 }
 
 .main-pages div {
@@ -233,6 +290,12 @@ input::placeholder {
   font-family: "Cuprum", Arial, sans-serif;
   width: 300px;
   height: 123px;
+  margin-left: 20px;
+  margin-bottom: 20px; /*потом для самых нижних нужно будет подправить*/
+}
+
+.main-pages div:first-child {
+  margin-left: 0;
 }
 
 .main-pages h2 {
@@ -253,11 +316,19 @@ input::placeholder {
   background-color: rgba(0,0,0,0.1);
 }
 
+.main-pages a:hover {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.main-pages a:active {
+  background-color: rgba(0,0,0,0.3);
+}
+
 .main-pages .slider {
   display: block;
   width: 620px;
   height: 266px;
-  margin-bottom: 450px;
+  margin-left: 0;
 }
 
 .materials {
@@ -292,16 +363,6 @@ input::placeholder {
   text-align: center; /*не получается выронять по вертикали ещё*/
 }
 
-.site-navigation a:hover {
-  background-color: #293449;
-  color: #ffffff;
-}
-
-.site-navigation a:active {
-  background-color: #1d2739;
-  color: rgba(255,255,255,0.5);
-}
-
 .red-button,
 .slider .red-button {
   font-family: "Cuprum", Arial, sans-serif;
@@ -314,13 +375,154 @@ input::placeholder {
   background-color: #ee3643; /*для кнопки "открыть каталог" потом подправлю размеры*/
 }
 
-.additional h2 {
+.slider .red-button:hover {
+  background-color: #ca2c37;
+}
+
+.slider .red-button:active {
+  background-color: #ba2732;
+}
+
+.polular-items-bar h2,
+.polular-brands-bar h2 {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+.polular-items-bar,
+.polular-brands-bar {
+  display: block;
+  width: 940px;
+  height: 89px;
+  background-color: #f9f5f0;
+  color: #32425c;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+}
+
+.polular-items-bar {
+  margin-top: 53px;
+}
+
+.items-list-main {
+  display: flex;
+  justify-content: space-between;
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0; /*не пойму, откуда взялся внутренний отступ, из-за которого его здесь пришлось обнулять*/
+}
+
+.list-brands {
+  display: flex;
+  justify-content: space-between;
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0; /*и здесь тоже*/
+}
+
+.list-brands li {
+  width: 220px;
+  height: 145px;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+}
+
+.list-brands img {
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.list-brands li:hover {
+  box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
+}
+
+.list-brands li:active img {
+  display: none; /*добавлю класс, уберу тройную вложенность и раскидаю лого брендов по своим блокам*/
+}
+/*тогда непонятно, как поставить картинку ровно посередине блока*/
+.list-brands li:active {
+  box-shadow: 0px 4px 10px 0px rgba(41, 52, 73, 0.5);
+  background-image: url("../img/logo-bosch-0,3.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%; /*не получается сделать полупрозрачную картинку, потому что белый фоновый цвет ставится позади картинки*/
+}
+
+.services {
+  background-color: #f4f7f9;
+  color: #000000;
+}
+
+.service-header {
+  padding-top: 68px;
+  padding-left: 130px;
+}
+
+.services p {
+  padding-left: 130px;
+}
+
+.additional h2,
+.service-header {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 30px;
   line-height: 30px;
 
   color: #000000;
   text-transform: uppercase;
+}
+
+.service-items {
+  padding-left: 130px;
+}
+
+.service-items li {
+  width: 240px;
+  height: 61px;
+  text-align: left;
+
+  background-color: #32425c;
+  box-shadow:
+    inset 0px 1px 0px 0px #405069,
+    inset -15px 0px 15px -15px #000000; /*Непонятно, как эту тень сделать, она вообще выезжает полоской по вертикали*/
+}
+
+.service-items-h:hover {
+  background-color: #293449;
+}
+
+.service-items-h:active {
+  background-color: #ffffff;
+}
+
+ .service-items-h:active a {
+   color: #32425c;
+ }
+
+.service-items a {
+  font-size: 21px;
+  line-height: 30px;
+  font-weight: 700;
+  padding-left: 23px;
+}
+
+.service-items-inside h2 {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+
+  color: #32425c;
+}
+
+.service-items-inside .red-button {
+  border: none;
+  width: 195px;
+  height: 38px; /*Потом доработать изменение состояния*/
 }
 
 .additional p {
@@ -331,6 +533,14 @@ input::placeholder {
   color: #000000;
 }
 
+.additional {
+  padding-left: 130px; /*Хотя, наверное, это надо делать с помощью layout-positioner*/
+}
+
+.additional-company {
+  width: 535px;
+}
+
 .companies-list {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 18px;
@@ -338,6 +548,16 @@ input::placeholder {
 
   color: #000000;
 }
+
+.contacts-map {
+  text-align: right;
+  padding-right: 130px;
+}
+/*
+.contacts-map h2,
+.contacts-map p {
+  text-align: center;
+}*/
 
 .company-info-button {
   padding: 14px 40px 12px 40px;
@@ -347,12 +567,19 @@ input::placeholder {
   padding: 14px 59px 12px 64px;
 }
 
+.footer-top {
+  margin-top: 86px;
+}
 
 .footer-top {
   background-color: #32425c;
   background-image: url("../img/footer-top-background.png");
   background-position: 0 0;
   background-repeat: repeat;
+}
+
+.footer-top .main-header-logo {
+  margin-left: 130px;
 }
 
 .footer-top p,
@@ -435,14 +662,28 @@ input::placeholder {
 }
 
 .inner-page-main h1 {
+  display: block;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
+  width: 940px;
+  height: 89px;
+  margin-right: auto;
+  margin-left: auto;
 
   color: #32425c;
   background-color: #f2f6f8;
   background-image: url("../img/perforator-background.png");
+}
+
+.filter {
+  width: 220px;
+  margin-left: 130px;
+}
+
+.show-btn {
+  margin-left: 130px;
 }
 
 fieldset h3 {
@@ -477,15 +718,12 @@ fieldset h3 {
   color: #000000;
 }
 
-.items-list div {
-  width: 220px;
-  height: 318px;
-  border: 1px solid #e5e5e5;
-}
-
 .items-list h3,
 .items-list del,
-.items-cards p {
+.items-cards p,
+.items-list-main h3,
+.items-list-main del,
+.items-list-main p {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 18px;
   line-height: 20px;
@@ -495,27 +733,58 @@ fieldset h3 {
   color: #000000;
 }
 
-.items-cards {
-  margin: 20px; /*для восприятия поставил, потом уберу, когда сетку буду делать*/
+.items-all {
+  display: flex;
+  flex-wrap: wrap;
+  width: 940px;
+  margin-left: 130px;
+  margin-right: auto;
+  padding-left: 0; /*тоже надо исправить*/
 }
 
-.items-list del,
-.items-cards .main-price {
+.items-cards {
+  width: 220px;
+  height: 318px;
+  border: 1px solid #e5e5e5;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.items-cards:nth-child(3n) {
+  margin-right: 0;
+}
+
+.items-cards p,
+.items-cards del {
   font-size: 17px;
   line-height: 18px;
   text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
 
   color: #999999;
 }
 
  .items-cards .main-price {
+  margin-top: 13px;
+
+  /*background-color: #ee3643;*/
   color: #ffffff;
-  background-color: #ee3643;
+  background-image: url("../img/price-button.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: contain; /*Не пойму, как поменять размер фонового изображения и цветовой заливки*/
 }
 
 .items-cards:hover {
   box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
   /*Пока не знаю, как заменить изображение на белый фон с кнопками*/
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  width: 284px;
 }
 
 .pagination a {
@@ -527,9 +796,6 @@ fieldset h3 {
   padding: 10px 15px 10px 15px;
 
   color: #000000;
-}
-.pagination li {
-  margin: 30px;
 }
 
 .pagination-current a {
