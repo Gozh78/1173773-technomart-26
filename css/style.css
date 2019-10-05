@@ -12,7 +12,7 @@ body {
   font-size: 13px;
   line-height: 24px;
   font-weight: 400;
-  width: 1200px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 
@@ -127,7 +127,7 @@ input::placeholder {
 }
 
 .header-authorization,
-/*.site-navigation,*/
+.site-navigation,
 .items-list-main,
 .items-list,
 .list-brands,
@@ -253,17 +253,23 @@ input::placeholder {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 940px;
+  width: 960px;
   height: 60px;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 17px;
   line-height: 17px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 
   background-color: #32425c;
   background-image: url("../img/main-navigation-background.jpg");
   background-repeat: no-repeat;
+}
+
+.site-navigation a {
+  display: block;
 }
 
 .main-navigation div:hover {
@@ -489,6 +495,14 @@ input::placeholder {
   box-shadow:
     inset 0px 1px 0px 0px #405069,
     inset -15px 0px 15px -15px #000000; /*Непонятно, как эту тень сделать, она вообще выезжает полоской по вертикали*/
+}
+
+.service-items ul::after {
+  content: '';
+  width: 10px;
+  height: 80px;
+  background-color: black;
+  dislay: block;
 }
 
 .service-items-h:hover {
@@ -748,9 +762,10 @@ fieldset h3 {
   border: 1px solid #e5e5e5;
   margin-right: 20px;
   margin-bottom: 20px;
+  padding-bottom: 0px;
 }
 
-.items-cards:nth-child(3n) {
+.items-all .items-cards:nth-child(3n) {
   margin-right: 0;
 }
 
@@ -766,19 +781,95 @@ fieldset h3 {
 }
 
  .items-cards .main-price {
-  margin-top: 13px;
+  position: relative;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0;
 
-  /*background-color: #ee3643;*/
   color: #ffffff;
-  background-image: url("../img/price-button.png");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: contain; /*Не пойму, как поменять размер фонового изображения и цветовой заливки*/
+  width: 121px;
+  height: 38px;
+  background-color: #ee3643;
+}
+
+.items-cards .main-price::after {
+  position: absolute;
+  content: "";
+  top: 0px;
+  right: -19px;
+  border: 19px solid #ffffff;
+  border-right-width: 0;
+  border-left-color: #ee3643;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
 }
 
 .items-cards:hover {
   box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
-  /*Пока не знаю, как заменить изображение на белый фон с кнопками*/
+}
+
+.items-cards:hover .card-image {
+  display: none;
+}
+
+.card-buttons {
+  color: #000000;
+  display: none;
+  width: 218px;
+  height: 170px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card-buttons a {
+  font-family: "Cuprum", Arial, sans-serif;
+  width: 135px;
+  height: 38px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 3px;
+
+  color: #ffffff;
+  background-color: #63a63e;
+  box-shadow: inset 0px -3px 0px 0px rgba(0,1,1,0.25);
+}
+
+.card-buttons a:last-child {
+  margin-top: 8px;
+
+  border: 3px solid #63a63e;
+  color: #000000;
+  background-color: #ffffff;
+  box-shadow: none;
+}
+
+.card-buttons a:hover {
+  background-color: #5fbb2d;
+}
+
+.card-buttons a:active {
+  background-color: #518534;
+}
+
+.card-buttons a:last-child:hover {
+  color: #32425c;
+  border-color: #32425c;
+  background-color: #ffffff;
+}
+
+.card-buttons a:last-child:active {
+  color: rgba(50,66,92,0.3);
+  border-color: rgba(50,66,92,0.3);
+  background-color: #ffffff;
+}
+
+.items-cards:hover .card-buttons {
+  display: block;
+}
+
+.items-cards:hover a {
+  display: block;
 }
 
 .pagination {
