@@ -1,5 +1,12 @@
 /* Позиционирование */
-
+.positioner {
+  box-sizing: border-box;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 /* Блочная модель */
 
 /* Типографика и оформление*/
@@ -12,9 +19,6 @@ body {
   font-size: 13px;
   line-height: 24px;
   font-weight: 400;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
 
   background-color: #ffffff;
 }
@@ -46,6 +50,14 @@ a {
 
 .header-top {
   background-color: #293449;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 0;
+  margin-left: auto;
 }
 
 .main-header-logo {
@@ -146,6 +158,7 @@ input::placeholder {
 .items-all,
 .pagination {
   list-style: none;
+  padding: 0;
 }
 
 .header-body {
@@ -159,6 +172,7 @@ input::placeholder {
   line-height: 23px;
   font-style: italic;
   text-align: left;
+  width: 197px; /*надо будет исправить*/
 
   color: #ee3643;
 }
@@ -209,7 +223,6 @@ input::placeholder {
   width: 299px;
   height: 45px;
   vertical-align: middle; /*и снова не работает*/
-  margin-right: 130px;
   margin-left: auto;
 
   background-color: #ffffff;
@@ -237,7 +250,7 @@ input::placeholder {
 
 .user-features {
   text-align: right;
-  margin-right: 130px
+  margin-left: auto;
 }
 
 .user-features a:hover {
@@ -250,29 +263,31 @@ input::placeholder {
 }
 
 .main-navigation {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   width: 960px;
   height: 60px;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 17px;
   line-height: 17px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 10px;
-  padding-right: 10px;
 
   background-color: #32425c;
-  background-image: url("../img/main-navigation-background.jpg");
-  background-repeat: no-repeat;
+  box-shadow: inset 0px -5px #293449;
+  /*background-image: url("../img/main-navigation-background.jpg");*/
+  /*background-repeat: no-repeat;*/
+
+}
+
+.site-navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .site-navigation a {
   display: block;
+  height: 60px;
 }
 
-.main-navigation div:hover {
+.main-navigation li:hover {
   background-color: #293449; /*пока что не сделал дивы по определённым размерам, не знаю, как равномерно место распределить между дивами*/
   color: #ffffff;
 }
@@ -283,7 +298,6 @@ input::placeholder {
 }
 
 .main-pages {
-  width: 940px;
   display: flex;
   flex-wrap: wrap;
   margin-left: auto;
@@ -381,11 +395,11 @@ input::placeholder {
   background-color: #ee3643; /*для кнопки "открыть каталог" потом подправлю размеры*/
 }
 
-.slider .red-button:hover {
+.red-button:hover {
   background-color: #ca2c37;
 }
 
-.slider .red-button:active {
+.red-button:active {
   background-color: #ba2732;
 }
 
@@ -418,7 +432,6 @@ input::placeholder {
   width: 940px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 0; /*не пойму, откуда взялся внутренний отступ, из-за которого его здесь пришлось обнулять*/
 }
 
 .list-brands {
@@ -427,7 +440,6 @@ input::placeholder {
   width: 940px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 0; /*и здесь тоже*/
 }
 
 .list-brands li {
@@ -447,15 +459,9 @@ input::placeholder {
   box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
 }
 
-.list-brands li:active img {
-  display: none; /*добавлю класс, уберу тройную вложенность и раскидаю лого брендов по своим блокам*/
-}
-/*тогда непонятно, как поставить картинку ровно посередине блока*/
 .list-brands li:active {
   box-shadow: 0px 4px 10px 0px rgba(41, 52, 73, 0.5);
-  background-image: url("../img/logo-bosch-0,3.png");
-  background-repeat: no-repeat;
-  background-position: 50% 50%; /*не получается сделать полупрозрачную картинку, потому что белый фоновый цвет ставится позади картинки*/
+  opacity: 0.3;
 }
 
 .services {
@@ -465,11 +471,6 @@ input::placeholder {
 
 .service-header {
   padding-top: 68px;
-  padding-left: 130px;
-}
-
-.services p {
-  padding-left: 130px;
 }
 
 .additional h2,
@@ -480,10 +481,6 @@ input::placeholder {
 
   color: #000000;
   text-transform: uppercase;
-}
-
-.service-items {
-  padding-left: 130px;
 }
 
 .service-items li {
@@ -539,16 +536,17 @@ input::placeholder {
   height: 38px; /*Потом доработать изменение состояния*/
 }
 
+.additional {
+  display: flex;
+  justify-content: space-between; /*что-то совсем непонятное произошло с блоком пока что*/
+}
+
 .additional p {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
 
   color: #000000;
-}
-
-.additional {
-  padding-left: 130px; /*Хотя, наверное, это надо делать с помощью layout-positioner*/
 }
 
 .additional-company {
@@ -563,9 +561,13 @@ input::placeholder {
   color: #000000;
 }
 
+.additional-company {
+  text-align: left; /*надо разнести по сторонам ещё*/
+}
+
 .contacts-map {
   text-align: right;
-  padding-right: 130px;
+  width: 301px;
 }
 /*
 .contacts-map h2,
@@ -587,13 +589,6 @@ input::placeholder {
 
 .footer-top {
   background-color: #32425c;
-  background-image: url("../img/footer-top-background.png");
-  background-position: 0 0;
-  background-repeat: repeat;
-}
-
-.footer-top .main-header-logo {
-  margin-left: 130px;
 }
 
 .footer-top p,
@@ -628,11 +623,13 @@ input::placeholder {
   color: rgba(255,209,128,0.5);
 }
 
+.footer-bottom .positioner {
+  display: flex;
+  justify-content: space-between;
+}
+
 .footer-bottom {
   background-color: #293449;
-  background-image: url("../img/footer-bottom-background.png");
-  background-position: 0 0;
-  background-repeat: repeat;
 }
 
 .footer-bottom .copyright,
@@ -665,6 +662,16 @@ input::placeholder {
 }
 
     /* Далее для внутренней страницы*/
+.breadcrumbs,
+.filter-item {
+  box-sizing: border-box;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .breadcrumbs a,
 .breadcrumbs-current {
   font-family: "PT Sans", Arial, sans-serif;
@@ -693,11 +700,6 @@ input::placeholder {
 
 .filter {
   width: 220px;
-  margin-left: 130px;
-}
-
-.show-btn {
-  margin-left: 130px;
 }
 
 fieldset h3 {
@@ -750,10 +752,6 @@ fieldset h3 {
 .items-all {
   display: flex;
   flex-wrap: wrap;
-  width: 940px;
-  margin-left: 130px;
-  margin-right: auto;
-  padding-left: 0; /*тоже надо исправить*/
 }
 
 .items-cards {
@@ -876,6 +874,7 @@ fieldset h3 {
   display: flex;
   justify-content: space-between;
   width: 284px;
+  text-align: left;
 }
 
 .pagination a {
