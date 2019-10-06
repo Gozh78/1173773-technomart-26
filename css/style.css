@@ -50,6 +50,7 @@ a {
 
 .header-top {
   background-color: #293449;
+  height: 42px;
 }
 
 .header-buttons {
@@ -152,13 +153,15 @@ input::placeholder {
 .user-name,
 .user-features,
 .breadcrumbs,
-.brands,
-.filter-option,
+.brands-filter,
+.mains-supply-filter,
 .sorting-option,
 .items-all,
 .pagination {
   list-style: none;
   padding: 0;
+  margin-top: 0; /*Надо ли так делать?*/
+  margin-bottom: 0;
 }
 
 .header-body {
@@ -173,6 +176,7 @@ input::placeholder {
   font-style: italic;
   text-align: left;
   width: 197px; /*надо будет исправить*/
+  margin-top: 0;
 
   color: #ee3643;
 }
@@ -271,9 +275,6 @@ input::placeholder {
 
   background-color: #32425c;
   box-shadow: inset 0px -5px #293449;
-  /*background-image: url("../img/main-navigation-background.jpg");*/
-  /*background-repeat: no-repeat;*/
-
 }
 
 .site-navigation {
@@ -464,7 +465,8 @@ input::placeholder {
   opacity: 0.3;
 }
 
-.services {
+.services,
+.rotary-hummer-info {
   background-color: #f4f7f9;
   color: #000000;
 }
@@ -539,6 +541,7 @@ input::placeholder {
 .additional {
   display: flex;
   justify-content: space-between; /*что-то совсем непонятное произошло с блоком пока что*/
+  height: 536px;
 }
 
 .additional p {
@@ -581,10 +584,6 @@ input::placeholder {
 
 .write-us-button {
   padding: 14px 59px 12px 64px;
-}
-
-.footer-top {
-  margin-top: 86px;
 }
 
 .footer-top {
@@ -683,6 +682,7 @@ input::placeholder {
 }
 
 .inner-page-main h1 {
+  box-sizing: border-box;
   display: block;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 30px;
@@ -692,6 +692,9 @@ input::placeholder {
   height: 89px;
   margin-right: auto;
   margin-left: auto;
+  padding-top: 31px;
+  padding-bottom: 34px; /*тоже подправить*/
+  padding-left: 28px;
 
   color: #32425c;
   background-color: #f2f6f8;
@@ -702,7 +705,34 @@ input::placeholder {
   width: 220px;
 }
 
-fieldset h3 {
+.filter-header,
+.sorting h2 {
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  font-weight: normal;
+  height: 38px;
+  padding-left: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  background-color: #f7f3ec;
+  color: #000000;
+}
+
+.price-form {
+  display: block;
+}
+
+fieldset {
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  /*border-image: url("../img/fieldset-border.png"); не получается заменить картинку рамки*/
+}
+
+fieldset h3,
+.price-form {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 17px;
   line-height: 30px;
@@ -732,6 +762,80 @@ fieldset h3 {
   padding: 13px 39px 14px 38px;
 
   color: #000000;
+}
+
+.sorting {
+  width: 700px;
+  height: 38px;
+  display: flex;
+  justify-content: space-between;
+
+  background-color: #f7f3ec;
+  color: #000000;
+}
+
+.sorting h2 {
+  font-size: 13px;
+  line-height: 18px;
+  text-transform: uppercase;
+  font-weight: normal;
+  height: 38px;
+  padding-left: 18px;
+}
+
+.sorting-option {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sorting-option a {
+  text-transform: uppercase;
+  margin-left: 20px; /*потом заменю*/
+
+  border-bottom: 1px dotted #ee3643;
+  color: rgba(0,0,0,0.5);
+}
+
+.sorting-option a:hover {
+  color: rgba(0,0,0,1);
+  border-bottom: 1px solid #ee3643;
+}
+
+.sorting-option .sort-item:active {
+  color: #ee3643;
+  border: none;
+}
+
+a.arrow {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 0;
+}
+
+.arrow::before {
+  display: inline-block;
+  border: 10px solid #c5c5c5;
+  border-right-width: 6px;
+  border-right-color: transparent;
+  border-left-width: 6px;
+  border-left-color: transparent;
+  content: "";
+}
+
+.arrow-up::before {
+  border-top-width: 0;
+}
+
+.arrow-down::before {
+  border-bottom-width: 0;
+}
+
+.arrow:hover .arrow::before { /*по-всякому пробовал обозначить, не получается поменять цвет стрелки при наведении*/
+  border: 10px solid #000000;
+  border-right-width: 6px;
+  border-right-color: transparent;
+  border-left-width: 6px;
+  border-left-color: transparent;
 }
 
 .items-list h3,
@@ -875,6 +979,7 @@ fieldset h3 {
   justify-content: space-between;
   width: 284px;
   text-align: left;
+  margin-bottom: 60px;
 }
 
 .pagination a {
@@ -896,6 +1001,19 @@ fieldset h3 {
 
 .next-page a {
   padding: 13px 32px 14px 33px;
+  text-transform: uppercase;
+}
+
+.rotary-hummer-info {
+  box-sizing: border-box;
+  height: 261px;
+  padding-top: 68px; /*текст надо будет выровнять по вертикали и переносы текста*/
+}
+
+.rotary-hummer-info h2 {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
   text-transform: uppercase;
 }
 

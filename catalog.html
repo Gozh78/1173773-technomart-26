@@ -78,14 +78,11 @@
         Перфораторы
       </h1>
       <section class="filter-item">
-        <h2>
-          Фильтр:
-        </h2>
         <form class="filter" action="#" method="get">
           <h2 class="filter-header">
             Фильтр:
           </h2>
-          <label for="price-range">
+          <label class="price-form" for="price-range">
             Цена:
           </label>
           <input type="range" name="price-range-1" min="0" max="" id="price-range">
@@ -96,7 +93,7 @@
             <h3>
               Производители:
             </h3>
-            <ul class="brands">
+            <ul class="brands-filter">
               <li class="filter-option">
                 <input class="visually-hidden filter-input filter-input-checkbox"
                 type="checkbox" id="filter-bosch" name="bosch" checked>
@@ -138,7 +135,7 @@
             <h3>
               Питание:
             </h3>
-            <ul>
+            <ul class="mains-supply-filter">
               <li class="filter-option">
                 <input class="visually-hidden filter-input filter-input-radio"
                 type="radio" id="filter-accumulator" name="accumulator" checked>
@@ -163,17 +160,17 @@
           </h2>
           <ul class="sorting-option">
             <li>
-              <a href="#">По цене</a>
+              <a class="sort-item" href="#">По цене</a>
             </li>
             <li>
-              <a href="#">По типу</a>
+              <a class="sort-item" href="#">По типу</a>
             </li>
             <li>
-              <a href="#">По функционалу</a>
+              <a class="sort-item" href="#">По функционалу</a>
             </li>
           </ul>
-          <img src="" width="" height="" alt="">
-          <img src="" width="" height="" alt="">
+          <a class="arrow arrow-up" href="#">по возрастанию</a>
+          <a class="arrow arrow-down" href="#">по убыванию</a>
         </section>
 
       </section>
@@ -353,6 +350,7 @@
           <li class="next-page"><a href="#">Следующая</a></li>
         </ul>
         <section class="rotary-hummer-info">
+          <div class="positioner">
           <h2>
             Пара слов о перфораторах
           </h2>
@@ -361,6 +359,7 @@
             Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка. В
             ассортиментном ряду есть выбор «трехрежимников»: в одном устройстве будут совмещены отбойный молоток и ударная дрель.
           </p>
+        </div>
         </section>
     </main>
     <footer>
