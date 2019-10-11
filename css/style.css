@@ -1,6 +1,5 @@
 /* Позиционирование */
 .positioner {
-  box-sizing: border-box;
   width: 960px;
   margin-left: auto;
   margin-right: auto;
@@ -8,6 +7,12 @@
   padding-right: 10px;
 }
 /* Блочная модель */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
 
 /* Типографика и оформление*/
 
@@ -19,6 +24,7 @@ body {
   font-size: 13px;
   line-height: 24px;
   font-weight: 400;
+  min-width: 1200px;
 
   background-color: #ffffff;
 }
@@ -51,49 +57,59 @@ a {
 .header-top {
   background-color: #293449;
   height: 42px;
+  min-width: 1200px;
 }
 
-.header-buttons {
+.header-top .positioner {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-right: 0;
-  margin-left: auto;
 }
 
 .main-header-logo {
-  border-bottom: 4px solid #b52933;
-  padding: 13px 57px 12px 55px;
-  margin: 10px;
+  display: block;
+  width: 220px;
+  height: 47px;
+  padding-top: 13px;
+  text-align: center;
 
   background-color: #ee3643;
-  background-image: url("../img/logo-background.jpg");
+  background-image: url("../img/logo-background.png");
 }
 
 .main-header-logo:hover {
   background-color: #ca2c37;
-  border-color: #9a212a;
-  background-image: url("../img/logo-background-hover.jpg");
+  background-image: url("../img/logo-background-hover.png");
 }
 
-.main-header-logo:focus,
 .main-header-logo:active {
   background-color: #ba2732;
-  border-color: #8e1e26;
-  background-image: url("../img/logo-background-active.jpg");
+  background-image: url("../img/logo-background-active.png");
 }
 
 .header-buttons {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 17px;
   line-height: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.header-buttons a {
+  width: 150px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .search-field {
   font: inherit;
   background-color: inherit;
   border: none;
-  display: block;
+  width: 270px;
+  height: 42px;
 }
 
 input::placeholder {
@@ -167,7 +183,16 @@ input::placeholder {
 .header-body {
   font-family: "Cuprum", Arial, sans-serif;
   background-color: #f3f7f9;
+  /*height: 320px;*/
+  padding-top: 46px;
   padding-bottom: 60px;
+  min-width: 1200px;
+}
+
+.header-body .header-body-top {
+ display: flex;
+ justify-content: flex-end;
+ margin-bottom: 44px;
 }
 
 .italic {
@@ -177,12 +202,29 @@ input::placeholder {
   text-align: left;
   width: 197px; /*надо будет исправить*/
   margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 71px;
+  align-self: flex-end;
 
   color: #ee3643;
 }
 
 .contacts {
+  width: 270px;
   text-align: center;
+  margin-right: 69px;
+}
+
+.contacts-inner {
+  margin-right: 51px;
+}
+
+.contacts p:first-child {
+  height: 45px;
+}
+
+.contacts a {
+  color: #ee3643;
 }
 
 .contacts .adress {
@@ -191,25 +233,42 @@ input::placeholder {
   color: #32425c;
 }
 
-.contacts a {
+.contacts p:first-of-type {
+  margin: 0;
   font-size: 21px;
   line-height: 21px;
-  padding: 10px 50px 9px 72px;  /* Этот параметр править, наверное, придется с появлением иконки*/
+  padding: 10px 50px;  /* Этот параметр править, наверное, придется с появлением иконки*/
 
-  color: #ee3643;
   border: 3px solid #ffffff;
 }
 
+.contacts p:last-of-type {
+  margin: 0;
+  margin-top: 5px;
+}
+
 .header-authorization {
-  text-align: right;
+  display: flex;
+  width: 281px;
+  height: 45px;
+  justify-content: space-between;
 }
 
 .header-authorization a {
+  display: flex;
+  height: 45px;
+  width: 150px;
+  justify-content: space-around;
+  align-items: center;
   font-size: 21px;
   line-height: 21px;
 
   color: #000000;
   background-color: #ffffff;
+}
+
+.header-authorization .enter {
+  width: 121px;
 }
 
 .header-authorization a:hover {
@@ -220,14 +279,20 @@ input::placeholder {
   color: rgba(0,0,0,0.3);
 }
 
+.user {
+  width: 299px;
+}
+
 .user-name {
   font-size: 21px;
   line-height: 21px;
   display: block;
   width: 299px;
   height: 45px;
-  vertical-align: middle; /*и снова не работает*/
   margin-left: auto;
+  margin-bottom: 5px;
+  padding-top: 9px;
+  text-align: center;
 
   background-color: #ffffff;
 }
@@ -248,13 +313,14 @@ input::placeholder {
   text-decoration: underline;
   font-size: 16px;
   line-height: 18px;
+  margin-right: 34px;
 
   color: #32425c;
 }
 
 .user-features {
-  text-align: right;
-  margin-left: auto;
+  padding-left: 18px;
+  display: flex;
 }
 
 .user-features a:hover {
@@ -267,7 +333,6 @@ input::placeholder {
 }
 
 .main-navigation {
-  width: 960px;
   height: 60px;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 17px;
@@ -279,17 +344,22 @@ input::placeholder {
 
 .site-navigation {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-around; /*нужно решить вопрос с шириной элементов*/
 }
 
 .site-navigation a {
-  display: block;
-  height: 60px;
+  display: flex;
+  align-items: center;
 }
 
-.main-navigation li:hover {
-  background-color: #293449; /*пока что не сделал дивы по определённым размерам, не знаю, как равномерно место распределить между дивами*/
+.main-navigation a {
+  height: 60px;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+.main-navigation a:hover {
+  background-color: #293449;
   color: #ffffff;
 }
 
@@ -386,6 +456,9 @@ input::placeholder {
 
 .red-button,
 .slider .red-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 14px;
   line-height: 18px;
@@ -469,6 +542,7 @@ input::placeholder {
 .rotary-hummer-info {
   background-color: #f4f7f9;
   color: #000000;
+  min-width: 1200px;
 }
 
 .service-header {
@@ -480,6 +554,8 @@ input::placeholder {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 30px;
   line-height: 30px;
+  margin: 0;
+  font-weight: normal;
 
   color: #000000;
   text-transform: uppercase;
@@ -540,14 +616,17 @@ input::placeholder {
 
 .additional {
   display: flex;
-  justify-content: space-between; /*что-то совсем непонятное произошло с блоком пока что*/
-  height: 536px;
+  justify-content: space-between;
+  padding-top: 82px;
+  min-height: 536px;
 }
 
 .additional p {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
+  margin-top: 25px;
+  margin-bottom: 20px;
 
   color: #000000;
 }
@@ -557,37 +636,63 @@ input::placeholder {
 }
 
 .companies-list {
+  min-height: 100px;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 18px;
   line-height: 20px;
+  margin-bottom: 35px;
 
   color: #000000;
 }
 
+.companies-list li {
+  margin-bottom: 20px;
+}
+
 .additional-company {
-  text-align: left; /*надо разнести по сторонам ещё*/
+  text-align: left;
 }
 
 .contacts-map {
-  text-align: right;
-  width: 301px;
+  width: 300px;
 }
-/*
-.contacts-map h2,
+
 .contacts-map p {
-  text-align: center;
-}*/
+  margin-bottom: 35px;
+}
+
+.contacts-map img {
+  margin-bottom: 30px;
+}
 
 .company-info-button {
-  padding: 14px 40px 12px 40px;
+  width: 220px;
+  height: 38px; /*нужно будет подровнять ещё*/
 }
 
 .write-us-button {
-  padding: 14px 59px 12px 64px;
+  width: 300px;
+  height: 38px;
 }
 
 .footer-top {
   background-color: #32425c;
+  height: 193px;
+}
+
+.footer-top .positioner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-logo {
+  display: block;
+  padding-top: 21px;
+  text-align: center;
+  width: 220px;
+  height: 68px;
+  background-size: cover;
+  margin-bottom: 25px;
 }
 
 .footer-top p,
@@ -595,13 +700,35 @@ input::placeholder {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
+  margin: 0;
 
   color: #f3f7f9;
+}
+
+.navigation-links {
+  padding-top: 35px;
+}
+
+.site-navigation-1,
+.site-navigation-2 {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 35px;
+}
+
+.site-navigation-1 li,
+.site-navigation-2 li {
+  margin-left: 62px;
 }
 
 .site-navigation-1 a {
   color: #f1f5f7;
 }
+
+.site-navigation-1 li:first-of-type {
+  margin-left: 0;
+}
+
 .site-navigation-2 a,
 .academy-contacts {
   color: #ffd180;
@@ -623,12 +750,20 @@ input::placeholder {
 }
 
 .footer-bottom .positioner {
+  padding-top: 35px;
+  padding-right: 25px;
   display: flex;
   justify-content: space-between;
 }
 
 .footer-bottom {
   background-color: #293449;
+  height: 107px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  margin-left: 49px;
 }
 
 .footer-bottom .copyright,
@@ -638,12 +773,27 @@ input::placeholder {
   line-height: 18px;
   color: #ffffff;
 }
+.copyright {
+  margin-right: 160px; /*что-то нужно сделать с выравниванием по горизонтали*/
+}
+
+.social-items {
+  display: flex;
+  margin-right: 80px;
+}
 
 .social li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #212a3a;
   width: 42px;
   height: 42px;
   border-radius: 50%; /*Иконки пока что криво встали*/
+}
+
+.social a {
+  height: 15px;
 }
 
 .social li:hover,
@@ -663,7 +813,6 @@ input::placeholder {
     /* Далее для внутренней страницы*/
 .breadcrumbs,
 .filter-item {
-  box-sizing: border-box;
   width: 960px;
   margin-left: auto;
   margin-right: auto;
@@ -671,18 +820,29 @@ input::placeholder {
   padding-right: 10px;
 }
 
-.breadcrumbs a,
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
+
+.breadcrumbs li,
 .breadcrumbs-current {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
+  margin-right: 32px; /*править*/
 
   color: #000000;
 }
 
+.breadcrumbs a {
+  color: #000000;
+}
+
 .inner-page-main h1 {
-  box-sizing: border-box;
   display: block;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 30px;
@@ -690,8 +850,10 @@ input::placeholder {
   text-transform: uppercase;
   width: 940px;
   height: 89px;
+  margin-top: 0;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 20px;
   padding-top: 31px;
   padding-bottom: 34px; /*тоже подправить*/
   padding-left: 28px;
@@ -701,8 +863,22 @@ input::placeholder {
   background-image: url("../img/perforator-background.png");
 }
 
+.filter-sorting-cards {
+  display: flex;
+}
+
+.sorting-cards {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+}
+
 .filter {
   width: 220px;
+}
+
+.filter-item {
+  padding: 0;
 }
 
 .filter-header,
@@ -728,6 +904,7 @@ fieldset {
   border-left: none;
   border-right: none;
   border-bottom: none;
+  padding: 0;
   /*border-image: url("../img/fieldset-border.png"); не получается заменить картинку рамки*/
 }
 
@@ -742,6 +919,11 @@ fieldset h3,
   color: #000000;
 }
 
+fieldset h3 {
+  margin-top: 21px;
+  margin-bottom: 12px;
+}
+
 .filter-option label {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 15px;
@@ -752,16 +934,23 @@ fieldset h3,
 }
 
 .white-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  background-color: #ffffff;
+  width: 140px;
+  height: 38px;
   text-transform: uppercase;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
-  padding: 13px 39px 14px 38px;
+  margin-top: 73px;
+  margin-left: auto;
+  margin-right: auto;
 
   color: #000000;
+  background-color: #ffffff;
 }
 
 .sorting {
@@ -769,6 +958,7 @@ fieldset h3,
   height: 38px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 
   background-color: #f7f3ec;
   color: #000000;
@@ -853,18 +1043,39 @@ a.arrow {
   color: #000000;
 }
 
+.items-list h3 {
+  margin-top: 11px;
+  width: 190px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+}
+
 .items-all {
   display: flex;
   flex-wrap: wrap;
 }
 
 .items-cards {
+  display: flex;
+  flex-direction: column;
   width: 220px;
   height: 318px;
   border: 1px solid #e5e5e5;
   margin-right: 20px;
   margin-bottom: 20px;
-  padding-bottom: 0px;
+}
+
+.new-flag {
+  background-image: url("../img/new-flag.png");
+  background-repeat: no-repeat;
+  background-position: 159px 0;
+  /*z-index: 2;*/ /*нужно как-то поставить флаг впереди*/
+}
+
+.items-cards img {
+  /*z-index: 0;*/
+  order: -1;
 }
 
 .items-all .items-cards:nth-child(3n) {
@@ -884,15 +1095,17 @@ a.arrow {
 
  .items-cards .main-price {
   position: relative;
-  margin-top: 0px;
+  margin-top: auto;
   margin-right: auto;
+  margin-bottom: 21px;
   margin-left: auto;
-  margin-bottom: 0;
 
   color: #ffffff;
   width: 121px;
   height: 38px;
   background-color: #ee3643;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 
 .items-cards .main-price::after {
@@ -922,6 +1135,7 @@ a.arrow {
   height: 170px;
   text-align: center;
   text-transform: uppercase;
+  margin-bottom: 0;
 }
 
 .card-buttons a {
@@ -946,6 +1160,16 @@ a.arrow {
   box-shadow: none;
 }
 
+.items-cards:hover .card-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.items-cards:hover a {
+  display: block; /*нужно что-то сделать с карточками*/
+}
+
 .card-buttons a:hover {
   background-color: #5fbb2d;
 }
@@ -966,31 +1190,32 @@ a.arrow {
   background-color: #ffffff;
 }
 
-.items-cards:hover .card-buttons {
-  display: block;
-}
-
-.items-cards:hover a {
-  display: block;
-}
-
 .pagination {
   display: flex;
   justify-content: space-between;
   width: 284px;
   text-align: left;
   margin-bottom: 60px;
+  margin-top: 32px;
 }
 
 .pagination a {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 38px;
+  height: 38px;
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
-  padding: 10px 15px 10px 15px;
 
   color: #000000;
+}
+
+.next-page a {
+  width: 140px;
 }
 
 .pagination-current a {
@@ -1000,12 +1225,22 @@ a.arrow {
 }
 
 .next-page a {
-  padding: 13px 32px 14px 33px;
   text-transform: uppercase;
 }
 
+.pagination a:hover {
+  border-color: #bdc6ca;
+}
+
+.pagination a:active {
+  border-color: #ee3643;
+}
+
+.pagination-current a:hover {
+  border-color: #ee3643;
+}
+
 .rotary-hummer-info {
-  box-sizing: border-box;
   height: 261px;
   padding-top: 68px; /*текст надо будет выровнять по вертикали и переносы текста*/
 }
