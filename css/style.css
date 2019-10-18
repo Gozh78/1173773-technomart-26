@@ -46,7 +46,7 @@ a {
 .cart,
 .to-order,
 .main-navigation a,
-.main-pages a,
+.main-cards a,
 .service-items a,
 .phone-number-footer,
 .sorting-option a {
@@ -58,6 +58,7 @@ a {
   background-color: #293449;
   height: 42px;
   min-width: 1200px;
+  min-height: 42px;
 }
 
 .header-top .positioner {
@@ -183,7 +184,7 @@ input::placeholder {
 .header-body {
   font-family: "Cuprum", Arial, sans-serif;
   background-color: #f3f7f9;
-  /*height: 320px;*/
+  min-height: 278px;
   padding-top: 46px;
   padding-bottom: 60px;
   min-width: 1200px;
@@ -192,7 +193,7 @@ input::placeholder {
 .header-body .header-body-top {
  display: flex;
  justify-content: flex-end;
- margin-bottom: 44px;
+ margin-bottom: 38px;
 }
 
 .italic {
@@ -202,7 +203,7 @@ input::placeholder {
   text-align: left;
   width: 197px; /*надо будет исправить*/
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 1px;
   margin-right: 71px;
   align-self: flex-end;
 
@@ -244,7 +245,7 @@ input::placeholder {
 
 .contacts p:last-of-type {
   margin: 0;
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 .header-authorization {
@@ -333,7 +334,7 @@ input::placeholder {
 }
 
 .main-navigation {
-  height: 60px;
+  min-height: 60px;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 17px;
   line-height: 17px;
@@ -344,12 +345,13 @@ input::placeholder {
 
 .site-navigation {
   display: flex;
-  justify-content: space-around; /*нужно решить вопрос с шириной элементов*/
+  justify-content: space-around;
 }
 
 .site-navigation a {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  padding-bottom: 22px;
 }
 
 .main-navigation a {
@@ -368,58 +370,85 @@ input::placeholder {
   color: rgba(255,255,255,0.5);
 }
 
-.main-pages {
+.main-cards {
+  min-height: 409px;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   margin-top: 59px;
 }
 
-.main-pages div {
+.main-cards-positioner-1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 620px;
+}
+
+.main-cards-positioner-2 {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.main-cards-positioner-1 div,
+.main-cards-positioner-2 div {
   display: block;
   font-family: "Cuprum", Arial, sans-serif;
   width: 300px;
   height: 123px;
-  margin-left: 20px;
-  margin-bottom: 20px; /*потом для самых нижних нужно будет подправить*/
+  margin-bottom: 20px;
 }
 
-.main-pages div:first-child {
+.main-cards-positioner-1 div:first-child {
   margin-left: 0;
+  margin-right: 20px;
 }
 
-.main-pages h2 {
+.main-cards-positioner-1 div:last-child,
+.main-cards-positioner-2 div:last-child {
+  margin-bottom: 0;
+}
+
+.main-cards h2 {
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
-  padding-top: 26px;
+  padding-top: 22px;
   padding-left: 23px;
+  padding-bottom: 15px;
+  margin: 0;
 }
 
-.main-pages a {
+.main-cards .button {
+  display: inline-block;
   font-size: 14px;
   line-height: 18px;
+  width: 135px;
+  height: 38px; /*это всё потом редактировать надо*/
+  padding-left: 25px;
   text-transform: uppercase;
-  padding: 14px 27px;
+  /*padding: 14px 27px;*/
   border-radius: 3px;
 
   background-color: rgba(0,0,0,0.1);
 }
 
-.main-pages a:hover {
+.main-cards .button:hover {
   background-color: rgba(0,0,0,0.2);
 }
 
-.main-pages a:active {
+.main-cards .button:active {
   background-color: rgba(0,0,0,0.3);
 }
 
-.main-pages .slider {
+.main-cards .slider {
+  position: relative;
   display: block;
   width: 620px;
   height: 266px;
   margin-left: 0;
+  overflow: hidden;
 }
 
 .materials {
@@ -469,12 +498,28 @@ input::placeholder {
   background-color: #ee3643; /*для кнопки "открыть каталог" потом подправлю размеры*/
 }
 
+.slider .red-button {
+  height: 38px;
+  position: absolute;
+  z-index: 10;
+  bottom: 22px;
+  left: 25px;
+  width: 195px;
+  padding: 0;
+  padding-left: 5px;
+}
+
 .red-button:hover {
   background-color: #ca2c37;
+  z-index: 10;
 }
 
 .red-button:active {
   background-color: #ba2732;
+}
+
+.popular-items {
+  margin-top: 53px;
 }
 
 .polular-items-bar h2,
@@ -483,27 +528,29 @@ input::placeholder {
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
+  margin: 0;
+  font-weight: normal;
 }
 .polular-items-bar,
 .polular-brands-bar {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 940px;
   height: 89px;
+  padding-left: 29px;
+  padding-right: 24px;
+  /*padding: 33px 24px 35px 30px;*/
   background-color: #f9f5f0;
   color: #32425c;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 20px;
-}
-
-.polular-items-bar {
-  margin-top: 53px;
+  margin-bottom: 21px;
 }
 
 .items-list-main {
   display: flex;
   justify-content: space-between;
   width: 940px;
+  min-height: 318px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -511,22 +558,29 @@ input::placeholder {
 .list-brands {
   display: flex;
   justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
   width: 940px;
+  min-height: 310px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .list-brands li {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   width: 220px;
   height: 145px;
   background-color: #ffffff;
   border: 1px solid #e5e5e5;
   text-align: center;
+  margin-bottom: 20px;
+  line-height: 9px; /*Неужели каждой картинке нужно настраивать выравнивание?*/
 }
 
-.list-brands img {
-  padding-top: auto;
-  padding-bottom: auto;
+.list-brands:last-child li {
+  margin-bottom: 0;
 }
 
 .list-brands li:hover {
@@ -538,6 +592,10 @@ input::placeholder {
   opacity: 0.3;
 }
 
+.popular-brands {
+  margin-bottom: 85px;
+}
+
 .services,
 .rotary-hummer-info {
   background-color: #f4f7f9;
@@ -545,8 +603,17 @@ input::placeholder {
   min-width: 1200px;
 }
 
+.services {
+  min-height: 522px;
+}
+
 .service-header {
-  padding-top: 68px;
+  padding-top: 65px;
+}
+
+.services p {
+  width: 400px;
+  margin-top: 26px;
 }
 
 .additional h2,
@@ -561,42 +628,91 @@ input::placeholder {
   text-transform: uppercase;
 }
 
-.service-items li {
+.service-items {
+  position: relative;
+  margin-top: 56px;
+  width: 240px;
+}
+
+.service-block {
+  display: flex;
+}
+
+.service-items .service-items-head {
   width: 240px;
   height: 61px;
-  text-align: left;
+  padding-left: 22px;
+  padding-top: 16px;
 
   background-color: #32425c;
   box-shadow:
-    inset 0px 1px 0px 0px #405069,
-    inset -15px 0px 15px -15px #000000; /*Непонятно, как эту тень сделать, она вообще выезжает полоской по вертикали*/
+    inset 0px -1px 0px 0px #293449,
+    inset 0px 1px 0px 0px #405069;
+    /*inset -15px 0px 15px -15px #000000; /*Непонятно, как эту тень сделать, она вообще выезжает полоской по вертикали*/*/
 }
 
-.service-items ul::after {
+.service-items::after {
+  position: absolute;
+  z-index: 1;
   content: '';
   width: 10px;
-  height: 80px;
-  background-color: black;
+  height: 250px;
+  background-color: #f4f7f9;
   dislay: block;
+  right: -30px;
+  top: -35px;
+  /*box-shadow: 10px 0px 10px -5px #000000;*/
+  /*box-shadow: inset -15px 0px 15px -22px #000000;*/
 }
 
-.service-items-h:hover {
+.service-items-head:hover {
   background-color: #293449;
 }
 
-.service-items-h:active {
+.service-items-head:active {
   background-color: #ffffff;
 }
 
- .service-items-h:active a {
+ .service-items-head:active a {
    color: #32425c;
  }
 
-.service-items a {
+.service-items-head a {
+  font-family: "Cuprum", Arial, sans-serif;
   font-size: 21px;
   line-height: 30px;
   font-weight: 700;
-  padding-left: 23px;
+}
+
+.service-items-inside {
+  margin-left: 80px;
+  margin-top: 20px;
+}
+
+.service-items-inside li {
+  display: inline-block;
+  position: relative;
+  width: 450px;
+}
+
+.service-items-inside p {
+  width: 275px;
+  margin-top: 0;
+  margin-bottom: 26px;
+}
+
+.service-items-inside p:nth-child(2) {
+  width: 375px;
+}
+
+.service-items-inside img {
+  position: absolute;
+  right: -169px;
+  top: 59px;
+}
+
+.service-items-inside img:nth-child(2) {
+  top: 36px;
 }
 
 .service-items-inside h2 {
@@ -604,6 +720,9 @@ input::placeholder {
   font-size: 36px;
   line-height: 36px;
   text-transform: uppercase;
+  font-weight: normal;
+  margin-top: 34px;
+  margin-bottom: 25px;
 
   color: #32425c;
 }
@@ -617,7 +736,7 @@ input::placeholder {
 .additional {
   display: flex;
   justify-content: space-between;
-  padding-top: 82px;
+  padding-top: 80px;
   min-height: 536px;
 }
 
@@ -626,7 +745,7 @@ input::placeholder {
   font-size: 13px;
   line-height: 24px;
   margin-top: 25px;
-  margin-bottom: 20px;
+  margin-bottom: 21px; /*непонятно, почему текст так растягивается при просмотре в perfect pixel*/
 
   color: #000000;
 }
@@ -640,7 +759,8 @@ input::placeholder {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 18px;
   line-height: 20px;
-  margin-bottom: 35px;
+  margin-bottom: 36px;
+  padding-left: 36px;
 
   color: #000000;
 }
@@ -649,35 +769,35 @@ input::placeholder {
   margin-bottom: 20px;
 }
 
-.additional-company {
-  text-align: left;
-}
-
 .contacts-map {
   width: 300px;
 }
 
 .contacts-map p {
-  margin-bottom: 35px;
+  margin-bottom: 31px;
 }
 
 .contacts-map img {
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 
 .company-info-button {
   width: 220px;
   height: 38px; /*нужно будет подровнять ещё*/
+  padding-top: 1px;
+  padding-left: 2px;
 }
 
 .write-us-button {
   width: 300px;
   height: 38px;
+  padding-top: 1px;
+  padding-left: 6px;
 }
 
 .footer-top {
   background-color: #32425c;
-  height: 193px;
+  min-height: 193px;
 }
 
 .footer-top .positioner {
@@ -758,7 +878,7 @@ input::placeholder {
 
 .footer-bottom {
   background-color: #293449;
-  height: 107px;
+  min-height: 107px;
 }
 
 .footer-bottom p {
@@ -811,20 +931,13 @@ input::placeholder {
 }
 
     /* Далее для внутренней страницы*/
-.breadcrumbs,
-.filter-item {
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-}
 
 .breadcrumbs {
   display: flex;
   align-items: center;
   padding-top: 24px;
   padding-bottom: 25px;
+  height: 59px;
 }
 
 .breadcrumbs li,
@@ -846,15 +959,14 @@ input::placeholder {
   display: block;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 30px;
+  font-weight: normal;
   line-height: 30px;
   text-transform: uppercase;
   width: 940px;
   height: 89px;
   margin-top: 0;
-  margin-right: auto;
-  margin-left: auto;
   margin-bottom: 20px;
-  padding-top: 31px;
+  padding-top: 30px;
   padding-bottom: 34px; /*тоже подправить*/
   padding-left: 28px;
 
@@ -865,6 +977,7 @@ input::placeholder {
 
 .filter-sorting-cards {
   display: flex;
+  justify-content: space-between;
 }
 
 .sorting-cards {
@@ -873,24 +986,22 @@ input::placeholder {
   width: 700px;
 }
 
-.filter {
+.filter-item {
+  padding: 0;
+  min-height: 746px;
   width: 220px;
 }
 
-.filter-item {
-  padding: 0;
-}
-
-.filter-header,
-.sorting h2 {
+.filter-header {
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
   font-weight: normal;
   height: 38px;
-  padding-left: 18px;
+  padding-left: 19px;
+  padding-top: 10px;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 11px;
 
   background-color: #f7f3ec;
   color: #000000;
@@ -955,10 +1066,12 @@ fieldset h3 {
 
 .sorting {
   width: 700px;
-  height: 38px;
+  min-height: 38px;
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  padding-top: 6px;
+  padding-right: 11px;
 
   background-color: #f7f3ec;
   color: #000000;
@@ -969,8 +1082,10 @@ fieldset h3 {
   line-height: 18px;
   text-transform: uppercase;
   font-weight: normal;
-  height: 38px;
-  padding-left: 18px;
+  padding-left: 19px;
+  padding-top: 4px;
+  margin: 0;
+  margin-right: 49px;
 }
 
 .sorting-option {
@@ -986,7 +1101,7 @@ fieldset h3 {
   color: rgba(0,0,0,0.5);
 }
 
-.sorting-option a:hover {
+.sorting-option .sort-item:hover {
   color: rgba(0,0,0,1);
   border-bottom: 1px solid #ee3643;
 }
@@ -998,7 +1113,7 @@ fieldset h3 {
 
 a.arrow {
   display: inline-block;
-  margin: 0 10px;
+  margin: 0 5px;
   font-size: 0;
 }
 
@@ -1020,8 +1135,8 @@ a.arrow {
   border-bottom-width: 0;
 }
 
-.arrow:hover .arrow::before { /*по-всякому пробовал обозначить, не получается поменять цвет стрелки при наведении*/
-  border: 10px solid #000000;
+.arrow::before:hover { /*по-всякому пробовал обозначить, не получается поменять цвет стрелки при наведении*/
+  border: 10px solid #ee3643;
   border-right-width: 6px;
   border-right-color: transparent;
   border-left-width: 6px;
@@ -1043,17 +1158,18 @@ a.arrow {
   color: #000000;
 }
 
-.items-list h3 {
-  margin-top: 11px;
-  width: 190px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 10px;
-}
-
 .items-all {
   display: flex;
   flex-wrap: wrap;
+  min-height: 994px;
+}
+
+.items-cards h3 {
+  margin-top: 9px;
+  width: 190px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 11px;
 }
 
 .items-cards {
@@ -1089,6 +1205,7 @@ a.arrow {
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
+  padding-left: 2px;
 
   color: #999999;
 }
@@ -1097,11 +1214,13 @@ a.arrow {
   position: relative;
   margin-top: auto;
   margin-right: auto;
-  margin-bottom: 21px;
-  margin-left: auto;
+  margin-bottom: 20px;
+  margin-left: 42px;
+  padding-top: 10px;
+  padding-left: 16px;
 
   color: #ffffff;
-  width: 121px;
+  width: 122px;
   height: 38px;
   background-color: #ee3643;
   border-top-left-radius: 3px;
@@ -1145,6 +1264,8 @@ a.arrow {
   margin-left: auto;
   margin-right: auto;
   border-radius: 3px;
+  padding-top: 7px;
+
 
   color: #ffffff;
   background-color: #63a63e;
@@ -1153,6 +1274,7 @@ a.arrow {
 
 .card-buttons a:last-child {
   margin-top: 8px;
+  padding-top: 5px;
 
   border: 3px solid #63a63e;
   color: #000000;
@@ -1241,15 +1363,17 @@ a.arrow {
 }
 
 .rotary-hummer-info {
-  height: 261px;
-  padding-top: 68px; /*текст надо будет выровнять по вертикали и переносы текста*/
+  min-height: 261px;
+  padding-top: 39px; /*текст надо будет выровнять по вертикали и переносы текста*/
 }
 
 .rotary-hummer-info h2 {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 30px;
+  font-weight: normal;
   line-height: 30px;
   text-transform: uppercase;
+  margin-bottom: 27px;
 }
 
 /* Анимация */
