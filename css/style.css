@@ -6,6 +6,21 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.back-link-positioner {
+  width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cart-positioner {
+  display: flex;
+  justify-content: space-between;
+  width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Блочная модель */
 *, *::before, *::after {
   box-sizing: inherit;
@@ -69,7 +84,7 @@ a {
   display: block;
   width: 220px;
   height: 47px;
-  padding-top: 13px;
+  padding-top: 12px;
   text-align: center;
 
   background-color: #ee3643;
@@ -87,6 +102,8 @@ a {
 }
 
 .header-buttons {
+  min-height: 42px;
+  /*flex-wrap: wrap;*/
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 17px;
   line-height: 18px;
@@ -97,12 +114,23 @@ a {
   margin-left: auto;
 }
 
-.header-buttons a {
-  width: 150px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+.header-buttons svg {
+  position: absolute;
+  top: 12px;
+  left: 17px;
+  opacity: 0.3
+}
+
+.search-form {
+  position: relative;
+}
+
+.header-buttons path {
+  fill: #ffffff;
+}
+
+.header-buttons g {
+  fill: #ffffff;
 }
 
 .search-field {
@@ -111,6 +139,7 @@ a {
   border: none;
   width: 270px;
   height: 42px;
+  padding-left: 48px;
 }
 
 input::placeholder {
@@ -121,11 +150,48 @@ input::placeholder {
   background-color: #212a3a;
 }
 
+.search-field:hover + svg {
+  opacity: 1;
+}
+
 .search-field:active,
 .search-field:focus {
   background-color: #ffffff;
   color: #000000;
   outline: none;
+}
+
+.search-field:active + svg path, /*Надо как-то избавиться от тройного селектора*/
+.search-field:focus + svg path {
+  fill: #ef404d;
+  z-index: 10;
+}
+
+.header-buttons a {
+  width: 150px;
+  height: 42px;
+  display: block;
+  padding-top: 12px;
+  padding-left: 45px;
+}
+
+.header-buttons .bookmarker,
+.header-buttons .cart {
+  padding-left: 45px;
+  position: relative;
+}
+
+.header-buttons .cart {
+  padding-left: 50px;
+}
+
+.cart svg {
+  left: 18px;
+}
+
+.header-buttons .to-order {
+  background-color: #63a63e;
+  padding-left: 20px;
 }
 
 .bookmarker:hover,
@@ -141,10 +207,6 @@ input::placeholder {
 .cart:active {
   background-color: #161d29;
   color: rgba(255,255,255,0.6);
-}
-
-.header-top .to-order {
-  background-color: #63a63e;
 }
 
 .to-order:hover {
@@ -167,7 +229,7 @@ input::placeholder {
 .site-navigation-1,
 .site-navigation-2,
 .social-items,
-.user-name,
+.user-field,
 .user-features,
 .breadcrumbs,
 .brands-filter,
@@ -193,7 +255,7 @@ input::placeholder {
 .header-body .header-body-top {
  display: flex;
  justify-content: flex-end;
- margin-bottom: 38px;
+ margin-bottom: 39px;
 }
 
 .italic {
@@ -214,36 +276,42 @@ input::placeholder {
   width: 270px;
   text-align: center;
   margin-right: 69px;
+  position: relative;
+}
+
+.contacts::before {
+  content: "";
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  top: 13px;
+  left: 15px;
+
+  background: url("../img/icon-phone.svg") no-repeat;
 }
 
 .contacts-inner {
   margin-right: 51px;
 }
 
-.contacts p:first-child {
-  height: 45px;
-}
-
 .contacts a {
+  display: block;
   color: #ee3643;
+  height: 45px;
+
+  margin: 0;
+  font-size: 21px;
+  line-height: 21px;
+  padding-top: 9px;
+  padding-left: 21px;
+
+  border: 3px solid #ffffff;
 }
 
 .contacts .adress {
   font-size: 14px;
   line-height: 24px;
   color: #32425c;
-}
-
-.contacts p:first-of-type {
-  margin: 0;
-  font-size: 21px;
-  line-height: 21px;
-  padding: 10px 50px;  /* Этот параметр править, наверное, придется с появлением иконки*/
-
-  border: 3px solid #ffffff;
-}
-
-.contacts p:last-of-type {
   margin: 0;
   margin-top: 4px;
 }
@@ -256,24 +324,50 @@ input::placeholder {
 }
 
 .header-authorization a {
-  display: flex;
+  display: block;
   height: 45px;
   width: 150px;
-  justify-content: space-around;
-  align-items: center;
   font-size: 21px;
   line-height: 21px;
+  padding-top: 12px;
+  padding-left: 24px;
 
   color: #000000;
   background-color: #ffffff;
 }
 
-.header-authorization .enter {
+.header-authorization .log-in {
+  position: relative;
   width: 121px;
+  padding-left: 47px;
+}
+
+.log-in svg {
+  position: absolute;
+  width: 20px;
+  height: 17px;
+  left: 14px;
+  top: 14px;
+  z-index: 10;
+}
+
+.log-in path,
+.log-in polygon {
+  fill: #c5c5c5;
 }
 
 .header-authorization a:hover {
   color: #ee3643;
+}
+
+.log-in:hover path,
+.log-in:hover polygon {
+  fill: #32425C;
+}
+
+.log-in:active path,
+.log-in:active polygon {
+  fill: #c5c5c5;
 }
 
 .header-authorization a:active {
@@ -284,39 +378,61 @@ input::placeholder {
   width: 299px;
 }
 
-.user-name {
+.user-field {
   font-size: 21px;
   line-height: 21px;
   display: block;
   width: 299px;
   height: 45px;
   margin-left: auto;
-  margin-bottom: 5px;
-  padding-top: 9px;
-  text-align: center;
-
+  margin-bottom: 7px;
   background-color: #ffffff;
 }
 
-.user-name a {
+.user-field li {
+  position: relative;
+}
+
+.user-name {
+  display: block;
+  padding-top: 12px;
+  padding-left: 46px;
+
   color: #000000;
 }
 
-.user-name p::after {
-
+.user-icon svg {
+  width: 20px;
+  height: 18px;
+  position: absolute;
+  left: 13px;
+  top: 13px;
 }
 
-.user-name p::before {
-
+.user-log-out svg {
+  width: 21px;
+  height: 17px;
+  position: absolute;
+  top: 14px;
+  right: 10px;
 }
 
-.user-features a {
-  text-decoration: underline;
-  font-size: 16px;
-  line-height: 18px;
-  margin-right: 34px;
+.user-icon path,
+.user-log-out polygon,
+.user-log-out path {
+  fill: #c5c5c5;
+}
 
-  color: #32425c;
+.user-icon:hover path,
+.user-log-out:hover polygon,
+.user-log-out:hover path {
+  fill: #32425c;
+}
+
+.user-icon:active path,
+.user-log-out:active polygon,
+.user-log-out:active path {
+  fill: #c5c5c5;
 }
 
 .user-features {
@@ -324,20 +440,50 @@ input::placeholder {
   display: flex;
 }
 
+.user-features li {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.user-features li:first-child {
+  margin-right: 32px;
+  position: relative;
+}
+
+.user-features li:first-child::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  top: 7px;
+  right: -19px;
+  background-color: #32425c;
+  border-radius: 50%;
+}
+
+.user-features a {
+  text-decoration: underline;
+
+  color: #32425c;
+}
+
 .user-features a:hover {
   color: #ee3643;
 }
 
-.user-name a:active,
+.user-name:active,
 .user-features a:active {
   color: rgba(0,0,0,0.3);
 }
 
 .main-navigation {
   min-height: 60px;
+  width: 940px;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 17px;
   line-height: 17px;
+  padding-left: 0;
+  padding-right: 0;
 
   background-color: #32425c;
   box-shadow: inset 0px -5px #293449;
@@ -345,27 +491,27 @@ input::placeholder {
 
 .site-navigation {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .site-navigation a {
-  display: flex;
-  align-items: flex-end;
+  display: block;
   padding-bottom: 22px;
-}
-
-.main-navigation a {
   height: 60px;
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 33px; /*Не получается распределить элементы равномерно
+  по pixel-perfect и чтобы не было незакрашенных участков
+  по бокам от самых крайних элементов при наведении. Если их убрать, увеличив паддинги, то тогда флекс строка перенесётся*/
+  padding-right: 33px;
+  padding-top: 20px;
 }
 
-.main-navigation a:hover {
+.site-navigation a:hover {
   background-color: #293449;
   color: #ffffff;
 }
 
-.main-navigation a:active {
+.site-navigation a:active {
   background-color: #1d2739;
   color: rgba(255,255,255,0.5);
 }
@@ -516,6 +662,7 @@ input::placeholder {
 
 .red-button:active {
   background-color: #ba2732;
+  outline: none;
 }
 
 .popular-items {
@@ -669,7 +816,8 @@ input::placeholder {
   background-color: #293449;
 }
 
-.service-items-head:active {
+.service-items-head:active,
+.service-items-head:focus {
   background-color: #ffffff;
 }
 
@@ -701,7 +849,7 @@ input::placeholder {
   margin-bottom: 26px;
 }
 
-.service-items-inside p:nth-child(2) {
+.service-items-inside p:nth-of-type(2) {
   width: 375px;
 }
 
@@ -711,7 +859,7 @@ input::placeholder {
   top: 59px;
 }
 
-.service-items-inside img:nth-child(2) {
+.service-items-inside img:nth-of-type(2) {
   top: 36px;
 }
 
@@ -736,8 +884,9 @@ input::placeholder {
 .additional {
   display: flex;
   justify-content: space-between;
-  padding-top: 80px;
-  min-height: 536px;
+  padding-top: 79px;
+  min-height: 485px; /*было 535*/
+  margin-bottom: 50px;
 }
 
 .additional p {
@@ -745,7 +894,7 @@ input::placeholder {
   font-size: 13px;
   line-height: 24px;
   margin-top: 25px;
-  margin-bottom: 21px; /*непонятно, почему текст так растягивается при просмотре в perfect pixel*/
+  margin-bottom: 20px; /*непонятно, почему текст так растягивается при просмотре в perfect pixel*/
 
   color: #000000;
 }
@@ -766,7 +915,19 @@ input::placeholder {
 }
 
 .companies-list li {
+  position: relative;
   margin-bottom: 20px;
+}
+
+.companies-list li::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  top: 8px;
+  left: -36px;
+
+  background-color: #ee3643;
 }
 
 .contacts-map {
@@ -807,12 +968,12 @@ input::placeholder {
 
 .bottom-logo {
   display: block;
-  padding-top: 21px;
+  padding-top: 20px;
   text-align: center;
   width: 220px;
   height: 68px;
   background-size: cover;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
 }
 
 .footer-top p,
@@ -825,28 +986,34 @@ input::placeholder {
   color: #f3f7f9;
 }
 
+.logo-adress p {
+  display: inline-block;
+  margin-left: 3px;
+}
+
 .navigation-links {
-  padding-top: 35px;
+  padding-top: 38px;
 }
 
 .site-navigation-1,
 .site-navigation-2 {
   display: flex;
-  justify-content: flex-end;
-  margin-bottom: 35px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
+  overflow: hidden;
 }
 
-.site-navigation-1 li,
+.site-navigation-1 li {
+  padding-left: 30px;
+}
+
 .site-navigation-2 li {
-  margin-left: 62px;
+  padding-left: 59px; /*что-то непонятное происходит с расположением ссылок*/
 }
 
 .site-navigation-1 a {
   color: #f1f5f7;
-}
-
-.site-navigation-1 li:first-of-type {
-  margin-left: 0;
 }
 
 .site-navigation-2 a,
@@ -870,20 +1037,20 @@ input::placeholder {
 }
 
 .footer-bottom .positioner {
-  padding-top: 35px;
+  padding-top: 37px;
   padding-right: 25px;
   display: flex;
-  justify-content: space-between;
 }
 
 .footer-bottom {
   background-color: #293449;
   min-height: 107px;
+  padding-left: 2px;
 }
 
 .footer-bottom p {
+  display: inline-block;
   margin: 0;
-  margin-left: 49px;
 }
 
 .footer-bottom .copyright,
@@ -894,30 +1061,35 @@ input::placeholder {
   color: #ffffff;
 }
 .copyright {
+  width: 230px;
   margin-right: 160px; /*что-то нужно сделать с выравниванием по горизонтали*/
 }
 
 .social-items {
   display: flex;
-  margin-right: 80px;
+  margin-right: 118px;
+  justify-content: space-between;
+  width: 132px;
+  position: relative;
+  top: -2px;
 }
 
-.social li {
+.social a {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #212a3a;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%; /*Иконки пока что криво встали*/
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
 }
 
-.social a {
-  height: 15px;
+.footer-bottom .back-link-footer {
+  margin-right: 52px;
 }
 
-.social li:hover,
-.social li:active {
+.social a:hover,
+.social a:active {
   background-color: #ee3643;
 }
 
@@ -930,14 +1102,225 @@ input::placeholder {
   color: #ee3643;
 }
 
+.back-link {
+  width: 620px;
+  height: 430px;
+  margin-top: 50px;/*убрать*/
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;/*убрать*/
+  padding-top: 47px;
+
+  border-top: 7px solid #ff5357;
+  box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.75);
+  background: url("../img/back-link-background.png") no-repeat 0px 311px;
+}
+
+.back-link-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: relative;
+}
+
+.back-link-form p {
+  margin: 0;
+}
+
+.back-link-item input {
+  width: 220px;
+  height: 38px;
+  padding-top: 0;
+  margin-bottom: 21px;
+
+  border: 2px solid #dee3e4;
+  border-radius: 2px;
+  outline: none;
+}
+
+.back-link-item textarea {
+  width: 460px;
+  height: 114px;
+  margin-bottom: 66px;
+
+  border: 2px solid #dee3e4;
+  border-radius: 2px;
+  outline: none;
+  resize: none;
+  overflow: auto;
+}
+
+.back-link-item label {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 18px;
+  margin-bottom: 11px;
+  display: block;
+  color: #000000;
+}
+
+.back-link-item input::placeholder,
+.back-link-item textarea::placeholder {
+  color: #a9a9a9;
+}
+
+.back-link-item input:hover,
+.back-link-item textarea:hover {
+  border-color: #b5b5b5;
+}
+
+.back-link-item input:active,
+.back-link-item input:focus,
+.back-link-item textarea:active,
+.back-link-item textarea:focus {
+  border-color: #ee3643;
+}
+
+.button-send {
+  width: 460px;
+  height: 38px;
+
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: #ffffff;
+  vertical-align: middle;
+  text-transform: uppercase;
+
+  background-color: #ee3643;
+  border: none;
+  border-radius: 3px/2px;
+}
+
+.button-send:hover,
+.make-order-button:hover {
+  background-color: #ca2c37;
+  cursor: pointer;
+}
+
+.button-send:active,
+.button-send:focus,
+.make-order-button:active,
+.make-order-button:focus {
+  background-color: #ba2732;
+  outline: none;
+  cursor: pointer;
+}
+
+.map-popup {
+  width: 940px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.map-popup div {
+  position: relative;
+}
+
+.button-close,
+.button-close-map,
+.button-close-cart {
+  position: absolute;
+  right: -72px;
+  top: -39px;
+  width: 21px;
+  height: 21px;
+
+  background: url("../img/icon-close.svg") no-repeat;
+}
+
+.button-close-map {
+  right: 22px;
+  top: 22px;
+}
+
+.cart-addition {
+  width: 620px;
+  height: 282px;
+  margin-top: 50px;/*убрать*/
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;/*убрать*/
+  padding-top: 47px;
+  position: relative;
+
+  border-top: 7px solid #ff5357;
+  box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.75);
+  background: url("../img/back-link-background.png") no-repeat 0px 163px;
+}
+
+.cart-addition p {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  margin-left: 180px;
+  color: #000000;
+  display: block;
+  margin-bottom: 95px;
+  position: relative;
+}
+
+.cart-addition p::before {
+  position: absolute;
+  content: "";
+  width: 66px;
+  height: 66px;
+  top: -17px;
+  left: -100px;
+  background: url("../img/icon-mark.svg");
+}
+
+.make-order-button,
+.continue-shopping-button {
+  width: 220px;
+  height: 38px;
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  padding-left: 60px;
+  padding-top: 11px;
+  color: #ffffff;
+  text-transform: uppercase;
+
+
+  background-color: #ee3643;
+  border: none;
+  border-radius: 3px;
+}
+
+.continue-shopping-button {
+  padding-left: 43px;
+  color: #000000;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 3px;
+}
+
+.button-close-cart {
+  right: 10px;
+  top: 10px;
+}
+
     /* Далее для внутренней страницы*/
 
 .breadcrumbs {
   display: flex;
   align-items: center;
-  padding-top: 24px;
+  padding-top: 25px;
   padding-bottom: 25px;
   height: 59px;
+  width: 940px;
+  padding-left: 54px;
+  position: relative;
+}
+
+.breadcrumbs svg {
+  width: 15px;
+  height: 12px;
+  top: 23px;
+  left: -2px;
+  position: absolute;
 }
 
 .breadcrumbs li,
@@ -946,13 +1329,28 @@ input::placeholder {
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
-  margin-right: 32px; /*править*/
+  margin-right: 40px;
+  position: relative;
 
   color: #000000;
 }
 
+.breadcrumbs li:nth-last-of-type(2) {
+  margin-right: 43px;
+}
+
 .breadcrumbs a {
   color: #000000;
+}
+
+.breadcrumbs li::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 12px;
+  top: 3px;
+  left: -24px;
+  background: url("../img/icon-right-small.svg");
 }
 
 .inner-page-main h1 {
@@ -1011,12 +1409,18 @@ input::placeholder {
   display: block;
 }
 
-fieldset {
+.filter-item fieldset {
   border-left: none;
   border-right: none;
   border-bottom: none;
   padding: 0;
+  border-width: 1px;
+  margin: 0;
   /*border-image: url("../img/fieldset-border.png"); не получается заменить картинку рамки*/
+}
+
+.filter-item fieldset:first-of-type {
+  margin-top: 108px; /*временно*/
 }
 
 fieldset h3,
@@ -1031,23 +1435,87 @@ fieldset h3,
 }
 
 fieldset h3 {
-  margin-top: 21px;
+  margin-top: 16px;
   margin-bottom: 12px;
 }
 
+fieldset:last-of-type h3 {
+  margin-top: 17px;
+  margin-bottom: 12px;
+}
+
+.brands-filter li,
+.mains-supply-filter li {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.brands-filter li:last-of-type {
+  margin-bottom: 20px;
+}
+
+.filter-option path,
+.filter-option polygon,
+.filter-option circle {
+  fill: #c5c5c5;
+}
+
+.filter-label:hover path,
+.filter-label:hover polygon,
+.filter-label:hover path,
+.filter-label:hover polygon,
+.filter-label:hover circle {
+  fill: #b5b5b5;
+}
+
+.disabled-checkbox path,
+.disabled-checkbox polygon,
+.disabled-radio path,
+.disabled-radio circle {
+  fill: #b5b5b5;
+  opacity: 0.3;
+} /*этот класс нужно присваивать элементу списка*/
+
+.filter-input-checkbox:checked ~ label .filter-icon-not-checked,
+.filter-input-checkbox:not(:checked) ~ label .filter-icon-checked,
+.filter-input-radio:checked ~ label .filter-icon-not-checked,
+.filter-input-radio:not(:checked) ~ label .filter-icon-checked {
+  display: none;
+}
+
+.filter-input-checkbox:not(:checked) ~ label .filter-icon-not-checked,
+.filter-input-checkbox:checked ~ label .filter-icon-checked,
+.filter-input-radio:checked ~ label .filter-icon-checked,
+.filter-input-radio:not(:checked) ~ label .filter-icon-not-checked {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/*надо убрать появляющиеся пробелы и тройную вложенность (если это считается за тройную)!!!*/
+/*
+.brands-filter li::before {
+  content: "";
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  top: 0px;
+  left: 0px;
+  background: url("../img/checkbox-off.svg");
+  opacity: 0.2;
+}
+*/
 .filter-option label {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 15px;
   line-height: 20px;
   text-transform: uppercase;
+  cursor: pointer;
 
   color: #000000;
 }
 
-.white-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.show-button {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -1056,8 +1524,8 @@ fieldset h3 {
   text-transform: uppercase;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
-  margin-top: 73px;
-  margin-left: auto;
+  margin-top: 58px;
+  margin-left: 0;
   margin-right: auto;
 
   color: #000000;
@@ -1068,10 +1536,10 @@ fieldset h3 {
   width: 700px;
   min-height: 38px;
   display: flex;
-  justify-content: space-between;
   margin-bottom: 20px;
   padding-top: 6px;
   padding-right: 11px;
+  position: relative;
 
   background-color: #f7f3ec;
   color: #000000;
@@ -1085,17 +1553,29 @@ fieldset h3 {
   padding-left: 19px;
   padding-top: 4px;
   margin: 0;
-  margin-right: 49px;
+  margin-right: 140px;
 }
 
-.sorting-option {
-  display: flex;
-  justify-content: space-between;
+.sorting-option li {
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 1px;
+  margin-right: 67px;
+  padding-bottom: 0;
+}
+
+.sorting-option li:nth-of-type(2) {
+  margin-right: 62px;
+}
+
+.sorting-option li:last-of-type {
+  margin-right: 26px;
 }
 
 .sorting-option a {
+  display: block;
+  height: 20px;
   text-transform: uppercase;
-  margin-left: 20px; /*потом заменю*/
 
   border-bottom: 1px dotted #ee3643;
   color: rgba(0,0,0,0.5);
@@ -1106,41 +1586,48 @@ fieldset h3 {
   border-bottom: 1px solid #ee3643;
 }
 
-.sorting-option .sort-item:active {
+.sorting-option .sort-item:active,
+.sorting-option .sort-item:focus {
   color: #ee3643;
   border: none;
 }
 
-a.arrow {
+.arrow {
   display: inline-block;
-  margin: 0 5px;
+  padding-top: 6px;
   font-size: 0;
 }
 
-.arrow::before {
-  display: inline-block;
-  border: 10px solid #c5c5c5;
-  border-right-width: 6px;
-  border-right-color: transparent;
-  border-left-width: 6px;
-  border-left-color: transparent;
-  content: "";
+.arrow polyline,
+.arrow polygon {
+  fill: #c5c5c5;
 }
 
-.arrow-up::before {
-  border-top-width: 0;
+.arrow:hover polyline,
+.arrow:hover polygon {
+  fill: #231f20;
 }
 
-.arrow-down::before {
-  border-bottom-width: 0;
+.arrow:active polyline,
+.arrow:focus polyline,
+.arrow:active polygon,
+.arrow:focus polygon {
+  fill: #ee3643;
 }
 
-.arrow::before:hover { /*по-всякому пробовал обозначить, не получается поменять цвет стрелки при наведении*/
-  border: 10px solid #ee3643;
-  border-right-width: 6px;
-  border-right-color: transparent;
-  border-left-width: 6px;
-  border-left-color: transparent;
+
+.arrow-up {
+  position: absolute;
+  right: 49px;
+}
+
+.arrow-down {
+  position: absolute;
+  right: 17px;
+}
+
+.arrow:hover {
+
 }
 
 .items-list h3,
@@ -1174,6 +1661,7 @@ a.arrow {
 
 .items-cards {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 220px;
   height: 318px;
@@ -1182,11 +1670,19 @@ a.arrow {
   margin-bottom: 20px;
 }
 
-.new-flag {
-  background-image: url("../img/new-flag.png");
-  background-repeat: no-repeat;
-  background-position: 159px 0;
-  /*z-index: 2;*/ /*нужно как-то поставить флаг впереди*/
+.items-cards .flag {
+  position: absolute;
+  z-index: 20;
+  top: -1px;
+  right: -1px;
+  width: 60px;
+  height: 60px;
+  text-indent: -1000px;
+  overflow: hidden;
+}
+
+.items-cards .new-flag {
+  background: url("../img/new-flag.png") no-repeat;
 }
 
 .items-cards img {
@@ -1294,6 +1790,7 @@ a.arrow {
 
 .card-buttons a:hover {
   background-color: #5fbb2d;
+  cursor: pointer;
 }
 
 .card-buttons a:active {
