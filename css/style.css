@@ -560,24 +560,29 @@ input::placeholder {
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
-  padding-top: 22px;
-  padding-left: 23px;
-  padding-bottom: 15px;
   margin: 0;
+  margin-top: 21px;
+  margin-left: 22px;
+  margin-bottom: 12px;
 }
 
 .main-cards .button {
-  display: inline-block;
+  display: block;
   font-size: 14px;
   line-height: 18px;
   width: 135px;
-  height: 38px; /*это всё потом редактировать надо*/
-  padding-left: 25px;
+  height: 38px;
+  text-align: center;
+  padding-top: 11px;
+  margin-left: 25px;
   text-transform: uppercase;
-  /*padding: 14px 27px;*/
-  border-radius: 3px;
 
+  border-radius: 3px;
   background-color: rgba(0,0,0,0.1);
+}
+
+.main-cards-positioner-2 .button {
+  margin-left: 23px;
 }
 
 .main-cards .button:hover {
@@ -591,49 +596,150 @@ input::placeholder {
 .main-cards .slider {
   position: relative;
   display: block;
-  width: 620px;
+  width: 1240px;
   height: 266px;
   margin-left: 0;
   overflow: hidden;
 }
 
+.slider .slider-slides {
+  width: 200%;
+  height: 266px;
+  transition: 0.3s ease; /*почему-то при обновлении страницы с добавлением этого свойства начал моргать текст внутри слайдера*/
+}
+
+.slider-text-1,
+.slider-text-2 {
+  position: absolute;
+}
+
+.slider-text-2 {
+  left: 620px;
+}
+
+.slider img {
+  float:left;
+}
+
+.slider .slider-controls {
+  position: absolute;
+  z-index: 10;
+  width: 40px;
+  height: 12px;
+  left: 295px;
+  bottom: 20px;
+}
+
+.slider-controls label {
+  display: inline-block;
+  margin-right: 7px;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+
+  background-color: #ffffff;
+}
+
+.slider .slider-controls-arrows-prev,
+.slider .slider-controls-arrows-next {
+  position: absolute;
+  width: 620px;
+}
+
+.slider-controls-arrows-prev label {
+  position: absolute;
+  width: 22px;
+  height: 40px;
+  left: 25px;
+  top: 114px;
+  background: url("../img/icon-left.svg") no-repeat;
+  z-index: 30;
+  cursor: pointer;
+}
+
+.slider-controls-arrows-next label {
+  position: absolute;
+  width: 22px;
+  height: 40px;
+  right: 20px;
+  top: 114px;
+  background: url("../img/icon-right.svg") no-repeat;
+  z-index: 30;
+  cursor: pointer;
+}
+
+.slider-radio-1:checked ~ .slider-controls label[for="slider-radio-1"],
+.slider-radio-2:checked ~ .slider-controls label[for="slider-radio-2"] {
+  background-color: #ee3643;
+}
+
+.slider-radio-1:checked ~ .slider-slides {
+  transform: translate(0);
+} /*не понимаю, почему стрелки работают по одному разу всего лишь*/
+
+.slider-radio-2:checked ~ .slider-slides {
+  transform: translate(-620px);
+}
+
+.main-cards .main-cards-slider-header-1,
+.main-cards .main-cards-slider-header-2 {
+  position: absolute;
+  z-index: 10;
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+  margin-top: 23px;
+  margin-left: 24px;
+}
+
+.slider p {
+  position: absolute;
+  z-index: 10;
+  font-size: 18px;
+  line-height: 24px;
+  top: 43px;
+  left: 25px;
+}
+
 .materials {
+  background:
+    url("../img/icon-1.svg") no-repeat 213px 31px,
+    url("../img/new-flag.png") no-repeat 240px 0px;
   background-color: #ffbf47;
-  /*background-image: url("../img/materials-background.jpg"); тогда и эти фоновые картинки удалять?*/
 }
 
 .instrument {
-  background-color: #3bbce3;
-  /*background-image: url("../img/instrument-background.jpg");*/
+  background: #3bbce3 url("../img/icon-2.svg") no-repeat 197px 33px;
 }
 
 .equipment {
-  background-color: #dc91d8;
-  /*background-image: url("../img/equipment-background.jpg");*/
+  background: #dc91d8 url("../img/icon-3.svg") no-repeat 191px 31px;
 }
 
 .discounts {
-  background-color: #8ed78f;
-/*  background-image: url("../img/discounts-background.jpg");*/
+  background: #8ed78f url("../img/icon-4.svg") no-repeat 196px 26px;
 }
 
 .delivery {
-  background-color: #ffc047;
-/*  background-image: url("../img/delivery-background.jpg");*/
+  background: #ffc047 url("../img/icon-5.svg") no-repeat 191px 32px;
 }
 
 .popular-btn {
   display: block;
   width: 253px;
   height: 38px;
-  text-align: center; /*не получается выронять по вертикали ещё*/
+  text-align: center;
+  margin-top: -1px; /*не получается выронять по вертикали ещё*/
 }
 
-.red-button,
-.slider .red-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.red-button {
+  display: block;
+  text-align: center;
+  height: 38px;
+  padding-top: 11px;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 14px;
   line-height: 18px;
@@ -645,13 +751,11 @@ input::placeholder {
 }
 
 .slider .red-button {
-  height: 38px;
   position: absolute;
   z-index: 10;
   bottom: 22px;
   left: 25px;
   width: 195px;
-  padding: 0;
   padding-left: 5px;
 }
 
@@ -669,15 +773,6 @@ input::placeholder {
   margin-top: 53px;
 }
 
-.polular-items-bar h2,
-.polular-brands-bar h2 {
-  font-family: "Cuprum", Arial, sans-serif;
-  font-size: 30px;
-  line-height: 30px;
-  text-transform: uppercase;
-  margin: 0;
-  font-weight: normal;
-}
 .polular-items-bar,
 .polular-brands-bar {
   display: flex;
@@ -685,12 +780,21 @@ input::placeholder {
   align-items: center;
   width: 940px;
   height: 89px;
-  padding-left: 29px;
   padding-right: 24px;
-  /*padding: 33px 24px 35px 30px;*/
   background-color: #f9f5f0;
   color: #32425c;
-  margin-bottom: 21px;
+  margin-bottom: 20px;
+}
+
+.polular-items-bar h2,
+.polular-brands-bar h2 {
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin: 0;
+  margin-left: 28px;
+  font-weight: normal;
 }
 
 .items-list-main {
@@ -700,6 +804,10 @@ input::placeholder {
   min-height: 318px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.items-list-main .items-cards {
+  margin-bottom: 21px;
 }
 
 .list-brands {
@@ -723,7 +831,7 @@ input::placeholder {
   border: 1px solid #e5e5e5;
   text-align: center;
   margin-bottom: 20px;
-  line-height: 9px; /*Неужели каждой картинке нужно настраивать выравнивание?*/
+  /*line-height: 9px; *//*Неужели каждой картинке нужно настраивать выравнивание?*/
 }
 
 .list-brands:last-child li {
@@ -737,6 +845,39 @@ input::placeholder {
 .list-brands li:active {
   box-shadow: 0px 4px 10px 0px rgba(41, 52, 73, 0.5);
   opacity: 0.3;
+}
+
+.bosch-logo img {
+  margin-top: 5px;
+}
+
+.makita-logo img,
+.dewalt-logo img {
+  margin-top: 3px;
+}
+
+.interskol-logo img {
+  margin-top: -7px;
+  margin-left: -1px;
+}
+
+.hitachi-logo img {
+  margin-top: 9px;
+  margin-left: 5px;
+}
+
+.lg-logo img {
+  margin-top: 5px;
+  margin-left: -2px;
+}
+
+.aeg-logo img {
+  margin-top: 4px;
+  margin-left: 2px;
+}
+
+.metabo-logo img {
+  margin-left: 4px;
 }
 
 .popular-brands {
@@ -787,9 +928,10 @@ input::placeholder {
 
 .service-items .service-items-head {
   width: 240px;
-  height: 61px;
+  height: 62px;
   padding-left: 22px;
-  padding-top: 16px;
+  padding-top: 14px;
+  cursor: pointer;
 
   background-color: #32425c;
   box-shadow:
@@ -801,15 +943,18 @@ input::placeholder {
 .service-items::after {
   position: absolute;
   z-index: 1;
-  content: '';
+  content: "";
   width: 10px;
   height: 250px;
-  background-color: #f4f7f9;
+  /*background-color: #f4f7f9;*/
   dislay: block;
-  right: -30px;
+  right: 0px;
   top: -35px;
+  border-top-left-radius: 100%;
+  border-bottom-left-radius: 100%;
   /*box-shadow: 10px 0px 10px -5px #000000;*/
-  /*box-shadow: inset -15px 0px 15px -22px #000000;*/
+  box-shadow: inset -15px 0px 105px -75px rgba(0,0,0,0.1);
+  /*box-shadow: -85px 0px 15px -35px rgba(0,0,0,0.3);*/
 }
 
 .service-items-head:hover {
@@ -819,6 +964,7 @@ input::placeholder {
 .service-items-head:active,
 .service-items-head:focus {
   background-color: #ffffff;
+  box-shadow: none;
 }
 
  .service-items-head:active a {
@@ -885,7 +1031,7 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   padding-top: 79px;
-  min-height: 485px; /*было 535*/
+  min-height: 486px; /*было 535*/
   margin-bottom: 50px;
 }
 
@@ -893,14 +1039,22 @@ input::placeholder {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
-  margin-top: 25px;
-  margin-bottom: 20px; /*непонятно, почему текст так растягивается при просмотре в perfect pixel*/
+  margin-top: 26px;
+  margin-bottom: 17px;
+  word-spacing: 1.2px;/*непонятно, почему текст так растягивается при просмотре в perfect pixel*/
 
   color: #000000;
 }
 
 .additional-company {
   width: 535px;
+}
+
+.additional-company p:last-of-type {
+  margin-top: 24px;
+  margin-bottom: 21px;
+  width: 391px;
+  word-spacing: 0.4px;
 }
 
 .companies-list {
@@ -936,6 +1090,8 @@ input::placeholder {
 
 .contacts-map p {
   margin-bottom: 31px;
+  word-spacing: 0.2px;
+  width: 180px;
 }
 
 .contacts-map img {
@@ -944,15 +1100,10 @@ input::placeholder {
 
 .company-info-button {
   width: 220px;
-  height: 38px; /*нужно будет подровнять ещё*/
-  padding-top: 1px;
-  padding-left: 2px;
 }
 
 .write-us-button {
   width: 300px;
-  height: 38px;
-  padding-top: 1px;
   padding-left: 6px;
 }
 
@@ -984,6 +1135,10 @@ input::placeholder {
   margin: 0;
 
   color: #f3f7f9;
+}
+
+.footer-top p {
+  width: 329px;
 }
 
 .logo-adress p {
@@ -1062,14 +1217,14 @@ input::placeholder {
 }
 .copyright {
   width: 230px;
-  margin-right: 160px; /*что-то нужно сделать с выравниванием по горизонтали*/
+  margin-right: 159px; /*что-то нужно сделать с выравниванием по горизонтали*/
 }
 
 .social-items {
   display: flex;
-  margin-right: 118px;
+  margin-right: 120px;
   justify-content: space-between;
-  width: 132px;
+  width: 131px;
   position: relative;
   top: -2px;
 }
@@ -1082,10 +1237,17 @@ input::placeholder {
   width: 41px;
   height: 41px;
   border-radius: 50%;
+  padding-left: 1px;
 }
 
 .footer-bottom .back-link-footer {
-  margin-right: 52px;
+  margin-right: 47px;
+  width: 140px;
+}
+
+.footer-bottom .made-by-footer {
+  width: 100px;
+  margin-right: -2px;
 }
 
 .social a:hover,
@@ -1493,18 +1655,6 @@ fieldset:last-of-type h3 {
 }
 
 /*надо убрать появляющиеся пробелы и тройную вложенность (если это считается за тройную)!!!*/
-/*
-.brands-filter li::before {
-  content: "";
-  position: absolute;
-  width: 23px;
-  height: 23px;
-  top: 0px;
-  left: 0px;
-  background: url("../img/checkbox-off.svg");
-  opacity: 0.2;
-}
-*/
 .filter-option label {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 15px;
@@ -1824,6 +1974,7 @@ fieldset:last-of-type h3 {
   align-items:center;
   width: 38px;
   height: 38px;
+  padding-left: 2px;
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -1861,7 +2012,7 @@ fieldset:last-of-type h3 {
 
 .rotary-hummer-info {
   min-height: 261px;
-  padding-top: 39px; /*текст надо будет выровнять по вертикали и переносы текста*/
+  padding-top: 40px; /*текст надо будет выровнять по вертикали и переносы текста*/
 }
 
 .rotary-hummer-info h2 {
@@ -1870,7 +2021,11 @@ fieldset:last-of-type h3 {
   font-weight: normal;
   line-height: 30px;
   text-transform: uppercase;
-  margin-bottom: 27px;
+  margin-bottom: 26px;
+}
+
+.rotary-hummer-info p {
+  word-spacing: 1px;
 }
 
 /* Анимация */
