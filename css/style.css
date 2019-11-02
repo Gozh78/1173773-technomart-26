@@ -1,4 +1,29 @@
 /* Позиционирование */
+
+.header-authorization,
+.site-navigation,
+.items-list-main,
+.items-list,
+.list-brands,
+.service-items,
+.service-items-inside,
+.companies-list,
+.site-navigation-1,
+.site-navigation-2,
+.social-items,
+.user-field,
+.user-features,
+.breadcrumbs,
+.brands-filter,
+.mains-supply-filter,
+.sorting-option,
+.items-all,
+.pagination {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .positioner {
   width: 960px;
   margin-left: auto;
@@ -46,6 +71,11 @@ body {
 
 a {
   text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .visually-hidden {
@@ -103,7 +133,7 @@ a {
 
 .header-buttons {
   min-height: 42px;
-  /*flex-wrap: wrap;*/
+  flex-wrap: wrap;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 17px;
   line-height: 18px;
@@ -118,7 +148,7 @@ a {
   position: absolute;
   top: 12px;
   left: 17px;
-  opacity: 0.3
+  opacity: 0.3 /*Вопрос: могу же я без ущерба для кода поменять в svg-коде id для разных картинок? А то мне validator по этому поводу ошибки высвечивает.*/
 }
 
 .search-form {
@@ -140,6 +170,7 @@ a {
   width: 270px;
   height: 42px;
   padding-left: 48px;
+  padding-bottom: 3px;
 }
 
 input::placeholder {
@@ -161,7 +192,7 @@ input::placeholder {
   outline: none;
 }
 
-.search-field:active + svg path, /*Надо как-то избавиться от тройного селектора*/
+.search-field:active + svg path,
 .search-field:focus + svg path {
   fill: #ef404d;
   z-index: 10;
@@ -218,31 +249,6 @@ input::placeholder {
   background-color: #518534;
 }
 
-.header-authorization,
-.site-navigation,
-.items-list-main,
-.items-list,
-.list-brands,
-.service-items,
-.service-items-inside,
-.companies-list,
-.site-navigation-1,
-.site-navigation-2,
-.social-items,
-.user-field,
-.user-features,
-.breadcrumbs,
-.brands-filter,
-.mains-supply-filter,
-.sorting-option,
-.items-all,
-.pagination {
-  list-style: none;
-  padding: 0;
-  margin-top: 0; /*Надо ли так делать?*/
-  margin-bottom: 0;
-}
-
 .header-body {
   font-family: "Cuprum", Arial, sans-serif;
   background-color: #f3f7f9;
@@ -264,7 +270,7 @@ input::placeholder {
   font-style: italic;
   text-align: left;
   width: 197px; /*надо будет исправить*/
-  margin-top: 0;
+  margin-top: 0;/*без <br> вообще никак не обойтись*/
   margin-bottom: 1px;
   margin-right: 71px;
   align-self: flex-end;
@@ -491,19 +497,28 @@ input::placeholder {
 
 .site-navigation {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .site-navigation a {
   display: block;
-  padding-bottom: 22px;
   height: 60px;
-  padding-left: 33px; /*Не получается распределить элементы равномерно
+  padding-left: 30px; /*Не получается распределить элементы равномерно
   по pixel-perfect и чтобы не было незакрашенных участков
   по бокам от самых крайних элементов при наведении. Если их убрать, увеличив паддинги, то тогда флекс строка перенесётся*/
-  padding-right: 33px;
+  padding-right: 30px;
   padding-top: 20px;
+}
+
+.site-navigation .first-site-navigation {
+  padding-left: 52px;
+  padding-right: 33px;
+}
+
+.site-navigation .last-site-navigation {
+  padding-left: 33px;
+  padding-right: 54px;
 }
 
 .site-navigation a:hover {
@@ -627,11 +642,12 @@ input::placeholder {
   width: 40px;
   height: 12px;
   left: 295px;
-  bottom: 20px;
+  bottom: 14px;
 }
 
 .slider-controls label {
   display: inline-block;
+  vertical-align: top;
   margin-right: 7px;
   width: 10px;
   height: 10px;
@@ -674,10 +690,22 @@ input::placeholder {
 .slider-radio-2:checked ~ .slider-controls label[for="slider-radio-2"] {
   background-color: #ee3643;
 }
+/*
+.slider-radio-1:checked ~ .slider-slides .img-2,
+.slider-radio-2:checked ~ .slider-slides .img-1,
+.slider-radio-1:checked ~ .slider-slides .slider-text-2,
+.slider-radio-2:checked ~ .slider-slides .slider-text-1 {
+  display: none;
+}
+
+.slider-radio-2:checked ~ .slider-slides .slider-text-2 {
+  transform: translateX(-620px);
+}
+*/
 
 .slider-radio-1:checked ~ .slider-slides {
   transform: translate(0);
-} /*не понимаю, почему стрелки работают по одному разу всего лишь*/
+} /*не понимаю, как осуществить прокрутку к началу без JS*/
 
 .slider-radio-2:checked ~ .slider-slides {
   transform: translate(-620px);
@@ -732,7 +760,7 @@ input::placeholder {
   width: 253px;
   height: 38px;
   text-align: center;
-  margin-top: -1px; /*не получается выронять по вертикали ещё*/
+  margin-top: -1px;
 }
 
 .red-button {
@@ -747,7 +775,7 @@ input::placeholder {
 
   border-radius: 2px;
   color: #ffffff;
-  background-color: #ee3643; /*для кнопки "открыть каталог" потом подправлю размеры*/
+  background-color: #ee3643;
 }
 
 .slider .red-button {
@@ -800,6 +828,7 @@ input::placeholder {
 .items-list-main {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 940px;
   min-height: 318px;
   margin-left: auto;
@@ -831,7 +860,6 @@ input::placeholder {
   border: 1px solid #e5e5e5;
   text-align: center;
   margin-bottom: 20px;
-  /*line-height: 9px; *//*Неужели каждой картинке нужно настраивать выравнивание?*/
 }
 
 .list-brands:last-child li {
@@ -869,6 +897,8 @@ input::placeholder {
 .lg-logo img {
   margin-top: 5px;
   margin-left: -2px;
+  width: 121px;
+  height: 73px;
 }
 
 .aeg-logo img {
@@ -895,13 +925,9 @@ input::placeholder {
   min-height: 522px;
 }
 
-.service-header {
-  padding-top: 65px;
-}
-
 .services p {
-  width: 400px;
-  margin-top: 26px;
+  width: 410px;
+  word-spacing: 0.4px;
 }
 
 .additional h2,
@@ -916,38 +942,50 @@ input::placeholder {
   text-transform: uppercase;
 }
 
-.service-items {
-  position: relative;
-  margin-top: 56px;
-  width: 240px;
+.service-header {
+  padding-top: 65px;
+  margin-bottom: 26px;
 }
 
 .service-block {
   display: flex;
 }
 
-.service-items .service-items-head {
+.service-headings {
+  position: relative;
+  margin-top: 56px;
+  width: 240px;
+  min-height: 186px;
+}
+
+.service-items-head {
+  display: block;
   width: 240px;
   height: 62px;
   padding-left: 22px;
   padding-top: 14px;
   cursor: pointer;
+  font-family: "Cuprum", Arial, sans-serif;
+  font-size: 21px;
+  line-height: 30px;
+  font-weight: 700;
+  color: #ffffff;
 
   background-color: #32425c;
   box-shadow:
     inset 0px -1px 0px 0px #293449,
     inset 0px 1px 0px 0px #405069;
-    /*inset -15px 0px 15px -15px #000000; /*Непонятно, как эту тень сделать, она вообще выезжает полоской по вертикали*/*/
+    /*inset -15px 0px 15px -15px #000000; /*Не пойму, как сделать точно такую же тень, - по-всякому уже пробовал*/*/
 }
 
-.service-items::after {
+.service-headings::after {/*работает не очень*/
   position: absolute;
   z-index: 1;
   content: "";
   width: 10px;
   height: 250px;
   /*background-color: #f4f7f9;*/
-  dislay: block;
+  display: block;
   right: 0px;
   top: -35px;
   border-top-left-radius: 100%;
@@ -961,21 +999,27 @@ input::placeholder {
   background-color: #293449;
 }
 
-.service-items-head:active,
-.service-items-head:focus {
+input[value="service-1"]:checked ~ .service-headings .service-items-head:first-of-type,
+input[value="service-2"]:checked ~ .service-headings .service-items-head:nth-of-type(2),
+input[value="service-3"]:checked ~ .service-headings .service-items-head:last-of-type {
   background-color: #ffffff;
   box-shadow: none;
+  color: #32425c;
 }
 
- .service-items-head:active a {
-   color: #32425c;
- }
+input[value="service-1"]:checked ~ .service-items-inside li:first-of-type,
+input[value="service-2"]:checked ~ .service-items-inside li:nth-of-type(2),
+input[value="service-3"]:checked ~ .service-items-inside li:last-of-type {
+  display: block;
+}
 
-.service-items-head a {
-  font-family: "Cuprum", Arial, sans-serif;
-  font-size: 21px;
-  line-height: 30px;
-  font-weight: 700;
+input[value="service-1"]:checked ~ .service-items-inside li:nth-of-type(2),
+input[value="service-1"]:checked ~ .service-items-inside li:last-of-type,
+input[value="service-2"]:checked ~ .service-items-inside li:first-of-type,
+input[value="service-2"]:checked ~ .service-items-inside li:last-of-type,
+input[value="service-3"]:checked ~ .service-items-inside li:first-of-type,
+input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
+  display: none;
 }
 
 .service-items-inside {
@@ -984,29 +1028,9 @@ input::placeholder {
 }
 
 .service-items-inside li {
-  display: inline-block;
+  /*display: inline-block;*/
   position: relative;
   width: 450px;
-}
-
-.service-items-inside p {
-  width: 275px;
-  margin-top: 0;
-  margin-bottom: 26px;
-}
-
-.service-items-inside p:nth-of-type(2) {
-  width: 375px;
-}
-
-.service-items-inside img {
-  position: absolute;
-  right: -169px;
-  top: 59px;
-}
-
-.service-items-inside img:nth-of-type(2) {
-  top: 36px;
 }
 
 .service-items-inside h2 {
@@ -1017,22 +1041,67 @@ input::placeholder {
   font-weight: normal;
   margin-top: 34px;
   margin-bottom: 25px;
+  letter-spacing: 0.4px;
 
   color: #32425c;
+}
+
+.service-items-inside .guarantee-heading {
+  line-height: 24px;
+  font-weight: bold;
+  margin-top: 40px;
+  letter-spacing: 0.7px;
+}
+
+.service-items-inside p {
+  margin-top: 0;
+  margin-bottom: 26px;
+}
+
+.delivery-heading + p {
+  width: 280px;
+}
+
+.guarantee-heading + p {
+  width: 380px;
+  margin-top: 31px;
+  word-spacing: 0.7px;
+}
+
+.service-items-inside img {
+  position: absolute;
+  right: -169px;
+  top: 25px;
+}
+
+.service-items-inside .service-delivery-img {
+  max-width: 468px;
+}
+
+.service-items-inside .service-guarantee-img {
+  top: -3px;
+  right: -178px;
+}
+
+.service-items-inside .service-credit-img {
+  top: 1px;
+  right: -180px;
+  max-width: 465px;
 }
 
 .service-items-inside .red-button {
   border: none;
   width: 195px;
-  height: 38px; /*Потом доработать изменение состояния*/
+  height: 38px;
 }
 
 .additional {
   display: flex;
   justify-content: space-between;
   padding-top: 79px;
-  min-height: 486px; /*было 535*/
+  min-height: 486px;
   margin-bottom: 50px;
+  position: relative;
 }
 
 .additional p {
@@ -1041,7 +1110,7 @@ input::placeholder {
   line-height: 24px;
   margin-top: 26px;
   margin-bottom: 17px;
-  word-spacing: 1.2px;/*непонятно, почему текст так растягивается при просмотре в perfect pixel*/
+  word-spacing: 1.2px;/*непонятно, почему текст так растягивается при просмотре в perfect pixel - во многих местах так*/
 
   color: #000000;
 }
@@ -1142,8 +1211,12 @@ input::placeholder {
 }
 
 .logo-adress p {
-  display: inline-block;
+  display: block;
   margin-left: 3px;
+}
+
+.phone-number-footer {
+  letter-spacing: 0.1px;
 }
 
 .navigation-links {
@@ -1153,18 +1226,18 @@ input::placeholder {
 .site-navigation-1,
 .site-navigation-2 {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-wrap: wrap;
   margin-bottom: 34px;
   overflow: hidden;
 }
 
 .site-navigation-1 li {
-  padding-left: 30px;
+  padding-left: 59px;
 }
 
 .site-navigation-2 li {
-  padding-left: 59px; /*что-то непонятное происходит с расположением ссылок*/
+  padding-left: 59px;
 }
 
 .site-navigation-1 a {
@@ -1204,7 +1277,7 @@ input::placeholder {
 }
 
 .footer-bottom p {
-  display: inline-block;
+  display: block;
   margin: 0;
 }
 
@@ -1215,9 +1288,10 @@ input::placeholder {
   line-height: 18px;
   color: #ffffff;
 }
-.copyright {
+
+.copyright p {
   width: 230px;
-  margin-right: 159px; /*что-то нужно сделать с выравниванием по горизонтали*/
+  margin-right: 159px;
 }
 
 .social-items {
@@ -1241,7 +1315,7 @@ input::placeholder {
 }
 
 .footer-bottom .back-link-footer {
-  margin-right: 47px;
+  margin-right: 52px;
   width: 140px;
 }
 
@@ -1264,18 +1338,27 @@ input::placeholder {
   color: #ee3643;
 }
 
+.items-list {
+  position: relative;
+}
+
+.modal {
+  position: fixed;
+  left: 50%;
+}
+
 .back-link {
   width: 620px;
   height: 430px;
-  margin-top: 50px;/*убрать*/
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;/*убрать*/
   padding-top: 47px;
+  z-index: 20;
+  top: 338px;
+  margin-left: -310px;
+  display: none;
 
   border-top: 7px solid #ff5357;
   box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.75);
-  background: url("../img/back-link-background.png") no-repeat 0px 311px;
+  background: #ffffff url("../img/back-link-background.png") no-repeat 0px 311px;
 }
 
 .back-link-form {
@@ -1293,6 +1376,7 @@ input::placeholder {
   width: 220px;
   height: 38px;
   padding-top: 0;
+  padding-left: 14px;
   margin-bottom: 21px;
 
   border: 2px solid #dee3e4;
@@ -1304,6 +1388,8 @@ input::placeholder {
   width: 460px;
   height: 114px;
   margin-bottom: 66px;
+  padding-left: 14px;
+  padding-top: 10px;
 
   border: 2px solid #dee3e4;
   border-radius: 2px;
@@ -1316,9 +1402,11 @@ input::placeholder {
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 18px;
   line-height: 18px;
-  margin-bottom: 11px;
+  margin-bottom: 9px;
+  padding-left: 1px;
   display: block;
   color: #000000;
+  word-spacing: 0.3px;
 }
 
 .back-link-item input::placeholder,
@@ -1341,6 +1429,7 @@ input::placeholder {
 .button-send {
   width: 460px;
   height: 38px;
+  padding-top: 2px;
 
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 14px;
@@ -1371,21 +1460,19 @@ input::placeholder {
 }
 
 .map-popup {
-  width: 940px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.map-popup div {
-  position: relative;
+  width: 970px;
+  z-index: 15;
+  top: 152px;
+  margin-left: -485px;
+  display: none;
 }
 
 .button-close,
 .button-close-map,
 .button-close-cart {
   position: absolute;
-  right: -72px;
-  top: -39px;
+  right: -71px;
+  top: -38px;
   width: 21px;
   height: 21px;
 
@@ -1393,23 +1480,22 @@ input::placeholder {
 }
 
 .button-close-map {
-  right: 22px;
-  top: 22px;
+  right: 24px;
+  top: 24px;
 }
 
 .cart-addition {
   width: 620px;
   height: 282px;
-  margin-top: 50px;/*убрать*/
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;/*убрать*/
-  padding-top: 47px;
-  position: relative;
+  padding-top: 36px;
+  z-index: 25;
+  margin-left: -310px;
+  top: 410px;
+  display: none;
 
   border-top: 7px solid #ff5357;
   box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.75);
-  background: url("../img/back-link-background.png") no-repeat 0px 163px;
+  background: #ffffff url("../img/back-link-background.png") no-repeat 0px 164px;
 }
 
 .cart-addition p {
@@ -1419,8 +1505,9 @@ input::placeholder {
   margin-left: 180px;
   color: #000000;
   display: block;
-  margin-bottom: 95px;
+  margin-bottom: 105px;
   position: relative;
+  letter-spacing: 0.1px;
 }
 
 .cart-addition p::before {
@@ -1429,7 +1516,7 @@ input::placeholder {
   width: 66px;
   height: 66px;
   top: -17px;
-  left: -100px;
+  left: -99px;
   background: url("../img/icon-mark.svg");
 }
 
@@ -1460,20 +1547,20 @@ input::placeholder {
 }
 
 .button-close-cart {
-  right: 10px;
+  right: 9px;
   top: 10px;
 }
 
     /* Далее для внутренней страницы*/
 
-.breadcrumbs {
+.inner-page-main .breadcrumbs {
   display: flex;
   align-items: center;
   padding-top: 25px;
   padding-bottom: 25px;
   height: 59px;
   width: 940px;
-  padding-left: 54px;
+  padding-left: 15px;
   position: relative;
 }
 
@@ -1505,14 +1592,24 @@ input::placeholder {
   color: #000000;
 }
 
-.breadcrumbs li::before {
+.breadcrumbs li:not(:first-of-type)::before {
   content: "";
   position: absolute;
   width: 8px;
   height: 12px;
-  top: 3px;
+  top: 2px;
   left: -24px;
   background: url("../img/icon-right-small.svg");
+}
+
+.breadcrumbs-to-main {
+  width: 14px;
+  height: 12px;
+  position: absolute;
+  top: -7px;
+  left: -17px;
+
+  background: url("../img/icon-home.svg");
 }
 
 .inner-page-main h1 {
@@ -1527,12 +1624,11 @@ input::placeholder {
   margin-top: 0;
   margin-bottom: 20px;
   padding-top: 30px;
-  padding-bottom: 34px; /*тоже подправить*/
+  padding-bottom: 34px;
   padding-left: 28px;
 
   color: #32425c;
   background-color: #f2f6f8;
-  background-image: url("../img/perforator-background.png");
 }
 
 .filter-sorting-cards {
@@ -1562,6 +1658,7 @@ input::placeholder {
   padding-top: 10px;
   margin-top: 0;
   margin-bottom: 11px;
+  border-radius: 3px;
 
   background-color: #f7f3ec;
   color: #000000;
@@ -1569,20 +1666,101 @@ input::placeholder {
 
 .price-form {
   display: block;
+  margin-bottom: 14px;
+}
+
+.price-range {
+  width: 220px;
+  height: 80px;
+  border-radius: 3px;
+  margin-bottom: 9px;
+  position: relative;
+
+  background-color: #f7f3ec;
+}
+
+.price-range::before {
+  position: absolute;
+  content: "";
+  width: 180px;
+  height: 2px;
+  top: 39px;
+  left: 20px;
+
+  background-color: #d7dcde;
+}
+
+.price-range-1 {
+  position: relative;
+  visibility: hidden;
+}
+
+.price-range-1::before {
+  content: "";
+  position: absolute;
+  visibility: visible;
+  width: 20px;
+  height: 22px;
+  top: 15px;
+  left: 21px;
+  background: url("../img/filter-button.svg");
+}
+
+.price-range-2 {
+  position: relative;
+  visibility: hidden;
+}
+
+.price-range-2::before {
+  content: "";
+  position: absolute;
+  visibility: visible;
+  width: 20px;
+  height: 22px;
+  top: 15px;
+  left: 159px;
+  background: url("../img/filter-button.svg");
+}
+
+.price-range-output {
+  display: flex;
+  justify-content: space-between;
+  width: 220px;
+  position: relative;
+}
+
+.price-range-output::after {
+  position: absolute;
+  content: "";
+  width: 9px;
+  height: 1px;
+  left: 106px;
+  top: 19px;
+
+  background-color: #000000;
+  box-shadow: -1px 0 0 0 #cdcdcd;
+}
+
+.price-range-output div {
+  width: 95px;
+  height: 38px;
+  font-size: 17px;
+  line-height: 18px;
+  padding-top: 9px;
+  text-align: center;
+  margin-bottom: 25px;
+
+  color: #000000;
+  background-color: #f7f3ec;
 }
 
 .filter-item fieldset {
+  border: 1px solid #e5e5e5;
   border-left: none;
   border-right: none;
   border-bottom: none;
   padding: 0;
-  border-width: 1px;
   margin: 0;
-  /*border-image: url("../img/fieldset-border.png"); не получается заменить картинку рамки*/
-}
-
-.filter-item fieldset:first-of-type {
-  margin-top: 108px; /*временно*/
 }
 
 fieldset h3,
@@ -1596,14 +1774,15 @@ fieldset h3,
   color: #000000;
 }
 
-fieldset h3 {
+.brands-fieldset h3 {
   margin-top: 16px;
   margin-bottom: 12px;
 }
 
-fieldset:last-of-type h3 {
+.mains-supply-fieldset h3 {
   margin-top: 17px;
   margin-bottom: 12px;
+  letter-spacing: 0.7px;
 }
 
 .brands-filter li,
@@ -1613,7 +1792,35 @@ fieldset:last-of-type h3 {
 }
 
 .brands-filter li:last-of-type {
-  margin-bottom: 20px;
+  margin-bottom: 19px;
+}
+
+.brands-filter,
+.mains-supply-filter {
+  padding-top: 1px;
+}
+
+.filter-option label {
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding-left: 35px;
+
+  color: #000000;
+}
+
+.filter-option svg {
+  position: absolute;
+  left: 0px;
+  top: -2px;
+}
+
+.supply-option svg {
+  left: -1px;
 }
 
 .filter-option path,
@@ -1654,17 +1861,6 @@ fieldset:last-of-type h3 {
   margin-right: 8px;
 }
 
-/*надо убрать появляющиеся пробелы и тройную вложенность (если это считается за тройную)!!!*/
-.filter-option label {
-  font-family: "PT Sans", Arial, sans-serif;
-  font-size: 15px;
-  line-height: 20px;
-  text-transform: uppercase;
-  cursor: pointer;
-
-  color: #000000;
-}
-
 .show-button {
   font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
@@ -1674,9 +1870,10 @@ fieldset:last-of-type h3 {
   text-transform: uppercase;
   border: 1px solid #e5e5e5;
   border-radius: 3px;
-  margin-top: 58px;
+  margin-top: 59px;
   margin-left: 0;
   margin-right: auto;
+  padding-top: 2px;
 
   color: #000000;
   background-color: #ffffff;
@@ -1690,6 +1887,7 @@ fieldset:last-of-type h3 {
   padding-top: 6px;
   padding-right: 11px;
   position: relative;
+  border-radius: 3px;
 
   background-color: #f7f3ec;
   color: #000000;
@@ -1712,6 +1910,7 @@ fieldset:last-of-type h3 {
   padding-top: 1px;
   margin-right: 67px;
   padding-bottom: 0;
+  user-select: none;
 }
 
 .sorting-option li:nth-of-type(2) {
@@ -1744,6 +1943,7 @@ fieldset:last-of-type h3 {
 
 .arrow {
   display: inline-block;
+  vertical-align: top;
   padding-top: 6px;
   font-size: 0;
 }
@@ -1765,7 +1965,6 @@ fieldset:last-of-type h3 {
   fill: #ee3643;
 }
 
-
 .arrow-up {
   position: absolute;
   right: 49px;
@@ -1774,10 +1973,6 @@ fieldset:last-of-type h3 {
 .arrow-down {
   position: absolute;
   right: 17px;
-}
-
-.arrow:hover {
-
 }
 
 .items-list h3,
@@ -1835,12 +2030,14 @@ fieldset:last-of-type h3 {
   background: url("../img/new-flag.png") no-repeat;
 }
 
-.items-cards img {
-  /*z-index: 0;*/
+.items-cards .card-image {
   order: -1;
+  width: 218px;
+  height: 170px;
 }
 
-.items-all .items-cards:nth-child(3n) {
+.items-all .items-cards:nth-child(3n),
+.items-list-main .items-cards:nth-child(4n) {
   margin-right: 0;
 }
 
@@ -1935,7 +2132,7 @@ fieldset:last-of-type h3 {
 }
 
 .items-cards:hover a {
-  display: block; /*нужно что-то сделать с карточками*/
+  display: block;
 }
 
 .card-buttons a:hover {
@@ -2012,7 +2209,7 @@ fieldset:last-of-type h3 {
 
 .rotary-hummer-info {
   min-height: 261px;
-  padding-top: 40px; /*текст надо будет выровнять по вертикали и переносы текста*/
+  padding-top: 40px;
 }
 
 .rotary-hummer-info h2 {
@@ -2022,10 +2219,11 @@ fieldset:last-of-type h3 {
   line-height: 30px;
   text-transform: uppercase;
   margin-bottom: 26px;
+  letter-spacing: 0.2px;
 }
 
 .rotary-hummer-info p {
-  word-spacing: 1px;
+  word-spacing: 1.1px;
 }
 
 /* Анимация */

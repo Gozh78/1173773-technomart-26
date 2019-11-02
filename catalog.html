@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
+
   <body class="catalog-page">
     <header class="page-header">
+
       <div class="header-top">
         <div class="positioner">
           <a class="main-header-logo" href="index.html">
@@ -56,6 +58,7 @@
           </div>
         </div>
       </div>
+
       <div class="header-body">
         <div class="positioner header-body-top">
           <p class="italic">
@@ -69,6 +72,7 @@
               г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
             </p>
           </div>
+
           <div class="user">
             <ul class="user-field">
               <li>
@@ -101,39 +105,32 @@
             </ul>
           </div>
         </div>
+
         <nav class="main-navigation positioner">
           <ul class="site-navigation">
-            <li><a href="index.html">Главная</a></li>
+            <li><a class="first-site-navigation" href="index.html">Главная</a></li>
             <li><a href="">Компания</a></li>
             <li><a href="catalog.html">Каталог</a></li>
             <li><a href="">Новости</a></li>
             <li><a href="">Спецпредложения</a></li>
             <li><a href="">Доставка</a></li>
-            <li><a href="">Контакты</a></li>
+            <li><a class="last-site-navigation" href="">Контакты</a></li>
           </ul>
         </nav>
       </div>
     </header>
+
     <main class="inner-page-main">
+
       <ul class="breadcrumbs positioner">
-        <a href="index.html">
-          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          	 width="15px" height="12px" viewBox="0 0 15 12" enable-background="new 0 0 15 12" xml:space="preserve">
-          <g>
-          	<polygon fill="#C1C6CE" points="3,8 3,12 7,12 7,8 9,8 9,12 13,12 13,8 8,3.516 	"/>
-          	<path fill="#C1C6CE" d="M14.831,6.365L13,4.751V0h-2v2.987L8.332,0.635c-0.02-0.017-0.043-0.023-0.064-0.037
-          		c-0.026-0.018-0.052-0.035-0.08-0.047C8.156,0.539,8.125,0.533,8.093,0.527C8.062,0.521,8.032,0.515,8,0.515
-          		c-0.031,0-0.061,0.006-0.092,0.012C7.875,0.533,7.845,0.539,7.813,0.552C7.785,0.563,7.76,0.581,7.733,0.598
-          		c-0.021,0.014-0.045,0.02-0.064,0.037l-6.498,5.73C0.964,6.548,0.944,6.864,1.126,7.071C1.225,7.183,1.363,7.24,1.501,7.24
-          		c0.118,0,0.236-0.041,0.331-0.125L8,1.677l6.169,5.438C14.265,7.199,14.383,7.24,14.5,7.24c0.139,0,0.276-0.058,0.375-0.169
-          		C15.058,6.864,15.038,6.548,14.831,6.365z"/>
-          </g>
-          </svg>
-        </a>
+        <li>
+          <a class="breadcrumbs-to-main" href="index.html"></a>
+        </li>
         <li><a href="#">Каталог</a></li>
         <li><a href="#">Инструмент</a></li>
         <li class="breadcrumbs-current">Перфораторы</li>
       </ul>
+
       <h1 class="positioner">
         Перфораторы
       </h1>
@@ -146,15 +143,25 @@
             <label class="price-form" for="price-range">
               Цена:
             </label>
-            <input type="range" name="price-range-1" min="0" max="" id="price-range">
-            <input type="range" name="price-range-2" min="0" max="">
-            <output name="price-1">0</output>
-            <output name="price-2">30000</output>
-            <fieldset>
+            <div class="price-range">
+              <input class="visually-hidden price-range-1" type="range" name="price-range-1" min="0" max="" id="price-range">
+              <input class="visually-hidden price-range-2" type="range" name="price-range-2" min="0" max="">
+            </div>
+            <div class="price-range-output">
+              <div>
+                <output name="price-1">0</output>
+              </div>
+              <div>
+                <output name="price-2">30000</output>
+              </div>
+            </div>
+
+            <fieldset class="brands-fieldset">
               <h3>
                 Производители:
               </h3>
               <ul class="brands-filter">
+
                 <li class="filter-option">
                   <input class="visually-hidden filter-input filter-input-checkbox"
                   type="checkbox" id="filter-bosch" name="bosch" checked>
@@ -175,10 +182,10 @@
                     			H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
                     	</g>
                     </g>
-                    </svg>
-                    BOSCH
+                    </svg>BOSCH
                   </label>
                 </li>
+
                 <li class="filter-option">
                   <input class="visually-hidden filter-input filter-input-checkbox"
                   type="checkbox" id="filter-interskol" name="interskol">
@@ -199,10 +206,10 @@
                     			H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
                     	</g>
                     </g>
-                    </svg>
-                    ИНТЕРСКОЛ
+                    </svg>ИНТЕРСКОЛ
                   </label>
                 </li>
+
                 <li class="filter-option">
                   <input class="visually-hidden filter-input filter-input-checkbox"
                   type="checkbox" id="filter-makita" name="makita" checked>
@@ -223,10 +230,10 @@
                     			H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
                     	</g>
                     </g>
-                    </svg>
-                    MAKITA
+                    </svg>MAKITA
                   </label>
                 </li>
+
                 <li class="filter-option">
                   <input class="visually-hidden filter-input filter-input-checkbox"
                   type="checkbox" id="filter-dewalt" name="dewalt">
@@ -247,10 +254,10 @@
                     			H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
                     	</g>
                     </g>
-                    </svg>
-                    DEWALT
+                    </svg>DEWALT
                   </label>
                 </li>
+
                 <li class="filter-option">
                   <input class="visually-hidden filter-input filter-input-checkbox"
                   type="checkbox" id="filter-hitachi" name="hitachi">
@@ -271,18 +278,19 @@
                     			H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
                     	</g>
                     </g>
-                    </svg>
-                    HITACHI
+                    </svg>HITACHI
                   </label>
                 </li>
               </ul>
             </fieldset>
-            <fieldset>
+
+            <fieldset class="mains-supply-fieldset">
               <h3>
                 Питание:
               </h3>
               <ul class="mains-supply-filter">
-                <li class="filter-option">
+
+                <li class="filter-option supply-option">
                   <input class="visually-hidden filter-input filter-input-radio"
                   type="radio" id="filter-accumulator" name="mains-supply" value="accumulator" checked>
                   <label class="filter-label" for="filter-accumulator">
@@ -300,7 +308,8 @@
                     Аккумуляторные
                   </label>
                 </li>
-                <li class="filter-option">
+
+                <li class="filter-option supply-option">
                   <input class="visually-hidden filter-input filter-input-radio"
                   type="radio" id="filter-mains-supply" name="mains-supply" value="mains-supply">
                   <label class="filter-label" for="filter-mains-supply">
@@ -320,9 +329,11 @@
                 </li>
               </ul>
             </fieldset>
+
             <button class="show-button" type="submit">Показать</button>
           </form>
         </section>
+
         <div class="sorting-cards">
           <section class="sorting">
             <h2>
@@ -354,11 +365,26 @@
               по убыванию
             </a>
           </section>
+
           <section class="items-list">
             <h2 class="visually-hidden">
               Список товаров
             </h2>
+            <div class="modal cart-addition">
+              <p>Товар добавлен в корзину!</p>
+              <div class="cart-positioner">
+                <a class="make-order-button" href="#">
+                  Оформить заказ
+                </a>
+                <a class="continue-shopping-button" href="#">
+                  Продолжить покупки
+                </a>
+              </div>
+              <a class="button-close-cart" href="#" aria-label="Закрыть"></a>
+            </div>
+
             <ul class="items-all">
+
               <li class="items-cards">
                 <div class="card-buttons">
                   <a>Купить</a>
@@ -376,6 +402,7 @@
                   15500 Р.
                 </p>
               </li>
+
               <li class="items-cards">
                 <div class="card-buttons">
                   <a>Купить</a>
@@ -393,6 +420,7 @@
                   25500 Р.
                 </p>
               </li>
+
               <li class="items-cards">
                 <div class="flag new-flag">
                   Новинка
@@ -410,6 +438,7 @@
                   12500 Р.
                 </p>
               </li>
+
               <li class="items-cards">
                 <div class="card-buttons">
                   <a>Купить</a>
@@ -427,6 +456,7 @@
                   15500 Р.
                 </p>
               </li>
+
               <li class="items-cards">
                 <div class="flag new-flag">
                   Новинка
@@ -447,6 +477,7 @@
                   25500 Р.
                 </p>
               </li>
+
               <li class="items-cards">
                 <div class="card-buttons">
                   <a>Купить</a>
@@ -461,6 +492,7 @@
                   12500 Р.
                 </p>
               </li>
+
               <li class="items-cards">
                 <div class="flag new-flag">
                   Новинка
@@ -481,6 +513,7 @@
                   15500 Р.
                 </p>
               </li>
+
               <li class="items-cards">
                 <div class="card-buttons">
                   <a>Купить</a>
@@ -498,6 +531,7 @@
                   25500 Р.
                 </p>
               </li>
+
               <li class="items-cards">
                 <div class="card-buttons">
                   <a>Купить</a>
@@ -514,6 +548,7 @@
               </li>
             </ul>
           </section>
+
           <ul class="pagination">
             <li class="pagination-current"><a>1</a></li>
             <li><a href="#">2</a></li>
@@ -522,6 +557,7 @@
           </ul>
         </div><!--конец дива для сортировки с карточками-->
       </div><!--конец дива для всех трех секций-->
+
       <section class="rotary-hummer-info">
         <div class="positioner">
           <h2>
@@ -535,7 +571,9 @@
         </div>
       </section>
     </main>
+
     <footer>
+
       <section class="footer-top">
         <div class="positioner">
           <div class="logo-adress">
@@ -567,11 +605,14 @@
           </div>
         </div>
       </section>
+
       <div class="footer-bottom">
         <div class="positioner">
           <div class="copyright">
-            © 2010–2019 Компания «Техномарт»
-            Все права защищены
+            <p>
+              © 2010–2019 Компания «Техномарт»
+              Все права защищены
+            </p>
           </div>
           <div class="social">
             <ul class="social-items">
@@ -596,13 +637,13 @@
            Обратная связь:
            <a class="academy-contacts" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
          </p>
-         <p class="made-by-footer">
+         <p>
            Разработано —
            <a class="academy-contacts" href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
          </p>
        </div>
      </div>
-    </footer>
+   </footer>
     <!-- <section>
       <h2 class="visually-hiddden">Войти в личный кабинет</h2>
       <p>Введите свой логин и пароль.</p>
@@ -632,17 +673,5 @@
         Закрыть
       </button>
     </section> -->
-    <div class="cart-addition">
-      <p>Товар добавлен в корзину!</p>
-      <div class="cart-positioner">
-        <a class="make-order-button" href="#">
-          Оформить заказ
-        </a>
-        <a class="continue-shopping-button" href="#">
-          Продолжить покупки
-        </a>
-      </div>
-      <a class="button-close-cart" href="#" aria-label="Закрыть"></a>
-    </div>
   </body>
 </html>
