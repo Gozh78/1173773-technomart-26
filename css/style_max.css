@@ -178,12 +178,12 @@ img {
 
 .search-field {
   font: inherit;
-  background-color: inherit;
   border: none;
   width: 270px;
   height: 42px;
   padding-left: 48px;
   padding-bottom: 3px;
+  background-color: #293449;
 }
 
 .search-field::-webkit-input-placeholder {
@@ -550,10 +550,10 @@ img {
 .site-navigation a {
   display: block;
   height: 60px;
-  padding-left: 30px; /*Не получается распределить элементы равномерно
+  padding-left: 29px; /*Не получается распределить элементы равномерно
   по pixel-perfect и чтобы не было незакрашенных участков
   по бокам от самых крайних элементов при наведении. Если их убрать, увеличив паддинги, то тогда флекс строка перенесётся*/
-  padding-right: 30px;
+  padding-right: 29px;
   padding-top: 20px;
 }
 
@@ -1825,8 +1825,9 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   color: #000000;
 }
 
-.price-form {
+.filter-item .price-form {
   display: block;
+  margin: 0;
   margin-bottom: 14px;
 }
 
@@ -1852,10 +1853,18 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 }
 
 .price-range-1 {
-  position: relative;
-  visibility: hidden;
+  position: absolute;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  top: 26px;
+  left: 15px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: url("../img/filter-button.svg") no-repeat 50% 50%;
 }
-
+/*
 .price-range-1::before {
   content: "";
   position: absolute;
@@ -1866,12 +1875,32 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   left: 21px;
   background: url("../img/filter-button.svg");
 }
-
+*/
 .price-range-2 {
-  position: relative;
-  visibility: hidden;
+  position: absolute;
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  top: 26px;
+  left: 155px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: url("../img/filter-button.svg") no-repeat 50% 50%;
 }
 
+.green-price-bar {
+  position: absolute;
+  z-index: 1;
+  width: 120px;
+  height: 2px;
+  top: 39px;
+  left: 40px;
+
+  background-color: #00ca74;
+}
+
+/*
 .price-range-2::before {
   content: "";
   position: absolute;
@@ -1882,7 +1911,7 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   left: 159px;
   background: url("../img/filter-button.svg");
 }
-
+*/
 .price-range-output {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2244,10 +2273,10 @@ fieldset h3,
   margin-bottom: 20px;
   margin-left: 42px;
   padding-top: 10px;
-  padding-left: 16px;
+  padding-left: 15px;
 
   color: #ffffff;
-  width: 122px;
+  width: 123px;
   height: 38px;
   background-color: #ee3643;
   border-top-left-radius: 3px;
@@ -2258,7 +2287,7 @@ fieldset h3,
   position: absolute;
   content: "";
   top: 0px;
-  right: -19px;
+  right: -18px;
   border: 19px solid #ffffff;
   border-right-width: 0;
   border-left-color: #ee3643;
@@ -2283,6 +2312,10 @@ fieldset h3,
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .card-buttons a {

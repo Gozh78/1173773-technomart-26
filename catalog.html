@@ -5,7 +5,7 @@
     <title>Техномарт</title>
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700%7cPT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style_max.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body class="catalog-page">
@@ -134,17 +134,20 @@
         Перфораторы
       </h1>
       <div class="filter-sorting-cards positioner">
-        <section class="filter-item ">
+        <section class="filter-item">
           <form class="filter" action="#" method="get">
             <h2 class="filter-header">
               Фильтр:
             </h2>
-            <label class="price-form" for="price-range">
+            <h3 class="price-form">
               Цена:
-            </label>
+            </h3>
             <div class="price-range">
-              <input class="visually-hidden price-range-1" type="range" name="price-range-1" min="0" max="35000" id="price-range">
-              <input class="visually-hidden price-range-2" type="range" name="price-range-2" min="0" max="35000">
+              <button class="price-range-1" type="button"></button>
+              <button class="price-range-2" type="button"></button>
+              <div class="green-price-bar"></div>
+              <!--<input class="visually-hidden price-range-1" type="range" name="price-range-1" min="0" max="35000" id="price-range">
+              <input class="visually-hidden price-range-2" type="range" name="price-range-2" min="0" max="35000">-->
             </div>
             <div class="price-range-output">
               <div>
