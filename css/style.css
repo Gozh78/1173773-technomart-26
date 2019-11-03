@@ -114,7 +114,7 @@ img {
   display: block;
   width: 220px;
   height: 47px;
-  padding-top: 12px;
+  padding-top: 13px;
   text-align: center;
 
   background-color: #ee3643;
@@ -274,6 +274,7 @@ input::placeholder {
   margin-bottom: 1px;
   margin-right: 71px;
   align-self: flex-end;
+  white-space: pre-line;
 
   color: #ee3643;
 }
@@ -1060,12 +1061,18 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 
 .delivery-heading + p {
   width: 280px;
+  white-space: pre-line;
 }
 
 .guarantee-heading + p {
   width: 380px;
   margin-top: 31px;
   word-spacing: 0.7px;
+  white-space: pre-line;
+}
+
+.credit-heading + p {
+  width: 282px;
 }
 
 .service-items-inside img {
@@ -2224,6 +2231,7 @@ fieldset h3,
 
 .rotary-hummer-info p {
   word-spacing: 1.1px;
+  white-space: pre-line;
 }
 
 /* Анимация */
