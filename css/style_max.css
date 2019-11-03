@@ -39,8 +39,12 @@
 }
 
 .cart-positioner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 460px;
   margin-left: auto;
   margin-right: auto;
@@ -48,10 +52,12 @@
 
 /* Блочная модель */
 *, *::before, *::after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Типографика и оформление*/
@@ -84,7 +90,6 @@ img {
   width: 1px;
   height: 1px;
   margin: -1px;
-  …
 }
 
 .bookmarker,
@@ -102,11 +107,12 @@ img {
 .header-top {
   background-color: #293449;
   height: 42px;
-  min-width: 1200px;
   min-height: 42px;
 }
 
 .header-top .positioner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -133,13 +139,20 @@ img {
 
 .header-buttons {
   min-height: 42px;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   font-family: "Cuprum", Arial, sans-serif;
   font-size: 17px;
   line-height: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin-right: 0;
   margin-left: auto;
 }
@@ -148,7 +161,7 @@ img {
   position: absolute;
   top: 12px;
   left: 17px;
-  opacity: 0.3 /*Вопрос: могу же я без ущерба для кода поменять в svg-коде id для разных картинок? А то мне validator по этому поводу ошибки высвечивает.*/
+  opacity: 0.3;
 }
 
 .search-form {
@@ -173,7 +186,23 @@ img {
   padding-bottom: 3px;
 }
 
-input::placeholder {
+.search-field::-webkit-input-placeholder {
+  color: #ffffff;
+}
+
+.search-field::-moz-placeholder {
+  color: #ffffff;
+}
+
+.search-field:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.search-field::-ms-input-placeholder {
+  color: #ffffff;
+}
+
+.search-field::placeholder {
   color: #ffffff;
 }
 
@@ -255,12 +284,15 @@ input::placeholder {
   min-height: 278px;
   padding-top: 46px;
   padding-bottom: 60px;
-  min-width: 1200px;
 }
 
 .header-body .header-body-top {
+ display: -webkit-box;
+ display: -ms-flexbox;
  display: flex;
- justify-content: flex-end;
+ -webkit-box-pack: end;
+     -ms-flex-pack: end;
+         justify-content: flex-end;
  margin-bottom: 39px;
 }
 
@@ -269,11 +301,12 @@ input::placeholder {
   line-height: 23px;
   font-style: italic;
   text-align: left;
-  width: 197px; /*надо будет исправить*/
-  margin-top: 0;/*без <br> вообще никак не обойтись*/
+  width: 197px;
+  margin-top: 0;
   margin-bottom: 1px;
   margin-right: 71px;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   white-space: pre-line;
 
   color: #ee3643;
@@ -324,10 +357,14 @@ input::placeholder {
 }
 
 .header-authorization {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 281px;
   height: 45px;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .header-authorization a {
@@ -444,6 +481,8 @@ input::placeholder {
 
 .user-features {
   padding-left: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -493,13 +532,19 @@ input::placeholder {
   padding-right: 0;
 
   background-color: #32425c;
-  box-shadow: inset 0px -5px #293449;
+  -webkit-box-shadow: inset 0px -5px #293449;
+          box-shadow: inset 0px -5px #293449;
 }
 
 .site-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .site-navigation a {
@@ -534,22 +579,34 @@ input::placeholder {
 
 .main-cards {
   min-height: 409px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   margin-top: 59px;
 }
 
 .main-cards-positioner-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 620px;
 }
 
 .main-cards-positioner-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 300px;
 }
 
@@ -621,6 +678,8 @@ input::placeholder {
 .slider .slider-slides {
   width: 200%;
   height: 266px;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
   transition: 0.3s ease; /*почему-то при обновлении страницы с добавлением этого свойства начал моргать текст внутри слайдера*/
 }
 
@@ -705,11 +764,15 @@ input::placeholder {
 */
 
 .slider-radio-1:checked ~ .slider-slides {
-  transform: translate(0);
+  -webkit-transform: translate(0);
+      -ms-transform: translate(0);
+          transform: translate(0);
 } /*не понимаю, как осуществить прокрутку к началу без JS*/
 
 .slider-radio-2:checked ~ .slider-slides {
-  transform: translate(-620px);
+  -webkit-transform: translate(-620px);
+      -ms-transform: translate(-620px);
+          transform: translate(-620px);
 }
 
 .main-cards .main-cards-slider-header-1,
@@ -804,9 +867,15 @@ input::placeholder {
 
 .polular-items-bar,
 .polular-brands-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 940px;
   height: 89px;
   padding-right: 24px;
@@ -827,9 +896,14 @@ input::placeholder {
 }
 
 .items-list-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 940px;
   min-height: 318px;
   margin-left: auto;
@@ -841,10 +915,16 @@ input::placeholder {
 }
 
 .list-brands {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 940px;
   min-height: 310px;
   margin-left: auto;
@@ -852,9 +932,14 @@ input::placeholder {
 }
 
 .list-brands li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   width: 220px;
   height: 145px;
   background-color: #ffffff;
@@ -868,11 +953,13 @@ input::placeholder {
 }
 
 .list-brands li:hover {
-  box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
+  -webkit-box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
+          box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
 }
 
 .list-brands li:active {
-  box-shadow: 0px 4px 10px 0px rgba(41, 52, 73, 0.5);
+  -webkit-box-shadow: 0px 4px 10px 0px rgba(41, 52, 73, 0.5);
+          box-shadow: 0px 4px 10px 0px rgba(41, 52, 73, 0.5);
   opacity: 0.3;
 }
 
@@ -919,7 +1006,6 @@ input::placeholder {
 .rotary-hummer-info {
   background-color: #f4f7f9;
   color: #000000;
-  min-width: 1200px;
 }
 
 .services {
@@ -949,6 +1035,8 @@ input::placeholder {
 }
 
 .service-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -973,27 +1061,27 @@ input::placeholder {
   color: #ffffff;
 
   background-color: #32425c;
-  box-shadow:
+  -webkit-box-shadow:
     inset 0px -1px 0px 0px #293449,
     inset 0px 1px 0px 0px #405069;
-    /*inset -15px 0px 15px -15px #000000; /*Не пойму, как сделать точно такую же тень, - по-всякому уже пробовал*/*/
+          box-shadow:
+    inset 0px -1px 0px 0px #293449,
+    inset 0px 1px 0px 0px #405069;
 }
 
-.service-headings::after {/*работает не очень*/
-  position: absolute;
-  z-index: 1;
+.service-headings::after {/*не совсем такая тень получается*/
   content: "";
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  left: 100%;
+  top: -30px;
+  bottom: 5px;
   width: 10px;
-  height: 250px;
-  /*background-color: #f4f7f9;*/
-  display: block;
-  right: 0px;
-  top: -35px;
-  border-top-left-radius: 100%;
-  border-bottom-left-radius: 100%;
-  /*box-shadow: 10px 0px 10px -5px #000000;*/
-  box-shadow: inset -15px 0px 105px -75px rgba(0,0,0,0.1);
-  /*box-shadow: -85px 0px 15px -35px rgba(0,0,0,0.3);*/
+  height: 249px;
+  border-radius: 50%;
+  -webkit-box-shadow: -7px 0 2px -3px hsla(0, 0%, 10%, 0.2);
+          box-shadow: -7px 0 2px -3px hsla(0, 0%, 10%, 0.2);
 }
 
 .service-items-head:hover {
@@ -1004,7 +1092,8 @@ input[value="service-1"]:checked ~ .service-headings .service-items-head:first-o
 input[value="service-2"]:checked ~ .service-headings .service-items-head:nth-of-type(2),
 input[value="service-3"]:checked ~ .service-headings .service-items-head:last-of-type {
   background-color: #ffffff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   color: #32425c;
 }
 
@@ -1103,8 +1192,12 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 }
 
 .additional {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-top: 79px;
   min-height: 486px;
   margin-bottom: 50px;
@@ -1117,7 +1210,7 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   line-height: 24px;
   margin-top: 26px;
   margin-bottom: 17px;
-  word-spacing: 1.2px;/*непонятно, почему текст так растягивается при просмотре в perfect pixel - во многих местах так*/
+  word-spacing: 1.2px;
 
   color: #000000;
 }
@@ -1189,8 +1282,12 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 }
 
 .footer-top .positioner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .bottom-logo {
@@ -1232,9 +1329,14 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 
 .site-navigation-1,
 .site-navigation-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 34px;
   overflow: hidden;
 }
@@ -1274,6 +1376,8 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 .footer-bottom .positioner {
   padding-top: 37px;
   padding-right: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -1302,18 +1406,28 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 }
 
 .social-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-right: 120px;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 131px;
   position: relative;
   top: -2px;
 }
 
 .social a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #212a3a;
   width: 41px;
   height: 41px;
@@ -1364,14 +1478,20 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   display: none;
 
   border-top: 7px solid #ff5357;
-  box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.75);
+          box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.75);
   background: #ffffff url("../img/back-link-background.png") no-repeat 0px 311px;
 }
 
 .back-link-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
 }
 
@@ -1414,6 +1534,26 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   display: block;
   color: #000000;
   word-spacing: 0.3px;
+}
+
+.back-link-item input::-webkit-input-placeholder,
+.back-link-item textarea::-webkit-input-placeholder {
+  color: #a9a9a9;
+}
+
+.back-link-item input::-moz-placeholder,
+.back-link-item textarea::-moz-placeholder {
+  color: #a9a9a9;
+}
+
+.back-link-item input:-ms-input-placeholder,
+.back-link-item textarea:-ms-input-placeholder {
+  color: #a9a9a9;
+}
+
+.back-link-item input::-ms-input-placeholder,
+.back-link-item textarea::-ms-input-placeholder {
+  color: #a9a9a9;
 }
 
 .back-link-item input::placeholder,
@@ -1501,7 +1641,8 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   display: none;
 
   border-top: 7px solid #ff5357;
-  box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.75);
+          box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.75);
   background: #ffffff url("../img/back-link-background.png") no-repeat 0px 164px;
 }
 
@@ -1561,8 +1702,12 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
     /* Далее для внутренней страницы*/
 
 .inner-page-main .breadcrumbs {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-top: 25px;
   padding-bottom: 25px;
   height: 59px;
@@ -1639,13 +1784,22 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 }
 
 .filter-sorting-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .sorting-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 700px;
 }
 
@@ -1730,8 +1884,12 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 }
 
 .price-range-output {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 220px;
   position: relative;
 }
@@ -1745,7 +1903,8 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   top: 19px;
 
   background-color: #000000;
-  box-shadow: -1px 0 0 0 #cdcdcd;
+  -webkit-box-shadow: -1px 0 0 0 #cdcdcd;
+          box-shadow: -1px 0 0 0 #cdcdcd;
 }
 
 .price-range-output div {
@@ -1813,7 +1972,10 @@ fieldset h3,
   line-height: 20px;
   text-transform: uppercase;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   position: relative;
   padding-left: 35px;
 
@@ -1889,6 +2051,8 @@ fieldset h3,
 .sorting {
   width: 700px;
   min-height: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 20px;
   padding-top: 6px;
@@ -1917,7 +2081,10 @@ fieldset h3,
   padding-top: 1px;
   margin-right: 67px;
   padding-bottom: 0;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .sorting-option li:nth-of-type(2) {
@@ -1998,8 +2165,11 @@ fieldset h3,
 }
 
 .items-all {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   min-height: 994px;
 }
 
@@ -2012,9 +2182,14 @@ fieldset h3,
 }
 
 .items-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 220px;
   height: 318px;
   border: 1px solid #e5e5e5;
@@ -2038,7 +2213,9 @@ fieldset h3,
 }
 
 .items-cards .card-image {
-  order: -1;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
   width: 218px;
   height: 170px;
 }
@@ -2090,7 +2267,8 @@ fieldset h3,
 }
 
 .items-cards:hover {
-  box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
+  -webkit-box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
+          box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
 }
 
 .items-cards:hover .card-image {
@@ -2119,7 +2297,8 @@ fieldset h3,
 
   color: #ffffff;
   background-color: #63a63e;
-  box-shadow: inset 0px -3px 0px 0px rgba(0,1,1,0.25);
+  -webkit-box-shadow: inset 0px -3px 0px 0px rgba(0,1,1,0.25);
+          box-shadow: inset 0px -3px 0px 0px rgba(0,1,1,0.25);
 }
 
 .card-buttons a:last-child {
@@ -2129,13 +2308,21 @@ fieldset h3,
   border: 3px solid #63a63e;
   color: #000000;
   background-color: #ffffff;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .items-cards:hover .card-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .items-cards:hover a {
@@ -2164,8 +2351,12 @@ fieldset h3,
 }
 
 .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 284px;
   text-align: left;
   margin-bottom: 60px;
@@ -2173,9 +2364,15 @@ fieldset h3,
 }
 
 .pagination a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items:center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
   width: 38px;
   height: 38px;
   padding-left: 2px;
