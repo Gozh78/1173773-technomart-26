@@ -226,7 +226,6 @@ img {
 .search-field:active + svg path,
 .search-field:focus + svg path {
   z-index: 10;
-
   fill: #ef404d;
 }
 
