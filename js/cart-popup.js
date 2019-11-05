@@ -1,13 +1,15 @@
 var cartLink = document.querySelectorAll(".cart-link");
 
-var cartPopup = document.querySelectorAll(".cart-addition");
+var cartPopup = document.querySelector(".cart-addition");
 
 var close = cartPopup.querySelector(".button-close-cart");
 var continueButton = cartPopup.querySelector(".continue-shopping-button");
 
-cartLink.addEventListener("click", function(evt) {
-  evt.preventDefault();
-  cartPopup.classList.add("modal-show");
+cartLink.forEach((it) => {
+  it.addEventListener("click", function(evt) {
+    evt.preventDefault();
+    cartPopup.classList.add("modal-show");
+  });
 });
 
 close.addEventListener("click", function(evt) {
