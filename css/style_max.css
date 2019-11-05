@@ -225,8 +225,9 @@ img {
 
 .search-field:active + svg path,
 .search-field:focus + svg path {
-  fill: #ef404d;
   z-index: 10;
+
+  fill: #ef404d;
 }
 
 .header-buttons a {
