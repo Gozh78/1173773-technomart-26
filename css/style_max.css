@@ -66,7 +66,7 @@ body {
   padding: 0;
   margin: 0;
   color: #ffffff;
-  font-family: "PT Sans", Arial, sans-serif;
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 13px;
   line-height: 24px;
   font-weight: 400;
@@ -141,7 +141,7 @@ img {
   min-height: 42px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 17px;
   line-height: 18px;
   display: -webkit-box;
@@ -279,7 +279,7 @@ img {
 }
 
 .header-body {
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   background-color: #f3f7f9;
   min-height: 278px;
   padding-top: 46px;
@@ -525,7 +525,7 @@ img {
 .main-navigation {
   min-height: 60px;
   width: 940px;
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 17px;
   line-height: 17px;
   padding-left: 0;
@@ -550,9 +550,7 @@ img {
 .site-navigation a {
   display: block;
   height: 60px;
-  padding-left: 29px; /*Не получается распределить элементы равномерно
-  по pixel-perfect и чтобы не было незакрашенных участков
-  по бокам от самых крайних элементов при наведении. Если их убрать, увеличив паддинги, то тогда флекс строка перенесётся*/
+  padding-left: 29px;
   padding-right: 29px;
   padding-top: 20px;
 }
@@ -613,7 +611,7 @@ img {
 .main-cards-positioner-1 div,
 .main-cards-positioner-2 div {
   display: block;
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   width: 300px;
   height: 123px;
   margin-bottom: 20px;
@@ -680,7 +678,7 @@ img {
   height: 266px;
   -webkit-transition: 0.3s ease;
   -o-transition: 0.3s ease;
-  transition: 0.3s ease; /*почему-то при обновлении страницы с добавлением этого свойства начал моргать текст внутри слайдера*/
+  transition: 0.3s ease;
 }
 
 .slider-text-1,
@@ -750,24 +748,12 @@ img {
 .slider-radio-2:checked ~ .slider-controls label[for="slider-radio-2"] {
   background-color: #ee3643;
 }
-/*
-.slider-radio-1:checked ~ .slider-slides .img-2,
-.slider-radio-2:checked ~ .slider-slides .img-1,
-.slider-radio-1:checked ~ .slider-slides .slider-text-2,
-.slider-radio-2:checked ~ .slider-slides .slider-text-1 {
-  display: none;
-}
-
-.slider-radio-2:checked ~ .slider-slides .slider-text-2 {
-  transform: translateX(-620px);
-}
-*/
 
 .slider-radio-1:checked ~ .slider-slides {
   -webkit-transform: translate(0);
       -ms-transform: translate(0);
           transform: translate(0);
-} /*не понимаю, как осуществить прокрутку к началу без JS*/
+}
 
 .slider-radio-2:checked ~ .slider-slides {
   -webkit-transform: translate(-620px);
@@ -779,7 +765,7 @@ img {
 .main-cards .main-cards-slider-header-2 {
   position: absolute;
   z-index: 10;
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 36px;
   line-height: 36px;
   text-transform: uppercase;
@@ -832,7 +818,7 @@ img {
   text-align: center;
   height: 38px;
   padding-top: 11px;
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
@@ -886,7 +872,7 @@ img {
 
 .polular-items-bar h2,
 .polular-brands-bar h2 {
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 30px;
   line-height: 30px;
   text-transform: uppercase;
@@ -1019,7 +1005,7 @@ img {
 
 .additional h2,
 .service-header {
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 30px;
   line-height: 30px;
   margin: 0;
@@ -1054,7 +1040,7 @@ img {
   padding-left: 22px;
   padding-top: 14px;
   cursor: pointer;
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 21px;
   line-height: 30px;
   font-weight: 700;
@@ -1069,7 +1055,7 @@ img {
     inset 0px 1px 0px 0px #405069;
 }
 
-.service-headings::after {/*не совсем такая тень получается*/
+.service-headings::after {
   content: "";
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1124,7 +1110,7 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 }
 
 .service-items-inside h2 {
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 36px;
   line-height: 36px;
   text-transform: uppercase;
@@ -1205,7 +1191,7 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 }
 
 .additional p {
-  font-family: "PT Sans", Arial, sans-serif;
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 13px;
   line-height: 24px;
   margin-top: 26px;
@@ -1228,7 +1214,7 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 
 .companies-list {
   min-height: 100px;
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 18px;
   line-height: 20px;
   margin-bottom: 36px;
@@ -1302,7 +1288,7 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 
 .footer-top p,
 .footer-top li {
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 18px;
   line-height: 24px;
   margin: 0;
@@ -1394,7 +1380,7 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 
 .footer-bottom .copyright,
 .footer-bottom p {
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 16px;
   line-height: 18px;
   color: #ffffff;
@@ -1466,6 +1452,19 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 .modal {
   position: fixed;
   left: 50%;
+  display: none;
+}
+
+.modal-show {
+  display: block;
+
+  animation-name: bounce;
+  animation-duration: 0.8s;
+}
+
+.modal-error {
+  animation-name: shake;
+  animation-duration: 0.6s;
 }
 
 .back-link {
@@ -1475,7 +1474,6 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   z-index: 20;
   top: 338px;
   margin-left: -310px;
-  display: none;
 
   border-top: 7px solid #ff5357;
   -webkit-box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.75);
@@ -1526,7 +1524,7 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 }
 
 .back-link-item label {
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 18px;
   line-height: 18px;
   margin-bottom: 9px;
@@ -1578,7 +1576,7 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   height: 38px;
   padding-top: 2px;
 
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 14px;
   line-height: 18px;
   text-align: center;
@@ -1611,22 +1609,46 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   z-index: 15;
   top: 152px;
   margin-left: -485px;
-  display: none;
 }
 
-.button-close,
-.button-close-map,
-.button-close-cart {
+.map-popup p {
+  width: 970px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  margin: 0;
+}
+
+.map-popup iframe {
+  position: relative;
+  z-index: 2;
+  top: 15px;
+  left: 15px;
+
+  border: none;
+}
+
+.button-close {
   position: absolute;
   right: -71px;
   top: -38px;
   width: 21px;
   height: 21px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 
   background: url("../img/icon-close.svg") no-repeat;
 }
 
+.button-close:active {
+  transform: scale(0.8);
+}
+
 .button-close-map {
+  z-index: 10;
   right: 24px;
   top: 24px;
 }
@@ -1638,7 +1660,6 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   z-index: 25;
   margin-left: -310px;
   top: 410px;
-  display: none;
 
   border-top: 7px solid #ff5357;
   -webkit-box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.75);
@@ -1647,15 +1668,17 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 }
 
 .cart-addition p {
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 30px;
   line-height: 30px;
   margin-left: 180px;
-  color: #000000;
   display: block;
   margin-bottom: 105px;
   position: relative;
   letter-spacing: 0.1px;
+  user-select: none;
+
+  color: #000000;
 }
 
 .cart-addition p::before {
@@ -1672,9 +1695,10 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 .continue-shopping-button {
   width: 220px;
   height: 38px;
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 14px;
   line-height: 18px;
+  padding: 0;
   padding-left: 60px;
   padding-top: 11px;
   color: #ffffff;
@@ -1684,10 +1708,13 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   background-color: #ee3643;
   border: none;
   border-radius: 3px;
+  outline: none;
+  cursor: pointer;
 }
 
 .continue-shopping-button {
-  padding-left: 43px;
+  padding-left: 0px;
+  padding-top: 2px;
   color: #000000;
   background-color: #ffffff;
   border: none;
@@ -1726,7 +1753,7 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 
 .breadcrumbs li,
 .breadcrumbs-current {
-  font-family: "PT Sans", Arial, sans-serif;
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
@@ -1766,7 +1793,7 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 
 .inner-page-main h1 {
   display: block;
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 30px;
   font-weight: normal;
   line-height: 30px;
@@ -1864,18 +1891,7 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   outline: none;
   background: url("../img/filter-button.svg") no-repeat 50% 50%;
 }
-/*
-.price-range-1::before {
-  content: "";
-  position: absolute;
-  visibility: visible;
-  width: 20px;
-  height: 22px;
-  top: 15px;
-  left: 21px;
-  background: url("../img/filter-button.svg");
-}
-*/
+
 .price-range-2 {
   position: absolute;
   z-index: 10;
@@ -1900,18 +1916,6 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
   background-color: #00ca74;
 }
 
-/*
-.price-range-2::before {
-  content: "";
-  position: absolute;
-  visibility: visible;
-  width: 20px;
-  height: 22px;
-  top: 15px;
-  left: 159px;
-  background: url("../img/filter-button.svg");
-}
-*/
 .price-range-output {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1960,7 +1964,7 @@ input[value="service-3"]:checked ~ .service-items-inside li:nth-of-type(2) {
 
 fieldset h3,
 .price-form {
-  font-family: "PT Sans", Arial, sans-serif;
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 17px;
   line-height: 30px;
   text-transform: uppercase;
@@ -1996,7 +2000,7 @@ fieldset h3,
 }
 
 .filter-option label {
-  font-family: "PT Sans", Arial, sans-serif;
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 15px;
   line-height: 20px;
   text-transform: uppercase;
@@ -2035,6 +2039,14 @@ fieldset h3,
   fill: #b5b5b5;
 }
 
+.filter-input:focus ~ label path,
+.filter-input:focus ~ label polygon,
+.filter-input:focus ~ label path,
+.filter-input:focus ~ label polygon,
+.filter-input:focus ~ label circle {
+  fill: #b5b5b5;
+}
+
 .disabled-checkbox path,
 .disabled-checkbox polygon,
 .disabled-radio path,
@@ -2060,7 +2072,7 @@ fieldset h3,
 }
 
 .show-button {
-  font-family: "PT Sans", Arial, sans-serif;
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 13px;
   line-height: 18px;
   width: 140px;
@@ -2184,7 +2196,7 @@ fieldset h3,
 .items-list-main h3,
 .items-list-main del,
 .items-list-main p {
-  font-family: "PT Sans", Arial, sans-serif;
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 18px;
   line-height: 20px;
   font-weight: bold;
@@ -2319,7 +2331,7 @@ fieldset h3,
 }
 
 .card-buttons a {
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   width: 135px;
   height: 38px;
   margin-left: auto;
@@ -2409,7 +2421,7 @@ fieldset h3,
   width: 38px;
   height: 38px;
   padding-left: 2px;
-  font-family: "PT Sans", Arial, sans-serif;
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 13px;
   line-height: 18px;
   border: 1px solid #e5e5e5;
@@ -2450,7 +2462,7 @@ fieldset h3,
 }
 
 .rotary-hummer-info h2 {
-  font-family: "Cuprum", Arial, sans-serif;
+  font-family: "Cuprum", "Arial", sans-serif;
   font-size: 30px;
   font-weight: normal;
   line-height: 30px;
@@ -2465,5 +2477,64 @@ fieldset h3,
 }
 
 /* Анимация */
+/*
+@keyframes bounce {
+  0% {
+    transform: translateX(-1000px) skewX(9deg);
+  }
+
+  70% {
+    transform: translateX(40px) skewX(-6deg);
+  }
+
+  90% {
+    transform: translateX(-20px) skewX(3deg);
+  }
+
+  100% {
+    transform: translateX(0) skewX(0);
+  }
+}
+*/
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-2000px);
+  }
+
+  70% {
+    transform: translateY(30px);
+  }
+
+  90% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
 
 /* Разное */

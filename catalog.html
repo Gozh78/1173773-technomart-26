@@ -5,7 +5,7 @@
     <title>Техномарт</title>
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700%7cPT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_max.css">
   </head>
 
   <body class="catalog-page">
@@ -135,7 +135,7 @@
       </h1>
       <div class="filter-sorting-cards positioner">
         <section class="filter-item">
-          <form class="filter" action="#" method="get">
+          <form class="filter" action="https://echo.htmlacademy.ru" method="get">
             <h2 class="filter-header">
               Фильтр:
             </h2>
@@ -372,25 +372,26 @@
             <h2 class="visually-hidden">
               Список товаров
             </h2>
+
             <div class="modal cart-addition">
               <p>Товар добавлен в корзину!</p>
               <div class="cart-positioner">
-                <a class="make-order-button" href="#">
+                <a class="make-order-button" href="cart.html">
                   Оформить заказ
                 </a>
-                <a class="continue-shopping-button" href="#">
+                <button class="continue-shopping-button" type="button">
                   Продолжить покупки
-                </a>
+                </button>
               </div>
-              <a class="button-close-cart" href="#" aria-label="Закрыть"></a>
+              <button class="button-close button-close-cart" type="button" aria-label="Закрыть"></button>
             </div>
 
             <ul class="items-all">
 
               <li class="items-cards">
                 <div class="card-buttons">
-                  <a>Купить</a>
-                  <a>В закладки</a>
+                  <a class="cart-link" href="cart.html">Купить</a>
+                  <a href="#">В закладки</a>
                 </div>
                 <h3>
                   Перфоратор BOSCH
@@ -407,8 +408,8 @@
 
               <li class="items-cards">
                 <div class="card-buttons">
-                  <a>Купить</a>
-                  <a>В закладки</a>
+                  <a class="cart-link" href="cart.html">Купить</a>
+                  <a href="#">В закладки</a>
                 </div>
                 <h3>
                   Перфоратор BOSCH
@@ -428,8 +429,8 @@
                   Новинка
                 </div>
                 <div class="card-buttons">
-                  <a>Купить</a>
-                  <a>В закладки</a>
+                  <a class="cart-link" href="cart.html">Купить</a>
+                  <a href="#">В закладки</a>
                 </div>
                 <h3>
                   Перфоратор BOSCH
@@ -443,8 +444,8 @@
 
               <li class="items-cards">
                 <div class="card-buttons">
-                  <a>Купить</a>
-                  <a>В закладки</a>
+                  <a class="cart-link" href="cart.html">Купить</a>
+                  <a href="#">В закладки</a>
                 </div>
                 <h3>
                   Перфоратор BOSCH
@@ -464,8 +465,8 @@
                   Новинка
                 </div>
                 <div class="card-buttons">
-                  <a>Купить</a>
-                  <a>В закладки</a>
+                  <a class="cart-link" href="cart.html">Купить</a>
+                  <a href="#">В закладки</a>
                 </div>
                 <h3>
                   Перфоратор BOSCH
@@ -482,8 +483,8 @@
 
               <li class="items-cards">
                 <div class="card-buttons">
-                  <a>Купить</a>
-                  <a>В закладки</a>
+                  <a class="cart-link" href="cart.html">Купить</a>
+                  <a href="#">В закладки</a>
                 </div>
                 <h3>
                   Перфоратор BOSCH
@@ -500,8 +501,8 @@
                   Новинка
                 </div>
                 <div class="card-buttons">
-                  <a>Купить</a>
-                  <a>В закладки</a>
+                  <a class="cart-link" href="cart.html">Купить</a>
+                  <a href="#">В закладки</a>
                 </div>
                 <h3>
                   Перфоратор BOSCH
@@ -518,8 +519,8 @@
 
               <li class="items-cards">
                 <div class="card-buttons">
-                  <a>Купить</a>
-                  <a>В закладки</a>
+                  <a class="cart-link" href="cart.html">Купить</a>
+                  <a href="#">В закладки</a>
                 </div>
                 <h3>
                   Перфоратор BOSCH
@@ -536,8 +537,8 @@
 
               <li class="items-cards">
                 <div class="card-buttons">
-                  <a>Купить</a>
-                  <a>В закладки</a>
+                  <a class="cart-link" href="cart.html">Купить</a>
+                  <a href="#">В закладки</a>
                 </div>
                 <h3>
                   Перфоратор BOSCH
@@ -674,5 +675,6 @@
         Закрыть
       </button>
     </section> -->
+    <script src="js/cart-popup.js"></script>
   </body>
 </html>
