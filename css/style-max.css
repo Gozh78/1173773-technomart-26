@@ -2074,6 +2074,10 @@ fieldset h3,
   fill: #b5b5b5;
 }
 
+.filter-input:focus ~ label svg {
+  outline: auto;
+}
+
 .disabled-checkbox path,
 .disabled-checkbox polygon,
 .disabled-radio path,
